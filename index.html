@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
+</head>
+
+    <!-- Link to the separate CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Applying the new background and text colors palette -->
+<body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
+    <!-- Header and Navigation -->
+<header class="bg-white shadow-md py-4">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Logo + Site Name -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-10 w-auto"> <!--logo -->
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Home</a></li>
+        <li><a href="projects.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Projects</a></li>
+        <li><a href="blogs.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Blogs</a></li>
+        <li><a href="about.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">About</a></li>
+        <li><a href="index.html#contact" class="text-lg font-medium text-gray-600 hover:text-[#66B2B2]">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+   <!-- Hero Section -->
+<section 
+    id="home" 
+    class="hero-section relative bg-cover bg-center text-white text-center min-h-screen"
+    style="background-image: url('assets/images/backgroundvs3.jpeg');"
+>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gray-900 opacity-40"></div>
+
+   <!-- Hero Content -->
+    <div class="container mx-auto px-4 relative z-10 flex flex-col justify-center items-center min-h-screen">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
+            Traci Moore
+        </h1>
+        <p class="mt-4 text-xl md:text-2xl text-gray-200">
+            Project Manager | Creator | Lifelong Learner
+        </p>
+        <a href="#about" 
+           class="mt-8 inline-block bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full 
+                  transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+            Learn More About Me
+        </a>
+    </div>
+</section>
+
+<!-- About Stats Section -->
+<section id="about" class="py-16 bg-[#F5F7FA]">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-[#2D3748] mb-8">About Me</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
+                <!-- Card 1: Years Experience -->
+                <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                    <div class="text-4xl font-extrabold text-[#66B2B2] mb-3">7+</div>
+                    <div class="text-lg font-medium text-[#2D3748]">Years Experience</div>
+                </div>
+
+                <!-- Card 2: Ideas Generated -->
+                <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                    <div class="text-4xl font-extrabold text-[#66B2B2] mb-3">100+</div>
+                    <div class="text-lg font-medium text-[#2D3748]">Ideas Generated</div>
+                </div>
+
+                <!-- Card 3: Infinite Happy Clients -->
+                <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                    <div class="text-5xl font-extrabold text-[#66B2B2] mb-3">∞</div>
+                    <div class="text-lg font-medium text-[#2D3748]">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Projects Section with new background color -->
+        <section id="projects" class="py-16 bg-[#F5F7FA]">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Featured Projects</h2>
+                <!-- This is the container where JavaScript will add the project cards -->
+               <div class="flex justify-center">
+             <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project cards will be injected here -->
+           </div>
+           </div>
+                <div class="mt-8 text-center">
+                    <!-- New button color -->
+                    <a href="projects.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        View All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- Motivation Section with rotating quotes -->
+<section id="motivation" class="py-16 bg-[#F5F7FA]">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-[#2D3748] mb-8">Inspirational Quotes</h2>
+
+    <!-- Quote container with lift and shadow effect -->
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-inner transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+      
+      <!-- Multiple quotes, only first visible -->
+      <div class="quote active">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "The only way to do great work is to love what you do."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500">- Steve Jobs</cite>
+      </div>
+
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "Creativity is intelligence having fun."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500">- Albert Einstein</cite>
+      </div>
+
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "Success usually comes to those who are too busy to be looking for it."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500">- Henry David Thoreau</cite>
+      </div>
+
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "You miss 100% of the shots you don’t take."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500"> – Michael Scott - The Office (Wayne Gretzky)</cite>
+      </div>
+
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "Deliver value early, reflect often, and adapt without fear."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500">- Unknown</cite>
+      </div>
+
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
+          "Simplicity is the ultimate sophistication."
+        </blockquote>
+        <cite class="relative z-10 text-lg font-semibold text-gray-500">- Leonardo da Vinci</cite>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Quote rotation logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const quotes = document.querySelectorAll("#motivation .quote");
+    let index = 0;
+
+    setInterval(() => {
+      quotes[index].classList.add("hidden");
+      quotes[index].classList.remove("active");
+      index = (index + 1) % quotes.length;
+      quotes[index].classList.remove("hidden");
+      quotes[index].classList.add("active");
+    }, 5000); // rotate every 5 seconds
+  });
+</script>
+
+        <!-- Blog Section with new background color -->
+<section id="blog" class="py-16 bg-[#F5F7FA]">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Latest Blog Posts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      
+      <!-- Blog Card 1 -->
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <a href="blogs/blog1.html">
+          <img class="rounded-t-lg w-full h-48 object-cover" src="/assets/images/PM Communication image.jpeg" alt="Blog 1" />
+        </a>
+        <div class="p-5">
+          <a href="blogs/blog1.html">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Project Manager as an Interpreter: Bridging the Gap Between Tech and Business</h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">How PMs bridge the gap between technical teams and business stakeholders, translating complex ideas into shared understanding.</p>
+          <a href="blogs/blog1.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
+            Read more
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <a href="blogs/blog2.html">
+          <img class="rounded-t-lg w-full h-48 object-cover" src="/assets/images/calmandchaospm.jpeg" alt="Blog 2" />
+        </a>
+        <div class="p-5">
+          <a href="blogs/blog2.html">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Calm in the Chaos: How Good PMs Handle Uncertainty</h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">Exploring how experienced project managers maintain clarity and focus amid shifting priorities and unexpected challenges.</p>
+          <a href="blogs/blog2.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
+            Read more
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <a href="blogs/blog3.html">
+          <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/pmbias4.jpeg" alt="Blog 3" />
+        </a>
+        <div class="p-5">
+          <a href="blogs/blog3.html">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">How Determination and Inspiration Helped Me Build My First Website.</p>
+          <a href="blogs/blog3.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
+            Read more
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="blogs.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+        View All Blogs
+      </a>
+    </div>
+  </div>
+</section>
+
+       <!-- Contact Section -->
+<section id="contact" class="py-16 bg-[#F5F7FA]">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Get in Touch</h2>
+        <!-- Contact container with lift and shadow effect -->
+        <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="relative z-10">
+                <div class="mb-4">
+                    <label for="name" class="block text-[#2D3748] font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66B2B2] bg-[#E2E8F0] text-[#2D3748]">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-[#2D3748] font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66B2B2] bg-[#E2E8F0] text-[#2D3748]">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-[#2D3748] font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66B2B2] bg-[#E2E8F0] text-[#2D3748]"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer with new colors -->
+<footer class="bg-[#2D3748] text-white py-8">
+  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+    <!-- Logo -->
+    <img src="assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+
+    <!-- Text -->
+    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
+    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+  </div>
+</footer>
+
+<script>
+    // A simple array of objects to hold your project data.
+    // You can easily add, remove, or edit projects here without touching the HTML.
+const projects = [
+  {
+    title: "Smart Building Automation Rollout",
+    description: "Integrated IoT devices and dashboards for smarter building management system (BAS).",
+    imageUrl: "assets/images/smartbuildingsvs2.jpg",
+    link: "projects/project1.html"
+  },
+  {
+    title: "MVP GenAI Project",
+    description: "Developed a minimum viable product using GenAI for automation workflows.",
+    imageUrl: "assets/images/lawmvpvs1.jpg",
+    link: "projects/project2.html"
+  },
+  {
+    title: "Advertising Management App",
+    description: "Supported and enhanced a critical advertising order system for thousands of newspapers nationwide.",
+    imageUrl: "assets/images/newspapererrp.jpg",
+    link: "projects/project3.html"
+  }
+];
+
+function createProjectCard(project) {
+return `
+  <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 object-cover relative z-10">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
+      <p class="text-sm mb-4">${project.description}</p>
+      <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
+        Read More
+      </span>
+    </div>
+  </a>
+`;
+}
+
+function renderProjects() {
+  const container = document.getElementById('projects-container');
+  if (container) {
+    container.innerHTML = '';
+    projects.forEach(project => {
+      container.innerHTML += createProjectCard(project);
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', renderProjects);
+</script>
+</body>
+</html>

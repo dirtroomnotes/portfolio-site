@@ -1,0 +1,2925 @@
+<svg width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 Q25,20 50,0 T100,0 V100 H0 Z" fill="#5c4a3d"/>
+</svg>
+
+
+
+<div class="hero-content">
+            <h1 class="font-display">Hello, I'm <span class="highlight text-sage">Traci</span></h1>
+            <p class="hero-subtitle">Weaving stories through strategy, crafting digital experiences with patience & intention.</p>
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('about')" class="btn btn-earth">Explore My Work</button>
+                <button onclick="downloadResume()" class="btn btn-outline-earth">Download Resume</button>
+            </div>
+        </div>
+
+
+ <section class="hero">
+        <div class="overlay"></div>
+            </div>
+        </div>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traci's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">🌿 Traci</div>
+            <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="javascript:void(0);" onclick="scrollToSection('about'); closeMobileNav();">About</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('portfolio'); closeMobileNav();">Projects</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('blog'); closeMobileNav();">Blog</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('contact'); closeMobileNav();">Contact</a></li>
+                <li><button class="btn btn-outline" onclick="downloadResume(); closeMobileNav();">Download Resume</button></li>
+            </ul>
+        </nav>
+        
+    </header>
+<section class="hero">
+  <div class="overlay"></div> <!-- background overlay (optional for dimming image) -->
+  <div class="container text-center">
+    <div class="hero-content">
+      <h1 class="font-display">Hello, I'm <span class="highlight text-sage">Traci</span></h1>
+      <p class="hero-subtitle">Weaving stories through strategy, crafting digital experiences with patience & intention.</p>
+      <div class="hero-buttons">
+        <button onclick="scrollToSection('about')" class="btn btn-earth">Explore My Work</button>
+        <button onclick="downloadResume()" class="btn btn-outline-earth">Download Resume</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="about" class="section section-padding section-muted-gold-bg">
+        <div class="container text-center">
+            <h2 class="section-title font-display">The Story Behind the Work</h2>
+            <p class="section-subtitle">Over 7+ years guiding digital transformation, mindful infrastructure, and project harmony.</p>
+            <div class="stats-grid">
+                <div class="stat-card organic-card"><h3>7+</h3><p>Years of Growth</p></div>
+                <div class="stat-card organic-card"><h3>50+</h3><p>Stories Crafted</p></div>
+                <div class="stat-card organic-card"><h3>$10M+</h3><p>Resources Stewarded</p></div>
+                <div class="stat-card organic-card"><h3>∞</h3><p>Possibilities Embraced</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section section-padding bg-texture-paper">
+        <div class="container text-center">
+            <h2 class="section-title font-display">Stories of Transformation</h2>
+            <div class="card-grid">
+                <div class="project-card organic-card" onclick="openModal('project1')">
+                    <img src="https://placehold.co/400x250/9caf88/fff?text=Project+1" alt="Project 1: Living Infrastructure" />
+                    <div class="card-text-content">
+                        <h3>Living Infrastructure</h3>
+                        <p>Responsive systems & AI-powered symphonies</p>
+                    </div>
+                </div>
+                <div class="project-card organic-card" onclick="openModal('project2')">
+                    <img src="https://placehold.co/400x250/a0522d/fff?text=Project+2" alt="Project 2: Data Migration" />
+                    <div class="card-text-content">
+                        <h3>Data Migration</h3>
+                        <p>Shepherding legacy systems to modern harmony</p>
+                    </div>
+                </div>
+                <div class="project-card organic-card" onclick="openModal('project3')">
+                    <img src="https://placehold.co/400x250/5c4a3d/fff?text=Project+3" alt="Project 3: Digital Strategy" />
+                    <div class="card-text-content">
+                        <h3>Digital Strategy</h3>
+                        <p>Crafting intentional online presences</p>
+                    </div>
+                </div>
+                <div class="project-card organic-card" onclick="openModal('project4')">
+                    <img src="https://placehold.co/400x250/b8860b/fff?text=Project+4" alt="Project 4: Community Engagement" />
+                    <div class="card-text-content">
+                        <h3>Community Engagement</h3>
+                        <p>Building bridges through digital connection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section section-padding bg-pattern-organic">
+        <div class="container text-center">
+            <h2 class="section-title font-display">Reflections & Insights</h2>
+            <div class="card-grid blog-grid">
+                <div class="blog-card organic-card">
+                    <img src="https://placehold.co/400x250/c9b07e/fff?text=Blog+1" alt="Blog Post 1: The Rhythms of Agile" />
+                    <div class="card-text-content">
+                        <h3>The Rhythms of Agile</h3>
+                        <p>Nature’s pace meets modern delivery</p>
+                    </div>
+                </div>
+                <div class="blog-card organic-card">
+                    <img src="https://placehold.co/400x250/9caf88/fff?text=Blog+2" alt="Blog Post 2: AI and the Human Heart" />
+                    <div class="card-text-content">
+                        <h3>AI and the Human Heart</h3>
+                        <p>Ethical harmony in tech design</p>
+                    </div>
+                </div>
+                <div class="blog-card organic-card">
+                    <img src="https://placehold.co/400x250/a0522d/fff?text=Blog+3" alt="Blog Post 3: Cultivating Digital Gardens" />
+                    <div class="card-text-content">
+                        <h3>Cultivating Digital Gardens</h3>
+                        <p>Mindful growth in the online sphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-padding">
+        <div class="container text-center">
+            <h2 class="section-title font-display">Let's Weave a New Story</h2>
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <input type="text" placeholder="Your Name" required aria-label="Your Name" />
+                <input type="email" placeholder="Your Email" required aria-label="Your Email" />
+                <textarea placeholder="Your Message..." required aria-label="Your Message"></textarea>
+                <button type="submit" class="btn btn-earth">Send Message</button>
+            </form>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/your-actual-linkedin-username/" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://github.com/your-actual-github-username" target="_blank" rel="noopener" aria-label="GitHub Profile"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="mailto:your.actual@email.com" aria-label="Send an Email"><ion-icon name="mail-outline"></ion-icon></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Traci. Crafted with care. 🌱</p>
+            <p>Thoughtfully designed for a digital world.</p>
+            <div class="socials footer-socials">
+                <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://github.com/your-github-username" target="_blank" rel="noopener" aria-label="GitHub Profile"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="mailto:your.email@example.com" aria-label="Send an Email"><ion-icon name="mail-outline"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-project1" class="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
+            <h3 class="font-display">Living Infrastructure: Project Details</h3>
+            <p>This project focused on designing and implementing responsive and resilient digital infrastructure, leveraging modern cloud solutions and AI-powered automation to create systems that adapt and grow organically. We prioritized scalability, security, and a seamless user experience, ensuring the infrastructure could support evolving business needs and handle significant data flows efficiently.</p>
+            <p>Key technologies included: AWS, Kubernetes, TensorFlow, and custom Python scripts.</p>
+        </div>
+    </div>
+
+    <div id="modal-project2" class="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
+            <h3 class="font-display">Data Migration: Project Details</h3>
+            <p>In this challenging project, I led the migration of extensive legacy data to a new, modern database system. The process involved meticulous planning, data cleansing, transformation, and validation to ensure data integrity and minimize downtime. Our approach included phased rollouts and comprehensive testing to ensure a smooth transition and unlock new analytical capabilities for the client.</p>
+            <p>Tools used: SQL, ETL processes, custom migration scripts, and rigorous QA.</p>
+        </div>
+    </div>
+
+    <div id="modal-project3" class="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
+            <h3 class="font-display">Digital Strategy: Project Details</h3>
+            <p>This project involved crafting a holistic digital strategy for a growing non-profit, encompassing website redesign, content strategy, and social media engagement. We focused on amplifying their mission and fostering deeper community connections through thoughtful digital touchpoints. The outcome was a more cohesive brand presence and increased online engagement.</p>
+            <p>Areas of focus: UX/UI principles, content marketing, SEO, and community building platforms.</p>
+        </div>
+    </div>
+
+    <div id="modal-project4" class="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
+            <h3 class="font-display">Community Engagement: Project Details</h3>
+            <p>For this project, I developed and implemented strategies to foster vibrant online communities around shared interests. This included designing interactive platforms, moderating discussions, and creating engaging content that encouraged participation and collaboration. The goal was to build stronger connections and empower individuals within the community.</p>
+            <p>Methods used: Forum management, social listening, event coordination (online), and user feedback integration.</p>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* General Reset and Base Styles */
+:root {
+    --color-primary-dark: #2f2f2f; /* Earthy Dark */
+    --color-primary-light: #fefcf9; /* Off-White Paper */
+    --color-accent-sage: #6c7c64; /* SAGE GREEN (NOW DARKER) */
+    --color-accent-terracotta: #a0522d; /* Terracotta (keep as is for now) */
+    --color-neutral-warm: #5c4a3d; /* Warm Brown (keep as is for now) */
+    --color-neutral-gold: #b8860b; /* Goldenrod (keep as is for now) */
+    --color-neutral-muted-gold: #a08c6e; /* MUTED GOLD (NOW DARKER) */
+    --color-light-bg: #e6dfd6; /* LIGHT PAPER BACKGROUND (NOW DARKER/CREAMIER) */
+    --color-pattern-bg-light: #fdfaf5; /* Keep as is for now */
+    --color-pattern-bg-dark: #f2ede6; /* Keep as is for now */
+
+    /* Typography */
+    --font-family-body: 'Montserrat', sans-serif;
+    --font-family-display: 'Lora', serif; /* For titles and headings */
+
+    --font-size-base: 1rem; /* 16px */
+    --font-size-h1: 3.5rem; /* ~56px */
+    --font-size-h2: 2.5rem; /* ~40px */
+    --font-size-h3: 1.75rem; /* ~28px */
+    --font-size-p: 1.125rem; /* ~18px */
+    --font-size-small: 0.875rem; /* ~14px */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from minor layout shifts */
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-family-display);
+    color: var(--color-primary-dark);
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+}
+
+p {
+    font-size: var(--font-size-p);
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-accent-sage);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.font-display {
+    font-family: var(--font-family-display);
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+.text-sage {
+    color: var(--color-accent-sage);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Consistent padding on sides */
+    width: 100%; /* Ensure it takes full width within max-width */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    padding: 6rem 0; /* Vertical padding for sections */
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-primary-dark); /* Ensure this is the deepest dark for titles */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-p);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    color: var(--color-neutral-warm); /* A distinct warm brown */
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.9rem 2rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
+    text-decoration: none; /* For links styled as buttons */
+    display: inline-block; /* Allow padding and margin for anchors */
+    text-align: center;
+}
+
+.btn-earth {
+    background: var(--color-accent-sage);
+    color: #fff;
+    border: 2px solid var(--color-accent-sage);
+}
+
+.btn-earth:hover {
+    background: #7e966e; /* Darker sage */
+    border-color: #7e966e;
+    transform: translateY(-2px);
+}
+
+.btn-outline-earth {
+    background: transparent;
+    border: 2px solid var(--color-accent-sage);
+    color: var(--color-accent-sage);
+}
+
+.btn-outline-earth:hover {
+    background: var(--color-accent-sage);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Header */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-family-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav .nav-links a {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    position: relative;
+    padding-bottom: 0.2rem;
+}
+
+.main-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-sage);
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.main-nav .btn {
+    margin-left: 1.5rem;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none; /* Hidden by default */
+    background-color: var(--color-primary-light);
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-links a,
+.mobile-nav-links .btn {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/images/your-background.jpg'); /* or .svg, .png etc. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Optional dark tint over background */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+  color: #fff; /* Or change depending on image */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75); /* Changed opacity from 0.4 to 0.75 */
+    z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f5f5f5;
+}
+
+/* Wavy Separator After Hero Section */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('./assets/images/wave-separator.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: 5;
+    transform: translateY(50%);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* About Me Section (Stats Grid) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--color-accent-sage);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+    color: var(--color-neutral-warm);
+    margin: 0;
+}
+
+/* Cards (Project & Blog) */
+.organic-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures image corners are rounded with card */
+    display: flex;
+    flex-direction: column;
+}
+
+.organic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.organic-card img {
+    width: 100%;
+    height: 250px; /* Fixed height for image consistency */
+    object-fit: cover; /* Crop image to fit */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.card-text-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allows text content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and description apart */
+}
+
+.card-text-content h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-dark);
+}
+
+.card-text-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-warm);
+    margin-bottom: 0;
+}
+
+/* Project & Blog Grids */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card, .blog-card {
+    cursor: pointer;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 700px;
+    margin: 3rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-body);
+    color: var(--color-primary-dark);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start; /* Align button to the left */
+    margin-top: 1rem;
+}
+
+/* Socials in Contact & Footer */
+.socials {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socials a {
+    font-size: 2rem; /* Larger icons */
+    color: var(--color-neutral-warm);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+    color: var(--color-accent-sage);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-primary-dark);
+    color: #f0f0f0;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-footer p {
+    font-size: var(--font-size-small);
+    color: #ccc;
+    margin: 0;
+}
+
+.site-footer .socials a {
+    color: #f0f0f0;
+    font-size: 1.8rem;
+}
+
+/* Background Textures */
+.bg-texture-paper {
+    background: var(--color-light-bg);
+}
+
+.bg-pattern-organic {
+    background: linear-gradient(to bottom right, var(--color-pattern-bg-light), var(--color-pattern-bg-dark)); /* #fdfaf5 to #f2ede6 */
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    inset: 0; /* Shorthand for top, right, bottom, left */
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: #fff;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1rem;
+    position: relative;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-box {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary-dark);
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.modal-box h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--color-accent-sage);
+}
+
+.modal-box p {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-warm);
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes gentleFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .site-header .container {
+        flex-wrap: wrap; /* Allow wrapping for logo and nav */
+        justify-content: center; /* Center items when wrapping */
+    }
+
+    .main-nav {
+        width: 100%; /* Take full width */
+        margin-top: 1rem;
+        display: flex; /* Keep nav items in line but let them wrap */
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header .main-nav {
+        display: none; /* Hide desktop nav */
+    }
+
+    .site-header .container {
+        flex-wrap: nowrap; /* Prevent wrapping in header on mobile */
+        justify-content: space-between; /* Space out logo and toggle */
+    }
+
+    .menu-toggle {
+        display: block; /* Show mobile menu toggle */
+    }
+
+    .hero {
+        height: 90vh; /* Make hero slightly taller on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        padding: 0.8rem 1.5rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack stats vertically */
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .socials {
+        flex-wrap: wrap; /* Allow social icons to wrap if needed */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .modal-box {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-box h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+
+    .stat-card p {
+        font-size: 1rem;
+    }
+
+    .organic-card img {
+        height: 200px; /* Smaller image height for tiny screens */
+    }
+
+    .card-text-content {
+        padding: 1rem;
+    }
+
+    .card-text-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-text-content p {
+        font-size: 0.9rem;
+    }
+
+    .modal-box {
+        padding: 1.2rem;
+    }
+}
+
+
+/* (Consolidated above, duplicate removed) */
+
+.section-accent-sage {
+    background-color: var(--color-accent-sage); /* Keep this as var() */
+    color: #fff; /* Ensure text is readable on this darker background */
+}
+.section-accent-terracotta {
+    background-color: var(--color-accent-terracotta); /* Your terracotta */
+    color: #fff; /* Ensure text is readable on this darker background */
+}
+
+.section-neutral-warm {
+    background-color: var(--color-neutral-warm); /* Keep this as var() */
+    color: #fff; /* Ensure text is readable on this darker background */
+}
+
+.section-muted-gold-bg {
+    background-color: var(--color-neutral-muted-gold);
+    color: var(--color-primary-dark);
+    padding-top: 100px; /* <--- ADD or CHANGE this line to 100px */
+}
+/* Adjust text colors for headings and paragraphs within these sections */
+.section-accent-sage h2,
+.section-accent-sage p,
+.section-accent-sage h3, /* Added h3 here for blog card titles */
+.section-accent-terracotta h2,
+.section-accent-terracotta p,
+.section-accent-terracotta h3,
+.section-neutral-warm h2,
+.section-neutral-warm p,
+.section-neutral-warm h3 {
+    color: #fff; /* Make text white for better contrast on darker backgrounds */
+}
+
+.section-muted-gold-bg h2,
+.section-muted-gold-bg p,
+.section-muted-gold-bg h3 {
+    color: var(--color-primary-dark); /* Keep dark text for this section */
+}
+
+/* --- End New Section Backgrounds --- */
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Function to scroll to any section by ID
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Download resume stub (replace with actual logic)
+function downloadResume() {
+    alert("This would initiate the resume download! Replace this alert with actual file download logic (e.g., window.open('your-resume.pdf', '_blank');).");
+    // Example: window.open('your-resume.pdf', '_blank');
+}
+
+// Mobile Menu Toggle
+const menuToggleButton = document.querySelector('.menu-toggle');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (menuToggleButton && mobileNav) {
+    menuToggleButton.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        // Optional: Change icon on toggle
+        const icon = menuToggleButton.querySelector('ion-icon');
+        if (mobileNav.classList.contains('active')) {
+            icon.setAttribute('name', 'close-outline');
+        } else {
+            icon.setAttribute('name', 'menu-outline');
+        }
+    });
+}
+
+// Close mobile nav when a link is clicked
+function closeMobileNav() {
+    if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        const icon = menuToggleButton.querySelector('ion-icon');
+        if (icon) {
+            icon.setAttribute('name', 'menu-outline');
+        }
+    }
+}
+
+
+// Modal logic
+const modals = document.querySelectorAll('.modal');
+
+function openModal(projectId) {
+    const modal = document.getElementById(`modal-${projectId}`);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling background
+    }
+}
+
+function closeModal() {
+    modals.forEach(modal => modal.classList.remove('active'));
+    document.body.style.overflow = ''; // Restore scrolling background
+}
+
+// Close modal when clicking outside the modal-box
+modals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) { // Check if the click was directly on the overlay
+            closeModal();
+        }
+    });
+});
+
+// Close modal when Escape key is pressed
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Handle contact form submission (client-side only for this example)
+function handleContactForm(event) {
+    event.preventDefault(); // Prevent default form submission
+    alert('Thank you for reaching out! Your message has been received.');
+    // In a real application, you'd send this data to a server using fetch() or XMLHttpRequest
+    event.target.reset(); // Clear the form
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------
+
+claude stopped
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traci's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Base Styles */
+        :root {
+            --color-primary-dark: #2f2f2f; /* Earthy Dark */
+            --color-primary-light: #fefcf9; /* Off-White Paper */
+            --color-accent-sage: #6c7c64; /* SAGE GREEN (NOW DARKER) */
+            --color-accent-terracotta: #a0522d; /* Terracotta (keep as is for now) */
+            --color-neutral-warm: #5c4a3d; /* Warm Brown (keep as is for now) */
+            --color-neutral-gold: #b8860b; /* Goldenrod (keep as is for now) */
+            --color-neutral-muted-gold: #a08c6e; /* MUTED GOLD (NOW DARKER) */
+            --color-light-bg: #e6dfd6; /* LIGHT PAPER BACKGROUND (NOW DARKER/CREAMIER) */
+            --color-pattern-bg-light: #fdfaf5; /* Keep as is for now */
+            --color-pattern-bg-dark: #f2ede6; /* Keep as is for now */
+
+            /* Typography */
+            --font-family-body: 'Montserrat', sans-serif;
+            --font-family-display: 'Lora', serif; /* For titles and headings */
+
+            --font-size-base: 1rem; /* 16px */
+            --font-size-h1: 3.5rem; /* ~56px */
+            --font-size-h2: 2.5rem; /* ~40px */
+            --font-size-h3: 1.75rem; /* ~28px */
+            --font-size-p: 1.125rem; /* ~18px */
+            --font-size-small: 0.875rem; /* ~14px */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll from minor layout shifts */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-family-display);
+            color: var(--color-primary-dark);
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: var(--font-size-h1);
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: var(--font-size-h2);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: var(--font-size-h3);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: var(--font-size-p);
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--color-accent-sage);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-accent-terracotta);
+        }
+
+        .font-display {
+            font-family: var(--font-family-display);
+        }
+
+        .highlight {
+            font-weight: 700;
+        }
+
+        .text-sage {
+            color: var(--color-accent-sage);
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem; /* Consistent padding on sides */
+            width: 100%; /* Ensure it takes full width within max-width */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section {
+            padding: 6rem 0; /* Vertical padding for sections */
+        }
+
+        .section-title {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--color-primary-dark); /* Ensure this is the deepest dark for titles */
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .section-subtitle {
+            font-size: var(--font-size-p);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            color: var(--color-neutral-warm); /* A distinct warm brown */
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 9999px; /* Pill shape */
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: var(--font-size-base);
+            text-decoration: none; /* For links styled as buttons */
+            display: inline-block; /* Allow padding and margin for anchors */
+            text-align: center;
+        }
+
+        .btn-earth {
+            background: var(--color-accent-sage);
+            color: #fff;
+            border: 2px solid var(--color-accent-sage);
+        }
+
+        .btn-earth:hover {
+            background: #7e966e; /* Darker sage */
+            border-color: #7e966e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-earth {
+            background: transparent;
+            border: 2px solid var(--color-accent-sage);
+            color: var(--color-accent-sage);
+        }
+
+        .btn-outline-earth:hover {
+            background: var(--color-accent-sage);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        .site-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-family: var(--font-family-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        .main-nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .main-nav .nav-links a {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+
+        .main-nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent-sage);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .main-nav .btn {
+            margin-left: 1.5rem;
+        }
+
+        .menu-toggle {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            font-size: 2.2rem;
+            color: var(--color-primary-dark);
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            background-color: var(--color-primary-light);
+            padding: 1rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-nav-links a,
+        .mobile-nav-links .btn {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--color-primary-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+          position: relative;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background-image: url('https://placehold.co/1920x1080/9caf88/fff?text=Hero+Background');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          overflow: hidden;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-color: rgba(0, 0, 0, 0.3); /* Optional dark tint over background */
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 700px;
+          padding: 2rem;
+          color: #fff; /* Or change depending on image */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.75); /* Changed opacity from 0.4 to 0.75 */
+            z-index: 1;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+          color: #f5f5f5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* About Me Section (Stats Grid) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--color-accent-sage);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            font-size: 1.1rem;
+            color: var(--color-neutral-warm);
+            margin: 0;
+        }
+
+        /* Cards (Project & Blog) */
+        .organic-card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures image corners are rounded with card */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .organic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .organic-card img {
+            width: 100%;
+            height: 250px; /* Fixed height for image consistency */
+            object-fit: cover; /* Crop image to fit */
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .card-text-content {
+            padding: 1.5rem;
+            flex-grow: 1; /* Allows text content to take up remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes content and description apart */
+        }
+
+        .card-text-content h3 {
+            font-size: var(--font-size-h3);
+            margin-bottom: 0.5rem;
+            color: var(--color-primary-dark);
+        }
+
+        .card-text-content p {
+            font-size: var(--font-size-base);
+            color: var(--color-neutral-warm);
+            margin-bottom: 0;
+        }
+
+        /* Project & Blog Grids */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card, .blog-card {
+            cursor: pointer;
+        }
+
+        /* Creative Highlights Carousel Section */
+        .creative-highlights {
+            background: var(--color-accent-sage);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .creative-highlights .section-title,
+        .creative-highlights .section-subtitle {
+            color: #fff;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .carousel-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .carousel-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 1rem;
+        }
+
+        .carousel-nav.next {
+            right: 1rem;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 3rem auto 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-body);
+            color: var(--color-primary-dark);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            align-self: flex-start; /* Align button to the left */
+            margin-top: 1rem;
+        }
+
+        /* Socials in Contact & Footer */
+        .socials {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .socials a {
+            font-size: 2rem; /* Larger icons */
+            color: var(--color-neutral-warm);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: var(--color-accent-sage);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--color-primary-dark);
+            color: #f0f0f0;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-footer p {
+            font-size: var(--font-size-small);
+            color: #ccc;
+            margin: 0;
+        }
+
+        .site-footer .socials a {
+            color: #f0f0f0;
+            font-size: 1.8rem;
+        }
+
+        /* Background Textures */
+        .bg-texture-paper {
+            background: var(--color-light-bg);
+        }
+
+        .bg-pattern-organic {
+            background: linear-gradient(to bottom right, var(--color-pattern-bg-light), var(--color-pattern-bg-dark)); /* #fdfaf5 to #f2ede6 */
+        }
+
+        .section-muted-gold-bg {
+            background-color: var(--color-neutral-muted-gold);
+            color: var(--color-primary-dark);
+            padding-top: 100px;
+        }
+
+        /* Modals */
+        .modal {
+            position: fixed;
+            inset: 0; /* Shorthand for top, right, bottom, left */
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: #fff;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 1rem;
+            position: relative;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-primary-dark);
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--color-accent-terracotta);
+        }
+
+        .modal-box h3 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--color-accent-sage);
+        }
+
+        .modal-box p {
+            font-size: var(--font-size-base);
+            color: var(--color-neutral-warm);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .site-header .container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-nav {
+                width: 100%;
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .carousel-slide img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header .main-nav {
+                display: none;
+            }
+
+            .site-header .container {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                height: 90vh;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-slide img {
+                height: 250px;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .carousel-nav.prev {
+                left: 0.5rem;
+            }
+
+            .carousel-nav.next {
+                right: 0.5rem;
+            }
+
+            .carousel-overlay {
+                padding: 1rem;
+            }
+
+            .carousel-overlay h3 {
+                font-size: 1.2rem;
+            }
+
+            .carousel-overlay p {
+                font-size: 0.9rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .socials {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .modal-box {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .modal-box h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .stat-card h3 {
+                font-size: 2rem;
+            }
+
+            .stat-card p {
+                font-size: 1rem;
+            }
+
+            .organic-card img {
+                height: 200px;
+            }
+
+            .card-text-content {
+                padding: 1rem;
+            }
+
+            .card-text-content h3 {
+                font-size: 1.4rem;
+            }
+
+            .card-text-content p {
+                font-size: 0.9rem;
+            }
+
+            .carousel-slide img {
+                height: 200px;
+            }
+
+            .modal-box {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">🌿 Traci</div>
+            <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#creative">Creative</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="javascript:void(0);" onclick="scrollToSection('about'); closeMobileNav();">About</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('portfolio'); closeMobileNav();">Projects</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('creative'); closeMobileNav();">Creative</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('blog'); closeMobileNav();">Blog</a></li>
+                <li><a href="javascript:void(0);" onclick="scrollToSection('contact'); closeMobileNav();">Contact</a></li>
+                <li><button class="btn btn-outline" onclick="downloadResume(); closeMobileNav();">Download Resume</button></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="container text-center">
+        <div class="hero-content">
+          <h1 class="font-display">Hello, I'm <span class="highlight text-sage">Traci</span></h1>
+          <p class="hero-subtitle">Weaving stories through strategy, crafting digital experiences with patience & intention.</p>
+          <div class="hero-buttons">
+            <button onclick="scrollToSection('about')" class="btn btn-earth">Explore My Work</button>
+            <button onclick="downloadResume()" class="btn btn-outline-earth">Download Resume</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-padding section-muted-gold-bg">
+        <div class="container text-center">
+            <h2 class="section-title font-display">The Story Behind the Work</h2>
+            <p class="section-subtitle">Over 7+ years guiding digital transformation, mindful infrastructure, and project harmony.</p>
+            <div class="stats-grid">
+                <div class="stat-card organic-card"><h3>7+</h3><p>Years of Growth</p></div>
+                <div class="stat-card organic-card"><h3>50+</h3><p>Stories Crafted</p></div>
+                <div class="stat-card organic-card"><h3>$10M+</h3><p>Resources Stewarded</p></div>
+                <div class="stat-card organic-card"><h3>∞</h3><p>Possibilities Embraced</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section section-padding bg-texture-paper">
+        <div class="container text-center">
+            <h2 class="section-title font-display">Stories of Transformation</h2>
+            <div class="card-grid">
+                <div class="project-card organic-card" onclick="openModal('project1')">
+                    <img src="https://placehold.co/400x250/9caf88/fff?text=Project+1" alt="Project 1: Living Infrastructure" />
+                    <div class="card-text-content">
+                        <h3>Living Infrastructure</h3>
+                        <p>Responsive systems & AI-powered symphonies</p>
+                    </div>
+                </div>
+                <div class="project-card organic-card" onclick="openModal('project2')">
+                    <img src="https://placehold.co/400x250/a0522d/fff?text=Project+2" alt="Project 2: Data Migration" />
+                    <div class="card-text-content">
+                        <h3>Data Migration</h3>
+                        <p>Shepherding legacy systems to modern harmony</p>
+                    </div>
+                </div>
+                <div class="project-card organic-card" onclick="openModal('project3')">
+                    <img src="https://placehold.co/400x250/5c4a3d/fff?text=Project+3" alt="Project 3: Digital Strategy" />
+                    <div class="card-text-content">
+                        <h3>Digital Strategy</h3>
+                        <p>Crafting intentional online presences</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+---------------------------------------
+
+style.css
+
+/* General Reset and Base Styles */
+:root {
+    --color-primary-dark: #2f2f2f; /* Earthy Dark */
+    --color-primary-light: #fefcf9; /* Off-White Paper */
+    --color-accent-sage: #6c7c64; /* SAGE GREEN (NOW DARKER) */
+    --color-accent-terracotta: #a0522d; /* Terracotta (keep as is for now) */
+    --color-neutral-warm: #5c4a3d; /* Warm Brown (keep as is for now) */
+    --color-neutral-gold: #b8860b; /* Goldenrod (keep as is for now) */
+    --color-neutral-muted-gold: #a08c6e; /* MUTED GOLD (NOW DARKER) */
+    --color-light-bg: #e6dfd6; /* LIGHT PAPER BACKGROUND (NOW DARKER/CREAMIER) */
+    --color-pattern-bg-light: #fdfaf5; /* Keep as is for now */
+    --color-pattern-bg-dark: #f2ede6; /* Keep as is for now */
+
+    /* Typography */
+    --font-family-body: 'Montserrat', sans-serif;
+    --font-family-display: 'Lora', serif; /* For titles and headings */
+
+    --font-size-base: 1rem; /* 16px */
+    --font-size-h1: 3.5rem; /* ~56px */
+    --font-size-h2: 2.5rem; /* ~40px */
+    --font-size-h3: 1.75rem; /* ~28px */
+    --font-size-p: 1.125rem; /* ~18px */
+    --font-size-small: 0.875rem; /* ~14px */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from minor layout shifts */
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-family-display);
+    color: var(--color-primary-dark);
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+}
+
+p {
+    font-size: var(--font-size-p);
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-accent-sage);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.font-display {
+    font-family: var(--font-family-display);
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+.text-sage {
+    color: var(--color-accent-sage);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Consistent padding on sides */
+    width: 100%; /* Ensure it takes full width within max-width */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    padding: 6rem 0; /* Vertical padding for sections */
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-primary-dark); /* Ensure this is the deepest dark for titles */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-p);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    color: var(--color-neutral-warm); /* A distinct warm brown */
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.9rem 2rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
+    text-decoration: none; /* For links styled as buttons */
+    display: inline-block; /* Allow padding and margin for anchors */
+    text-align: center;
+}
+
+.btn-earth {
+    background: var(--color-accent-sage);
+    color: #fff;
+    border: 2px solid var(--color-accent-sage);
+}
+
+.btn-earth:hover {
+    background: #7e966e; /* Darker sage */
+    border-color: #7e966e;
+    transform: translateY(-2px);
+}
+
+.btn-outline-earth {
+    background: transparent;
+    border: 2px solid var(--color-accent-sage);
+    color: var(--color-accent-sage);
+}
+
+.btn-outline-earth:hover {
+    background: var(--color-accent-sage);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Header */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-family-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav .nav-links a {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    position: relative;
+    padding-bottom: 0.2rem;
+}
+
+.main-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-sage);
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.main-nav .btn {
+    margin-left: 1.5rem;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none; /* Hidden by default */
+    background-color: var(--color-primary-light);
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-links a,
+.mobile-nav-links .btn {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/images/your-background.jpg'); /* or .svg, .png etc. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Optional dark tint over background */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+  color: #fff; /* Or change depending on image */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75); /* Changed opacity from 0.4 to 0.75 */
+    z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f5f5f5;
+}
+
+/* Wavy Separator After Hero Section */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('./assets/images/wave-separator.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: 5;
+    transform: translateY(50%);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* About Me Section (Stats Grid) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--color-accent-sage);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+    color: var(--color-neutral-warm);
+    margin: 0;
+}
+
+/* Cards (Project & Blog) */
+.organic-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures image corners are rounded with card */
+    display: flex;
+    flex-direction: column;
+}
+
+.organic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.organic-card img {
+    width: 100%;
+    height: 250px; /* Fixed height for image consistency */
+    object-fit: cover; /* Crop image to fit */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.card-text-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allows text content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and description apart */
+}
+
+.card-text-content h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-dark);
+}
+
+.card-text-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-warm);
+    margin-bottom: 0;
+}
+
+/* Project & Blog Grids */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card, .blog-card {
+    cursor: pointer;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 700px;
+    margin: 3rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-body);
+    color: var(--color-primary-dark);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start; /* Align button to the left */
+    margin-top: 1rem;
+}
+
+/* Socials in Contact & Footer */
+.socials {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socials a {
+    font-size: 2rem; /* Larger icons */
+    color: var(--color-neutral-warm);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+    color: var(--color-accent-sage);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-primary-dark);
+    color: #f0f0f0;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-footer p {
+    font-size: var(--font-size-small);
+    color: #ccc;
+    margin: 0;
+}
+
+.site-footer .socials a {
+    color: #f0f0f0;
+    font-size: 1.8rem;
+}
+
+/* Background Textures */
+.bg-texture-paper {
+    background: var(--color-light-bg);
+}
+
+.bg-pattern-organic {
+    background: linear-gradient(to bottom right, var(--color-pattern-bg-light), var(--color-pattern-bg-dark)); /* #fdfaf5 to #f2ede6 */
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    inset: 0; /* Shorthand for top, right, bottom, left */
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: #fff;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1rem;
+    position: relative;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-box {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary-dark);
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.modal-box h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--color-accent-sage);
+}
+
+.modal-box p {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-warm);
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes gentleFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .site-header .container {
+        flex-wrap: wrap; /* Allow wrapping for logo and nav */
+        justify-content: center; /* Center items when wrapping */
+    }
+
+    .main-nav {
+        width: 100%; /* Take full width */
+        margin-top: 1rem;
+        display: flex; /* Keep nav items in line but let them wrap */
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header .main-nav {
+        display: none; /* Hide desktop nav */
+    }
+
+    .site-header .container {
+        flex-wrap: nowrap; /* Prevent wrapping in header on mobile */
+        justify-content: space-between; /* Space out logo and toggle */
+    }
+
+    .menu-toggle {
+        display: block; /* Show mobile menu toggle */
+    }
+
+    .hero {
+        height: 90vh; /* Make hero slightly taller on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        padding: 0.8rem 1.5rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack stats vertically */
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .socials {
+        flex-wrap: wrap; /* Allow social icons to wrap if needed */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .modal-box {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-box h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+
+    .stat-card p {
+        font-size: 1rem;
+    }
+
+    .organic-card img {
+        height: 200px; /* Smaller image height for tiny screens */
+    }
+
+    .card-text-content {
+        padding: 1rem;
+    }
+
+    .card-text-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-text-content p {
+        font-size: 0.9rem;
+    }
+
+    .modal-box {
+        padding: 1.2rem;
+    }
+}
+
+
+
+-------------------------------
+
+
+script.js
+
+// (CSS code removed. Please place it in a separate .css file and link it in your HTML.)
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Function to scroll to any section by ID
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Download resume stub (replace with actual logic)
+function downloadResume() {
+    alert("This would initiate the resume download! Replace this alert with actual file download logic (e.g., window.open('resume.pdf', '_blank');).");
+    // To implement actual download, use:
+    // window.open('resume.pdf', '_blank');
+}
+
+// Mobile Menu Toggle
+const menuToggleButton = document.querySelector('.menu-toggle');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (menuToggleButton && mobileNav) {
+    menuToggleButton.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        // Optional: Change icon on toggle
+        const icon = menuToggleButton.querySelector('ion-icon');
+        if (icon) {
+            if (mobileNav.classList.contains('active')) {
+                icon.setAttribute('name', 'close-outline');
+            } else {
+                icon.setAttribute('name', 'menu-outline');
+            }
+        }
+    });
+}
+function closeMobileNav() {
+    if (!mobileNav) return;
+function closeMobileNav() {
+    if (mobileNav && menuToggleButton && mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        const icon = menuToggleButton.querySelector('ion-icon');
+        if (icon) {
+            icon.setAttribute('name', 'menu-outline');
+        }
+    }
+}
+}
+
+
+// Modal logic
+const modals = document.querySelectorAll('.modal');
+
+function openModal(projectId) {
+    const modal = document.getElementById(`modal-${projectId}`);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling background
+    }
+}
+
+function closeModal() {
+    modals.forEach(modal => modal.classList.remove('active'));
+    document.body.style.overflow = ''; // Restore scrolling background
+}
+
+// Close modal when clicking outside the modal-box
+modals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) { // Check if the click was directly on the overlay
+            closeModal();
+        }
+    });
+});
+
+// Close modal when Escape key is pressed
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+// Handle contact form submission (client-side only; no data is sent—this is for demonstration purposes only)
+function handleContactForm(event) {
+    event.preventDefault(); // Prevent default form submission
+    alert('Thank you for reaching out! Your message has been received.');
+    // No data is sent anywhere; in a real application, you'd send this data to a server using fetch() or XMLHttpRequest
+    event.target.reset(); // Clear the form
+}
