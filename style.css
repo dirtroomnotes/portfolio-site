@@ -150,3 +150,24 @@
     margin: 0 auto;
   }
 }
+
+/* Base styles for desktops */
+.container {
+  width: 960px;
+}
+
+/* Styles for smaller tablets and mobile devices */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 15px; /* Add some padding */
+  }
+}
+
+/* Styles for very small mobile devices */
+@media screen and (max-width: 480px) {
+  /* Hide elements or change layout */
+  .sidebar {
+    display: none;
+  }
+}
