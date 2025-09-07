@@ -277,18 +277,18 @@ window.projects = [
 
 function createProjectCard(project) {
   return `
-    <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-      <div class="relative overflow-hidden">
-        <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 md:h-56 lg:h-64 object-cover transition-transform duration-500 transform hover:scale-110">
-      </div>
+    <div class="project-card card-hover bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <a href="${project.link}">
+        <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 object-cover">
+      </a>
       <div class="p-6">
         <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
         <p class="text-sm mb-4">${project.description}</p>
-        <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
+        <a href="${project.link}" class="inline-block text-[#2D3748] font-semibold underline hover:text-[#66B2B2] transition-colors duration-300">
           Read More
-        </span>
+        </a>
       </div>
-    </a>
+    </div>
   `;
 }
 
@@ -302,9 +302,10 @@ function renderProjects() {
   }
 }
 
-// Call renderProjects after defining your projects array
+// Render cards
 renderProjects();
 </script>
+
 
     <!-- Main JS -->
     <script src="script.js"></script>
