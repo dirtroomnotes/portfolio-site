@@ -99,36 +99,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // PROJECT CARDS (SAFE CHECK)
-    const container = document.getElementById("projects-container");
-    // If projects is not defined, define as empty array for safety
-    let projects = window.projects || [];
-    if (!Array.isArray(projects)) {
-        console.warn('projects is not an array. Check your data source!');
-        projects = [];
-    }
-    if (container && projects.length) {
-        projects.forEach(project => {
-            const card = document.createElement("div");
-            card.classList.add("card-hover");
-            card.innerHTML = `
-                <div class="card-hover__content">
-                  <h3 class="card-hover__title">${project.title}</h3>
-                  <p class="card-hover__text">${project.description}</p>
-                  <a href="${project.link}" class="card-hover__link">
-                    <span>Learn More</span>
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </a>
+ // PROJECT CARDS
+const container = document.getElementById("projects-container");
+let projects = window.projects || [];
+if (!Array.isArray(projects)) {
+    console.warn('projects is not an array. Check your data source!');
+    projects = [];
+}
+
+if (container && projects.length) {
+    projects.forEach(project => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+            <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                <img src="${project.image}" alt="${project.title}" class="w-full h-auto max-h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
+                    <p class="text-sm mb-4">${project.description}</p>
+                    <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
+                        Read More
+                    </span>
                 </div>
-                <div class="card-hover__extra">
-                  <h4>${project.extra}</h4>
-                </div>
-                <img src="${project.image}" alt="${project.title}">
-            `;
-            container.appendChild(card);
-        });
+            </a>
+        `;
+        container.appendChild(card);
+    });
     }
     
     // HAMBURGER MENU (MOBILE)
