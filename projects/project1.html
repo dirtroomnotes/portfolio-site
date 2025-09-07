@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+  <!-- ✅ Favicon -->
+<link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
+</head>
 <body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
-
-      <!-- ✅ Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/vintagelogovs2updated.webp">
 
 <!-- Header and Navigation with Logo -->
 <header class="bg-white shadow-md py-4">
@@ -120,13 +120,17 @@
 
 <!-- Mobile Menu Toggle Script -->
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
   });
 </script>
+
   <script src="../script.js"></script>
 </body>
 </html>
