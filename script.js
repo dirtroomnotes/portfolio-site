@@ -117,13 +117,6 @@ projects.forEach(project => {
   container.appendChild(card);
 });
 
-const btn = document.getElementById('mobile-menu-button');
-const nav = document.getElementById('nav-links');
-
-btn.addEventListener('click', () => {
-  nav.classList.toggle('hidden');
-});
-
 const menuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
