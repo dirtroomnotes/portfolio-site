@@ -252,33 +252,35 @@
       </div>
     </footer>
 
-    <!-- Projects array BEFORE script.js -->
-    <script>
-    window.projects = [
-      {
-        title: "Smart Building Automation Rollout",
-        description: "Integrated IoT devices and dashboards for smarter building management system (BAS).",
-        imageUrl: "assets/images/smartbuildingsvs2.jpg",
-        link: "projects/project1.html"
-      },
-      {
-        title: "MVP GenAI Project",
-        description: "Developed a minimum viable product using GenAI for automation workflows.",
-        imageUrl: "assets/images/lawmvpvs1.jpg",
-        link: "projects/project2.html"
-      },
-      {
-        title: "Advertising Management App",
-        description: "Supported and enhanced a critical advertising order system for thousands of newspapers nationwide.",
-        imageUrl: "assets/images/newspapererrp.jpg",
-        link: "projects/project3.html"
-      }
-    ];
+<!-- Projects array BEFORE script.js -->
+<script>
+window.projects = [
+  {
+    title: "Smart Building Automation Rollout",
+    description: "Integrated IoT devices and dashboards for smarter building management system (BAS).",
+    imageUrl: "assets/images/smartbuildingsvs2.jpg",
+    link: "projects/project1.html"
+  },
+  {
+    title: "MVP GenAI Project",
+    description: "Developed a minimum viable product using GenAI for automation workflows.",
+    imageUrl: "assets/images/lawmvpvs1.jpg",
+    link: "projects/project2.html"
+  },
+  {
+    title: "Advertising Management App",
+    description: "Supported and enhanced a critical advertising order system for thousands of newspapers nationwide.",
+    imageUrl: "assets/images/newspapererrp.jpg",
+    link: "projects/project3.html"
+  }
+];
 
 function createProjectCard(project) {
   return `
     <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-      <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-auto max-h-48 object-cover">
+      <div class="relative overflow-hidden">
+        <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 md:h-56 lg:h-64 object-cover transition-transform duration-500 transform hover:scale-110">
+      </div>
       <div class="p-6">
         <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
         <p class="text-sm mb-4">${project.description}</p>
@@ -292,9 +294,9 @@ function createProjectCard(project) {
 
 function renderProjects() {
   const container = document.getElementById('projects-container');
-  if (container && Array.isArray(projects)) {
+  if (container && Array.isArray(window.projects)) {
     container.innerHTML = '';
-    projects.forEach(project => {
+    window.projects.forEach(project => {
       container.innerHTML += createProjectCard(project);
     });
   }
@@ -302,8 +304,8 @@ function renderProjects() {
 
 // Call renderProjects after defining your projects array
 renderProjects();
+</script>
 
-    </script>
     <!-- Main JS -->
     <script src="script.js"></script>
 </body>
