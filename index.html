@@ -112,25 +112,23 @@
     </div>
 </section>
 
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-[#F5F7FA]">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Featured Projects</h2>
 
-        <!-- Projects Section with new background color -->
-        <section id="projects" class="py-16 bg-[#F5F7FA]">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Featured Projects</h2>
-                <!-- This is the container where JavaScript will add the project cards -->
-               <div class="flex justify-center">
-             <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Project cards will be injected here -->
-           </div>
-           </div>
-                <div class="mt-8 text-center">
-                    <!-- New button color -->
-                    <a href="projects.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        View All Projects
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- Projects Grid -->
+    <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project cards will be injected here via JS -->
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="projects.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        View All Projects
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- Motivation Section with rotating quotes -->
 <section id="motivation" class="py-16 bg-[#F5F7FA]">
@@ -244,7 +242,7 @@
       <!-- Blog Card 3 -->
       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
         <a href="blogs/blog7.html">
-          <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/pmbias4.jpeg" alt="Blog 3" />
+          <img class="rounded-t-lg w-full h-48 object-cover" src="/assets/images/pmbias4.jpeg" alt="Blog 3" />
         </a>
         <div class="p-5">
           <a href="blogs/blog7.html">
@@ -317,29 +315,36 @@ const projects = [
 ];
 
 function createProjectCard(project) {
-return `
-  <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-auto object-cover relative z-10">
-    <div class="p-6">
-      <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-      <p class="text-sm mb-4">${project.description}</p>
-      <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
-        Read More
-      </span>
-    </div>
-  </a>
-`;
+  return `
+    <a href="${project.link}" class="project-card block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
+      <img src="${project.imageUrl}" 
+           alt="${project.title}" 
+           class="w-full h-48 sm:h-56 md:h-64 lg:h-52 xl:h-60 object-cover rounded-t-xl">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
+        <p class="text-sm mb-4">${project.description}</p>
+        <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
+          Read More
+        </span>
+      </div>
+    </a>
+  `;
 }
 
 function renderProjects() {
   const container = document.getElementById('projects-container');
-  if (container) {
+  if (container && Array.isArray(projects)) {
     container.innerHTML = '';
     projects.forEach(project => {
       container.innerHTML += createProjectCard(project);
     });
+  } else {
+    console.warn("Projects array is missing or undefined");
   }
 }
+
+// Call renderProjects after your projects array is defined
+renderProjects();
 
 document.addEventListener('DOMContentLoaded', renderProjects);
 </script>
