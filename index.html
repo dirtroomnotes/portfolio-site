@@ -275,7 +275,7 @@
       }
     ];
 
-    function createProjectCard(project) {
+function createProjectCard(project) {
   return `
     <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
       <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-auto max-h-48 object-cover">
@@ -299,6 +299,9 @@ function renderProjects() {
     });
   }
 }
+
+// Call renderProjects after defining your projects array
+renderProjects();
 
     </script>
     <!-- Main JS -->
