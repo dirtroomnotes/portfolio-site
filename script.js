@@ -99,33 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
- // PROJECT CARDS
-const container = document.getElementById("projects-container");
-let projects = window.projects || [];
-if (!Array.isArray(projects)) {
-    console.warn('projects is not an array. Check your data source!');
-    projects = [];
-}
-
-if (container && projects.length) {
-    projects.forEach(project => {
-        const card = document.createElement("div");
-        card.innerHTML = `
-            <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-auto max-h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-                    <p class="text-sm mb-4">${project.description}</p>
-                    <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
-                        Read More
-                    </span>
-                </div>
-            </a>
-        `;
-        container.appendChild(card);
-    });
-    }
-    
     // HAMBURGER MENU (MOBILE)
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
