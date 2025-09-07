@@ -116,3 +116,11 @@ projects.forEach(project => {
   `;
   container.appendChild(card);
 });
+
+// Mobile menu toggle
+const btn = document.getElementById('mobile-menu-button');
+const nav = document.querySelector('nav ul');
+
+btn.addEventListener('click', () => {
+  nav.classList.toggle('hidden');
+});

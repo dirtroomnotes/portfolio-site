@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +16,14 @@
 
     <!-- ✅ Favicon -->
     <link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
-</head>
 
- <!-- ✅ Open Graph / Social Preview -->
+    <!-- ✅ Open Graph / Social Preview -->
     <meta property="og:title" content="Traci M Portfolio">
     <meta property="og:description" content="A showcase of my projects, blogs, and professional journey.">
-    <meta property="og:image" content="<meta property="og:image" content="/portfolio-site/assets/images/vintagelogovs2.png">">
+    <meta property="og:image" content="assets/images/vintagelogovs2.png">
     <meta property="og:url" content="https://dirtroomnotes.github.io/portfolio-site">
     <meta property="og:type" content="website">
-   </head> 
+</head>
 
     <!-- Link to the separate CSS file -->
     <link rel="stylesheet" href="style.css">
@@ -53,6 +50,14 @@
     </nav>
   </div>
 </header>
+
+  <!-- Mobile menu button -->
+  <div class="md:hidden">
+    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+      ☰
+    </button>
+  </div>
+</nav>
 
    <!-- Hero Section -->
 <section 
@@ -285,6 +290,8 @@
     <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
+
+<script src="script.js"></script>
 
 <script>
     // A simple array of objects to hold your project data.
