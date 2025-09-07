@@ -38,6 +38,13 @@
       <img src="assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-10 w-auto"> <!--logo -->
     </a>
 
+ <!-- Hamburger Button (Mobile) -->
+    <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+      <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+      </svg>
+    </button>   
+    
     <!-- Navigation -->
     <nav>
       <ul class="flex space-x-6">
@@ -50,14 +57,6 @@
     </nav>
   </div>
 </header>
-
-  <!-- Mobile menu button -->
-  <div class="md:hidden">
-    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-      ☰
-    </button>
-  </div>
-</nav>
 
    <!-- Hero Section -->
 <section 
@@ -244,11 +243,11 @@
 
       <!-- Blog Card 3 -->
       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
-        <a href="blogs/blog7.html">">
+        <a href="blogs/blog7.html">
           <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/pmbias4.jpeg" alt="Blog 3" />
         </a>
         <div class="p-5">
-          <a href="blogs/blog7.html"">
+          <a href="blogs/blog7.html">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h5>
           </a>
           <p class="mb-3 font-normal text-gray-700">How Determination and Inspiration Helped Me Build My First Website.</p>
@@ -320,7 +319,7 @@ const projects = [
 function createProjectCard(project) {
 return `
   <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 object-cover relative z-10">
+    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-auto object-cover relative z-10">
     <div class="p-6">
       <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
       <p class="text-sm mb-4">${project.description}</p>
