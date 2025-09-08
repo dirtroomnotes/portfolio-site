@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
+    <!-- Google Analytics Enhanced Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGLSZJYQHE');
+
+  // Wait for DOM to load before attaching event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    // Track project card clicks
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const projectName = card.getAttribute('data-project-name') || 'Unknown Project';
+        gtag('event', 'project_card_click', {
+          'project_name': projectName
+        });
+      });
+    });
+
+    // Track modal opens
+    document.querySelectorAll('.modal-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const modalName = trigger.getAttribute('data-modal-name') || 'Unknown Modal';
+        gtag('event', 'modal_open', {
+          'modal_name': modalName
+        });
+      });
+    });
+  });
+</script>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
