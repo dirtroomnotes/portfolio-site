@@ -171,3 +171,52 @@
     display: none;
   }
 }
+
+/* Consolidating styles from style.css */
+        body {
+            background-color: #2d3748;
+            color: #13021e;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-custom-gray {
+            background-color: #F5F7FA;
+        }
+        
+        .text-custom-gray {
+            color: #2D3748;
+        }
+
+        .text-custom-teal {
+            color: #66B2B2;
+        }
+
+        .bg-custom-purple {
+            background-color: #5c5469;
+        }
+
+        .bg-custom-teal {
+            background-color: #66B2B2;
+        }
+        
+        .hero-section {
+            background-image: url('https://placehold.co/1920x1080/2d3748/66B2B2?text=Your+Background+Image');
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .quote.active {
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+        }
