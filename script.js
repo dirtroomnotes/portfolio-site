@@ -1,40 +1,34 @@
 // Wait for DOM content to be loaded before running scripts
 document.addEventListener('DOMContentLoaded', function() {
-    // QUOTE ROTATION
-    let currentQuote = 0;
-    const quotes = document.querySelectorAll('.quote');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    function showQuote(index) {
-        if (!quotes[index] || !indicators[index]) {
-            console.error("Quote or indicator missing at index", index);
-            return;
-        }
-        quotes.forEach(quote => quote.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        quotes[index].classList.add('active');
-        indicators[index].classList.add('active');
+ // Quote rotation logic
+     function setupQuoteRotation() {
+        const quotes = document.querySelectorAll("#motivation .quote");
+        if (!quotes.length) return;
+        let index = 0;
+        setInterval(() => {
+            quotes[index].classList.remove("active");
+            quotes[index].classList.add("hidden");
+            index = (index + 1) % quotes.length;
+            quotes[index].classList.remove("hidden");
+            quotes[index].classList.add("active");
+        }, 5000); // 5 seconds
     }
-    
-    function nextQuote() {
-        if (quotes.length === 0) return;
-        currentQuote = (currentQuote + 1) % quotes.length;
-        showQuote(currentQuote);
-    }
-    
-    if (quotes.length && indicators.length && quotes.length === indicators.length) {
-        showQuote(currentQuote);
-        setInterval(nextQuote, 10000);
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentQuote = index;
-                showQuote(currentQuote);
-            });
-        });
-    } else {
-        if (quotes.length !== indicators.length) {
-            console.warn("Mismatched number of quotes and indicators");
-        }
+    setupQuoteRotation();
+
+    // PAGE NAVIGATION
+    window.showPage = function(event, pageId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) targetPage.classList.add('active');
+        if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+        // Trigger scroll animations
+        observeElements();
     }
     
     // PAGE NAVIGATION
@@ -53,6 +47,26 @@ document.addEventListener('DOMContentLoaded', function() {
         observeElements();
     }
     
+ // Back to top button logic
+ function setupBackToTopButton() {
+   const backToTopButton = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+  backToTopButton.classList.remove('hidden');
+} else {
+  backToTopButton.classList.add('hidden');
+}
+});
+
+backToTopButton.addEventListener('click', () => {
+ window.scrollTo({
+ top: 0, 
+ behavior: 'smooth'
+  });
+ });
+}
+
     // INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
     function observeElements() {
         const observer = new IntersectionObserver((entries) => {

@@ -286,7 +286,13 @@
       </div>
     </footer>
 
-<!-- Projects Array -->
+    <!-- Back to Top Button  -->
+<button id="back-to-top" 
+        class="hidden fixed bottom-6 right-6 p-4 rounded-full bg-[#66B2B2] text-white shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none z-50 text-3xl flex items-center justify-center" 
+        title="Back to Top">
+    ↑
+</button>
+
 <script>
 window.projects = [
   {
@@ -324,7 +330,7 @@ function createProjectCard(project) {
   `;
 }
 
-  function renderProjects() {
+function renderProjects() {
   const container = document.getElementById('projects-container');
   if (container && Array.isArray(projects)) {
     container.innerHTML = '';
@@ -334,11 +340,31 @@ function createProjectCard(project) {
   }
 }
 
-// Call renderProjects to inject the cards
-renderProjects();
+document.addEventListener("DOMContentLoaded", () => {
+    // Back to Top Functionality
+    const backToTopButton = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.remove("hidden");
+        } else {
+            backToTopButton.classList.add("hidden");
+        }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // Render Projects
+    renderProjects && renderProjects();
+});
 </script>
 
-    <!-- Main JS -->
-    <script src="script.js"></script>
+<!-- Main JS -->
+<script src="script.js"></script>
 </body>
 </html>
