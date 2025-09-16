@@ -62,7 +62,7 @@
     <h1 class="text-4xl font-bold text-gray-900 mb-8">About Me</h1>
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
       <!-- Moved image to the top and added mx-auto to center it -->
-      <img src="assets/images/abouttm.jpg" alt="Traci Moore smiling with a professional background" class="w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full shadow-lg object-cover mx-auto mb-8">
+      <img src="assets/images/traciaboutme.png" alt="Traci Moore smiling with a professional background" class="w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full shadow-lg object-cover mx-auto mb-8">
       <div class="text-left">
         <p class="text-gray-800 text-lg leading-relaxed mb-4">
           Well, Hello there! I’m Traci, a Project Manager and Business Analyst who loves turning big, messy projects into clear, successful outcomes. For over seven years, I’ve worked across SaaS, ERP, cloud, IoT, and infrastructure, helping teams cut through the noise, find focus, and feel confident in what they deliver. My approach is simple: create clarity, build trust, and empower people. I thrive in environments where collaboration is key, and I enjoy mentoring teams, guiding them through complex projects, and celebrating successes along the way.
@@ -81,46 +81,68 @@
         </p>
       </div> <!-- Close the text-left wrapper -->
 
-      <!-- Links / Call-to-Action Buttons -->
- <div class="flex flex-wrap justify-center gap-4 mt-6">
-  <a href="index.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-  Back to Home
-  </a>
- <a href="index.html#contact" class="inline-flex items-center justify-center bg-[#2D3748] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
- Contact Me
-  </a>
- <a href="https://github.com/dirtroomnotes/daylightking.github.io" target="_blank" class="inline-flex items-center justify-center bg-[#2D3748] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-  GitHub
-  </a>
- <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="inline-flex items-center justify-center bg-[#2D3748] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
- LinkedIn
- </a>
-      </div>
-    </div>
-  </section>
+   <!-- Links / Call-to-Action Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4 mt-6">
+                        <a href="index.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Back to Home
+                        </a>
+                        <a href="index.html" id="contactButton" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Contact Me
+                        </a>
+                        <a href="https://github.com/dirtroomnotes/daylightking.github.io" target="_blank" class="inline-flex items-center justify-center bg-[#2D3748] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="inline-flex items-center justify-center bg-[#2D3748] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <!-- Footer with new colors -->
 <footer class="bg-[#2D3748] text-white py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="images/tmlogovs10.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
 
     <!-- Text -->
     <p>&copy; 2025 Traci M. All Rights Reserved.</p>
     <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
   </div>
-</footer>
-
-<!-- Mobile Menu Toggle Script -->
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+    // Function to handle contact button click
+    function setupContactButton() {
+        const contactButton = document.getElementById('contactButton');
+        if (contactButton) {
+            contactButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link behavior
+                window.location.href = 'index.html#contact'; // Navigate to the target page and anchor
+            });
+        }
+    }
+    
+    // Function to handle mobile menu toggle
+    function setupMobileMenu() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    }
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+    // Wait for the DOM to be fully loaded before running scripts
+    document.addEventListener('DOMContentLoaded', () => {
+        setupContactButton();
+        setupMobileMenu();
+    });
 </script>
+
+<!-- External JS -->
 <script src="script.js"></script>
 </body>
 </html>
