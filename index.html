@@ -3,349 +3,693 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Traci Moore Portfolio - Retro Chic</title>
 
-    <!-- Google Analytics Enhanced Tracking -->
+    <!-- Google Analytics Enhanced Tracking (Preserved) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGLSZJYQHE');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RGLSZJYQHE');
 
-  // Wait for DOM to load before attaching event listeners
-  document.addEventListener('DOMContentLoaded', () => {
-    // Track project card clicks
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const projectName = card.getAttribute('data-project-name') || 'Unknown Project';
-        gtag('event', 'project_card_click', {
-          'project_name': projectName
+    // Wait for DOM to load before attaching event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        // Track project card clicks
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const projectName = card.getAttribute('data-project-name') || 'Unknown Project';
+                gtag('event', 'project_card_click', {
+                    'project_name': projectName
+                });
+            });
         });
-      });
-    });
 
-    // Track modal opens
-    document.querySelectorAll('.modal-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const modalName = trigger.getAttribute('data-modal-name') || 'Unknown Modal';
-        gtag('event', 'modal_open', {
-          'modal_name': modalName
+        // Track modal opens
+        document.querySelectorAll('.modal-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const modalName = trigger.getAttribute('data-modal-name') || 'Unknown Modal';
+                gtag('event', 'modal_open', {
+                    'modal_name': modalName
+                });
+            });
         });
-      });
     });
-  });
 </script>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure custom colors, keyframes, and the new retro palette -->
+    <script>
+        tailwind.config = {
+            // Dark mode configuration removed
+            theme: {
+                extend: {
+                    // Define the custom color palette based on the new Teal/Purple/Cream theme
+                    colors: {
+                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color - preserved)
+                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background - preserved)
+                        
+                        // NEW COLORS
+                        'custom-teal': '#66B2B2',         // Primary Accent
+                        'custom-purple': '#5c5469',       // Secondary Accent/Hover/Highlight
+                        
+                        // Mapping old names to new palette for minimal HTML change
+                        'retro-accent-main': '#66B2B2',   // Mapped to Teal
+                        'retro-accent-secondary': '#5c5469', // Mapped to Purple
+                        
+                        // Re-mapping background colors to fit the new scheme
+                        'retro-sage': '#f5f2e8',          // Now Cream (Replaces Green)
+                        'retro-lavender': '#66B2B2',      // Now Teal (Used for specific element backgrounds)
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                    },
+                    // Keyframes and animation extensions removed as they are not used via Tailwind classes
+                }
+            }
+        }
+    </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts for Retro Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for the Retro Theme -->
+    <style>
+        /* Define CSS Variables for the custom styles (UPDATED) */
+        :root {
+            --custom-teal: #66B2B2;
+            --custom-purple: #5c5469;
+            --warm-cream: #f5f2e8;
+            --deep-charcoal: #202c34;
+            /* NEW LIGHTER SHADES FOR GRADIENT (USED IN CONTACT SECTION) */
+            --light-teal: #99CCCC;
+            --light-purple: #A7A3B1;
+        }
+        
+        /* Utility classes for user-defined colors (defined in config above) */
+         .text-custom-teal {
+             color: var(--custom-teal);
+         }
 
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css">
+         .bg-custom-purple {
+             background-color: var(--custom-purple);
+         }
 
-    <!-- ✅ Favicon -->
+         .bg-custom-teal {
+             background-color: var(--custom-teal);
+         }
+         
+        /* NEW: Subtle Panning Gradient Animation for Contact Section (Classic, Chic) */
+        @keyframes soft-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-chic-gradient {
+            /* Define the gradient: Cream -> Light Teal -> Light Purple -> Cream (very wide) */
+            background: linear-gradient(-45deg, var(--warm-cream), var(--light-teal), var(--light-purple), var(--warm-cream));
+            background-size: 400% 400%; /* Make it 4 times wider than the container */
+            animation: soft-pan 30s ease infinite; /* Changed from 60s to 30s for faster speed */
+        }
+
+
+        /* Custom CSS for the calm, feminine 60s/70s theme */
+        body {
+            background-color: var(--warm-cream); 
+            color: var(--deep-charcoal); 
+            position: relative;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .text-pacifico {
+             font-family: 'Pacifico', cursive;
+        }
+        .text-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Hero image container with the user's original image and soft background color (UPDATED) */
+        .hero-section {
+            background-color: var(--custom-teal); /* Teal */
+            background-image: url('assets/images/TM Sunset.jpeg'); /* Placeholder/Example image URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Overlay to darken the image for text visibility */
+        .hero-overlay {
+            background-color: rgba(32, 44, 52, 0.4); /* Use new charcoal color with transparency */
+        }
+
+        /* Subtle Fade-in on Scroll (Modern Feature kept for polish) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: var(--delay);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating header with a subtle frosted glass effect */
+        .floating-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            /* Frosted effect applied using a Tailwind background color with opacity and blur */
+            background-color: rgba(245, 242, 232, 0.9); /* Use Warm Cream with transparency */
+            backdrop-filter: blur(8px); /* Subtle frosted effect */
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Animated Underline for Navigation (Custom Interaction, using Purple) */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--custom-purple); /* Dusty Rose -> Purple */
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Card hover effect for gallery items (Projects/Blogs) */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--custom-purple); /* Dusty Rose -> Purple border for elegance */
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px) rotateZ(0.5deg); /* Gentle lift and tilt */
+            box-shadow: 0 12px 25px rgba(92, 84, 105, 0.5); /* Dusty Rose glow -> Purple glow */
+            border-color: var(--custom-teal); /* Teal border on hover */
+        }
+
+        /* Floating shapes animation (Dingbats) */
+        @keyframes sway-float {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            30% { opacity: 0.4; } /* Reduced opacity for subtlety */
+            70% { transform: translateY(-70vh) translateX(10vw) rotate(10deg); }
+            100% { transform: translateY(-100vh) translateX(0) rotate(-10deg); opacity: 0; }
+        }
+
+        .floater {
+            position: absolute;
+            bottom: -100px; 
+            opacity: 0;
+            animation: sway-float 20s linear infinite;
+            pointer-events: none;
+            z-index: 1; /* Keep them behind content (z-index 20) */
+            
+            /* Styles for Dingbats/Symbols */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem; 
+            line-height: 1;
+            font-family: sans-serif; /* Ensure symbol rendering */
+            font-weight: 700;
+        }
+
+        /* Define specific floater styles and colors */
+        .floater.delay-1 { animation-delay: 2s; left: 10%; width: 60px; height: 60px; }
+        .floater.delay-2 { animation-delay: 4s; left: 40%; width: 40px; height: 40px; }
+        .floater.delay-3 { animation-delay: 6s; left: 70%; width: 70px; height: 70px; } 
+        .floater.delay-4 { animation-delay: 8s; left: 25%; width: 55px; height: 55px; }
+        .floater.delay-5 { animation-delay: 10s; left: 85%; width: 45px; height: 45px; }
+
+
+        /* -------------------------------------- */
+        /* Mouse Trail Animation Styles */
+        /* -------------------------------------- */
+
+        .cursor-dot {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--custom-purple); /* Purple trail */
+            pointer-events: none; /* Ignore mouse events */
+            z-index: 9999;
+            opacity: 0;
+            transform: translate(-50%, -50%); /* Center the dot on the cursor coordinates */
+            animation: fade-out 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes fade-out {
+            0% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+            100% { opacity: 0; transform: scale(0.1) translate(-50%, -50%); }
+        }
+    </style>
+
+    <!-- Google Fonts for Retro Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Favicon and Open Graph (Preserved) -->
     <link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
-
-    <!-- ✅ Open Graph / Social Preview -->
-    <meta property="og:title" content="Traci M Portfolio">
+    <meta property="og:title" content="Traci Moore Portfolio">
     <meta property="og:description" content="A showcase of my projects, blogs, and professional journey.">
     <meta property="og:image" content="assets/images/vintagelogovs2.png">
     <meta property="og:url" content="https://dirtroomnotes.github.io/portfolio-site">
     <meta property="og:type" content="website">
 </head>
-<body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
-    <!-- Header and Navigation -->
-    <header class="bg-white shadow-md py-4">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <!-- Logo + Site Name -->
-        <a href="index.html" class="flex items-center space-x-2">
-          <img src="assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-10 w-auto"> <!--logo -->
-        </a>
+<!-- Body uses fixed light mode classes -->
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
+    
+    <!-- Floating Header and Navigation -->
+    <header id="main-header" class="floating-header py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo + Site Name -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+                <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
+            </a>
 
-        <!-- Hamburger Button (Mobile) -->
-        <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-          <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-          </svg>
-        </button> 
+            <!-- Utility Container: Mobile Button -->
+            <div class="flex items-center space-x-4">
+                 <!-- Dark Mode Toggle Button removed -->
+            
+                <!-- Hamburger Button (Mobile) -->
+                <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button> 
+            </div>
 
-        <!-- Navigation -->
-        <nav id="mobile-menu" class="hidden md:flex">
-          <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-            <li><a href="index.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Home</a></li>
-            <li><a href="projects.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Projects</a></li>
-            <li><a href="blogs.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Blogs</a></li>
-            <li><a href="about.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">About</a></li>
-            <li><a href="index.html#contact" class="text-lg font-medium text-gray-600 hover:text-[#66B2B2]">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+            <!-- Navigation -->
+            <nav id="mobile-menu" class="hidden md:flex">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+                    <li><a href="index.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Home</a></li>
+                    <li><a href="projects.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Projects</a></li>
+                    <li><a href="blogs.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Blogs</a></li>
+                    <li><a href="about.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">About</a></li>
+                    <li><a href="#contact" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300 border-t border-custom-teal">
+            <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+                <li><a href="index.html" class="block text-retro-primary hover:text-retro-accent-secondary">Home</a></li>
+                <li><a href="projects.html" class="block text-retro-primary hover:text-retro-accent-secondary">Projects</a></li>
+                <li><a href="blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary">Blogs</a></li>
+                <li><a href="about.html" class="block text-retro-primary hover:text-retro-accent-secondary">About</a></li>
+                <li><a href="#contact" class="block text-retro-primary hover:text-retro-accent-secondary">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Accent color changed to Teal) -->
     <section 
         id="home" 
-        class="hero-section relative bg-cover bg-center text-white text-center min-h-screen"
-        style="background-image: url('assets/images/backgroundvswebp.webp');"
->
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-gray-900 opacity-40"></div>
+        class="hero-section relative text-white text-center min-h-[90vh] flex items-center justify-center pt-20"
+    >
+        <!-- Overlay (Z-index 10) -->
+        <div class="hero-overlay absolute inset-0"></div>
 
-        <!-- Hero Content -->
-        <div class="container mx-auto px-4 relative z-10 flex flex-col justify-center items-center min-h-screen">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
+        <!-- Hero Content (Z-index 20) -->
+        <div class="container mx-auto px-4 relative z-20 py-16">
+            <h1 class="text-6xl md:text-8xl text-retro-background font-pacifico tracking-tight drop-shadow-lg reveal" style="--delay: 0s;">
                 Traci Moore
             </h1>
-            <p class="mt-4 text-xl md:text-2xl text-gray-200">
+            <!-- Accent color changed to Teal -->
+            <p class="mt-4 text-2xl md:text-4xl font-cormorant font-light text-custom-teal drop-shadow-md italic reveal" style="--delay: 0.2s;">
                 Project Manager | Creator | Lifelong Learner
             </p>
+            <!-- Button color changed to Teal/Purple -->
             <a href="#about" 
-            class="mt-8 inline-block bg-[#5c5469] text-white font-semibold py-3 px-6 rounded-full 
-                    transition-all duration-300 transform hover:scale-105 shadow-lg"
+            class="mt-10 inline-block bg-retro-accent-main text-retro-primary font-cormorant font-bold py-4 px-10 rounded-full 
+                    transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-secondary shadow-lg text-lg uppercase tracking-wider reveal" style="--delay: 0.4s;"
             >
-                Learn More About Me
+                View My Story
             </a>
         </div>
     </section>
 
-    <!-- About Stats Section -->
-    <section id="about" class="py-16 bg-custom-gray">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-custom-gray mb-8">About Me</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg text-gray-700 mb-12">
-                    I’m a passionate and dedicated Project Manager and Business Analyst with a track record of delivering complex IT and SaaS projects from concept to completion. I thrive in agile environments, aligning stakeholders, guiding teams, and leveraging technology to solve challenges efficiently. Driven by curiosity and continuous learning, I embrace new tools and processes to deliver meaningful results.
+    <!-- About Stats Section (Background changed from Sage Green to Cream) -->
+    <section id="about" class="py-20 bg-retro-background">
+        <div class="container mx-auto px-4 text-center reveal" style="--delay: 0s;">
+            <!-- Title accent color changed to Teal -->
+            <h2 class="text-4xl font-pacifico text-retro-primary mb-12 border-b-2 border-retro-accent-main inline-block pb-1 mx-auto">About Me</h2>
+            <div class="max-w-4xl mx-auto reveal" style="--delay: 0.2s;">
+                <p class="text-xl text-retro-primary mb-16 leading-relaxed font-cormorant">
+                    I’m a passionate and dedicated **Project Manager** and Business Analyst with a track record of delivering complex IT and SaaS projects from concept to completion. I thrive in agile environments, aligning stakeholders, guiding teams, and leveraging technology to solve challenges efficiently. Driven by curiosity and continuous learning, I embrace new tools and processes to deliver meaningful results.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                    <!-- Card 1: Years Experience -->
-                    <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-                        <div class="text-4xl font-extrabold text-custom-teal mb-3">7+</div>
-                        <div class="text-lg font-medium text-custom-gray">Years Experience</div>
+                    <!-- Card 1: Years Experience (Background changed to Teal) -->
+                    <div class="bg-custom-teal rounded-xl p-8 shadow-md transition-all duration-300 transform hover:scale-[1.02] gallery-item reveal" style="--delay: 0.4s;">
+                        <div class="text-5xl font-pacifico text-retro-primary mb-3">7+</div>
+                        <div class="text-lg font-cormorant font-semibold mt-2">Years Experience</div>
                     </div>
-                    <!-- Card 2: Ideas Generated -->
-                    <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-                        <div class="text-4xl font-extrabold text-custom-teal mb-3">100+</div>
-                        <div class="text-lg font-medium text-custom-gray">Ideas Generated</div>
+                    <!-- Card 2: Projects Managed (Background changed to Teal) -->
+                    <div class="bg-custom-teal rounded-xl p-8 shadow-md transition-all duration-300 transform hover:scale-[1.02] gallery-item reveal" style="--delay: 0.6s;">
+                        <div class="text-5xl font-pacifico text-retro-primary mb-3">100+</div>
+                        <div class="text-lg font-cormorant font-semibold mt-2">Projects Managed/Supported</div>
                     </div>
-                    <!-- Card 3: Infinite Happy Clients -->
-                    <div class="bg-[#E2E8F0] rounded-2xl p-6 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-                        <div class="text-5xl font-extrabold text-custom-teal mb-3">∞</div>
-                        <div class="text-lg font-medium text-custom-gray">Happy Clients</div>
+                    <!-- Card 3: Happy Clients (Background changed to Teal) -->
+                    <div class="bg-custom-teal rounded-xl p-8 shadow-md transition-all duration-300 transform hover:scale-[1.02] gallery-item reveal" style="--delay: 0.8s;">
+                        <div class="text-6xl font-pacifico text-retro-primary mb-3">∞</div>
+                        <div class="text-lg font-cormorant font-semibold mt-2">Happy Stakeholders</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-16 bg-[#F5F7FA]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Featured Projects</h2>
+<!-- Projects Section - Now contains dingbat floaters and is relative -->
+<section id="projects" class="py-20 bg-retro-background relative">
     
-    <!-- Projects Grid -->
-    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-      <!-- JS injects cards here -->
-    </div>
+    <!-- Background Dingbat Floaters (Z-index 1) (Colors updated) -->
+    <div class="floater delay-1 text-retro-background" style="background-color: var(--custom-teal);">★</div> 
+    <div class="floater delay-2 text-retro-primary" style="background-color: var(--custom-purple);">~</div> 
+    <div class="floater delay-3 text-retro-background" style="background-color: var(--custom-teal); border-radius: 10%;">◆</div> 
+    <div class="floater delay-4 text-retro-primary" style="background-color: var(--custom-teal);">○</div> 
+    <div class="floater delay-5 text-retro-background" style="background-color: var(--custom-purple);">★</div> 
+    <div class="floater delay-5 text-retro-primary" style="background-color: var(--custom-teal); left: 55%; animation-delay: 12s;">~</div>
 
-    <div class="mt-8 text-center">
-      <a href="projects.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-        View All Projects
-      </a>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+        <!-- Centered Heading (Accent color changed to Teal) -->
+        <h2 class="text-4xl font-pacifico mb-12 text-retro-primary border-b-2 border-retro-accent-main inline-block pb-1 reveal" style="--delay: 0s;">Featured Projects</h2>
+        
+        <!-- Projects Grid (using justify-items-center for centering cards) -->
+        <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- JS injects cards here -->
+        </div>
+
+        <div class="mt-12 text-center reveal" style="--delay: 0.2s;">
+            <!-- Button color changed to Teal/Purple -->
+            <a href="projects.html" class="inline-block bg-retro-accent-main text-retro-primary font-cormorant font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-secondary shadow-lg">
+                View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Motivation Section with rotating quotes (Background changed to Purple) - MOVED HERE -->
+<section id="motivation" class="py-20 bg-custom-purple">
+  <div class="container mx-auto px-4 text-center reveal" style="--delay: 0s;">
+    <!-- Title Accent color changed to Purple -->
+    <h2 class="text-4xl font-pacifico text-retro-background mb-12 border-b-2 border-retro-accent-secondary inline-block pb-1 mx-auto">Inspirational Quotes</h2>
+    <!-- Card background kept as Cream, border changed to Teal -->
+    <div class="max-w-4xl mx-auto bg-retro-background p-8 rounded-2xl shadow-xl border-4 border-custom-teal reveal" style="--delay: 0.2s;">
+      <div class="quote active">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "The only way to do great work is to love what you do."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">- Steve Jobs</cite>
+      </div>
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "Creativity is intelligence having fun."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">- Albert Einstein</cite>
+      </div>
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "Success usually comes to those who are too busy to be looking for it."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">- Henry David Thoreau</cite>
+      </div>
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "You miss 100% of the shots you don’t take."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">– Michael Scott - The Office (Wayne Gretzky)</cite>
+      </div>
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "Deliver value early, reflect often, and adapt without fear."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">- Unknown</cite>
+      </div>
+      <div class="quote hidden">
+        <blockquote class="relative z-10 text-3xl italic text-retro-primary font-cormorant font-light mb-4 leading-snug">
+          "Simplicity is the ultimate sophistication."
+        </blockquote>
+        <!-- Accent color changed to Teal -->
+        <cite class="relative z-10 text-xl font-pacifico text-custom-teal">- Leonardo da Vinci</cite>
+      </div>
     </div>
   </div>
 </section>
 
-    <!-- Motivation Section with rotating quotes -->
-    <section id="motivation" class="py-16 bg-[#F5F7FA]">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-[#2D3748] mb-8">Inspirational Quotes</h2>
-        <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-inner transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-          <div class="quote active">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "The only way to do great work is to love what you do."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">- Steve Jobs</cite>
-          </div>
-          <div class="quote hidden">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "Creativity is intelligence having fun."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">- Albert Einstein</cite>
-          </div>
-          <div class="quote hidden">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "Success usually comes to those who are too busy to be looking for it."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">- Henry David Thoreau</cite>
-          </div>
-          <div class="quote hidden">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "You miss 100% of the shots you don’t take."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">– Michael Scott - The Office (Wayne Gretzky)</cite>
-          </div>
-          <div class="quote hidden">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "Deliver value early, reflect often, and adapt without fear."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">- Unknown</cite>
-          </div>
-          <div class="quote hidden">
-            <blockquote class="relative z-10 text-2xl italic text-[#2D3748] font-medium mb-4">
-              "Simplicity is the ultimate sophistication."
-            </blockquote>
-            <cite class="relative z-10 text-lg font-semibold text-gray-500">- Leonardo da Vinci</cite>
-          </div>
+<!-- Blogs Section -->
+<section id="blogs" class="py-20 bg-retro-background relative">
+    <div class="container mx-auto px-4 relative z-10 text-center">
+        <!-- Centered Heading (Accent color changed to Teal) -->
+        <h2 class="text-4xl font-pacifico mb-12 text-retro-primary border-b-2 border-retro-accent-main inline-block pb-1 reveal" style="--delay: 0s;">Recent Musings (Blogs)</h2>
+        
+        <!-- Blogs Grid -->
+        <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- JS injects blog cards here -->
         </div>
-      </div>
-    </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-16 bg-[#F5F7FA]">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-10 text-[#2D3748]">Latest Blog Posts</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          <!-- Blog Card 1 -->
-          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
-            <a href="blogs/blog1.html">
-              <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/PM Communication image.jpeg" alt="Blog 1" />
+        <div class="mt-12 text-center reveal" style="--delay: 0.2s;">
+            <!-- Button color changed to Teal/Purple -->
+            <a href="blogs.html" class="inline-block bg-retro-accent-main text-retro-primary font-cormorant font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-secondary shadow-lg">
+                Read All Blogs
             </a>
-            <div class="p-5">
-              <a href="blogs/blog1.html">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Project Manager as an Interpreter: Bridging the Gap Between Tech and Business</h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700">How PMs bridge the gap between technical teams and business stakeholders, translating complex ideas into shared understanding.</p>
-              <a href="blogs/blog1.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
-                Read more
-              </a>
-            </div>
-          </div>
-          <!-- Blog Card 2 -->
-          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
-            <a href="blogs/blog2.html">
-              <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/calmandchaospm.jpeg" alt="Blog 2" />
-            </a>
-            <div class="p-5">
-              <a href="blogs/blog2.html">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Calm in the Chaos: How Good PMs Handle Uncertainty</h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700">Exploring how experienced project managers maintain clarity and focus amid shifting priorities and unexpected challenges.</p>
-              <a href="blogs/blog2.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
-                Read more
-              </a>
-            </div>
-          </div>
-          <!-- Blog Card 3 -->
-          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:shadow-2xl">
-            <a href="blogs/blog7.html">
-              <img class="rounded-t-lg w-full h-48 object-cover" src="assets/images/pmbias4.jpeg" alt="Blog 3" />
-            </a>
-            <div class="p-5">
-              <a href="blogs/blog7.html">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700">How Determination and Inspiration Helped Me Build My First Website.</p>
-              <a href="blogs/blog7.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#66B2B2] rounded-lg hover:bg-[#559999] transition-all duration-300">
-                Read more
-              </a>
-            </div>
-          </div>
         </div>
-        <div class="mt-8 text-center">
-          <a href="blogs.html" class="inline-block bg-[#66B2B2] text-white font-semibold py-3 px-8 rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
-            View All Blogs
-          </a>
-        </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-[#F5F7FA]">
-        <div class="container mx-auto px-4 max-w-lg text-center">
-            <h2 class="text-3xl font-bold mb-6 text-[#2D3748]">Connect with Me</h2>
-            <p class="mb-6 text-[#2D3748]">I’d love to hear from you! Please reach out via LinkedIn</a>.</p>
-            <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+    <!-- Contact Section (Background changed to Chic Gradient) -->
+    <section id="contact" class="py-20 bg-chic-gradient">
+        <div class="container mx-auto px-4 max-w-lg text-center reveal" style="--delay: 0s;">
+            <!-- Title accent color changed to Purple -->
+            <h2 class="text-4xl font-pacifico mb-6 text-retro-primary border-b-2 border-retro-accent-secondary inline-block pb-1 mx-auto">Connect with Me</h2>
+            <p class="mb-8 text-xl text-retro-primary font-cormorant">I’d love to hear from you! Please reach out via LinkedIn to discuss project opportunities or collaborative ideas.</p>
+            <!-- Button is Custom Purple for contrast, hover is Teal -->
+            <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" 
+               class="bg-retro-accent-secondary text-retro-background font-cormorant font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-main shadow-xl uppercase tracking-wider">
                 Message Me on LinkedIn
             </a>
         </div>
     </section>
 
-    <!-- Footer with new colors -->
-    <footer class="bg-[#2D3748] text-white py-8">
-      <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-        <!-- Logo -->
-        <img src="assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
-        <!-- Text -->
-        <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-        <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-retro-primary text-retro-background py-10">
+        <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-4">
+            <!-- Logo -->
+            <img src="assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-80 hover:opacity-100 transition duration-300 rounded-full">
+            <!-- Social Links (Placeholder for icons) (Hover color changed to Teal) -->
+            <div class="flex space-x-6 text-xl">
+                <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="hover:text-custom-teal transition-colors text-retro-background">
+                    <!-- LinkedIn Icon Placeholder -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 3c-1.11 0-2 .89-2 2s.89 2 2 2 2-.89 2-2-.89-2-2-2z"/></svg>
+                </a>
+                <a href="https://dirtroomnotes.github.io/portfolio-site" target="_blank" class="hover:text-custom-teal transition-colors text-retro-background">
+                    <!-- GitHub Icon Placeholder -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12s-5.373-12-12-12zm6.602 17.653c-.347.85-1.503.85-2.003.586-1.39-1.29-3.32-1.63-4.63-1.63s-3.24.34-4.63 1.63c-.5.264-1.656.264-2.003-.586-.184-.452-.084-.963.264-1.31 1.29-1.29 3.22-1.63 4.63-1.63s3.34.34 4.63 1.63c.348.347.448.858.264 1.31zM12 11c-2.485 0-4.5-2.015-4.5-4.5S9.515 2 12 2s4.5 2.015 4.5 4.5S14.485 11 12 11z"/></svg>
+                </a>
+            </div>
+            <!-- Copyright (Accent color changed to Teal) -->
+            <p class="text-custom-teal">&copy; 2025 Traci Moore. All Rights Reserved.</p>
+            <p class="text-custom-teal">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+        </div>
     </footer>
 
-    <!-- Back to Top Button  -->
+    <!-- Back to Top Button (Color changed to Teal/Purple) -->
 <button id="back-to-top" 
-        class="hidden fixed bottom-6 right-6 p-4 rounded-full bg-[#66B2B2] text-white shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none z-50 text-3xl flex items-center justify-center" 
+        class="hidden fixed bottom-8 right-8 p-4 rounded-full bg-retro-accent-main text-retro-primary shadow-xl transition-all duration-300 hover:scale-110 hover:bg-retro-accent-secondary focus:outline-none z-50 text-2xl font-bold" 
         title="Back to Top">
-    ↑
+    <span class="sr-only">Back to Top</span>
+    &uarr;
 </button>
 
 <script>
 window.projects = [
-  {
-    title: "Smart Building Automation Rollout",
-    description: "Integrated IoT devices and dashboards for smarter building management system (BAS).",
-    imageUrl: "assets/images/baswebvs3.jpg",
-    link: "projects/project1.html"
-  },
-  {
-    title: "MVP GenAI Project",
-    description: "Developed a minimum viable product using GenAI for automation workflows.",
-    imageUrl: "assets/images/mvplegalvs7.jpg",
-    link: "projects/project2.html"
-  },
-  {
-    title: "Advertising Management App",
-    description: "Supported and enhanced a critical advertising order system for thousands of newspapers nationwide.",
-    imageUrl: "assets/images/admanagementvs2.jpg",
-    link: "projects/project3.html"
-  }
+    {
+        title: "Smart Building Automation Rollout",
+        description: "Integrated IoT devices and dashboards for smarter building management system (BAS).",
+        imageUrl: "assets/images/baswebvs3.jpg",
+        link: "projects/project1.html"
+    },
+    {
+        title: "MVP GenAI Project",
+        description: "Developed a minimum viable product using GenAI for automation workflows.",
+        imageUrl: "assets/images/mvplegalvs7.jpg",
+        link: "projects/project2.html"
+    },
+    {
+        title: "Advertising Management App",
+        description: "Supported and enhanced a critical advertising order system for thousands of newspapers nationwide.",
+        imageUrl: "assets/images/admanagementvs2.jpg",
+        link: "projects/project3.html"
+    }
 ];
 
+window.featuredBlogs = [
+    {
+        title: "The Agile Mindset: More Than Just Scrum",
+        description: "Exploring the fundamental principles behind Agile methodologies and how they apply outside of software development.",
+        imageUrl: "https://placehold.co/600x300/A7A3B1/202c34?text=Agile+Mindset",
+        link: "blogs.html#agile" 
+    },
+    {
+        title: "Navigating Stakeholder Expectations",
+        description: "A deep dive into communication strategies for keeping complex project stakeholders aligned and happy.",
+        imageUrl: "https://placehold.co/600x300/99CCCC/202c34?text=Stakeholder+Comms",
+        link: "blogs.html#stakeholders"
+    },
+    {
+        title: "From BA to PM: A Career Transition Guide",
+        description: "Sharing personal insights on moving from business analysis to full-time project management roles.",
+        imageUrl: "https://placehold.co/600x300/66B2B2/202c34?text=Career+Transition",
+        link: "blogs.html#career"
+    }
+];
+
+// Observer for the reveal-on-scroll animation
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+
 function createProjectCard(project) {
-  return `
-    <a href="${project.link}" class="project-card card-hover block bg-[#E2E8F0] rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-      <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-        <p class="text-sm mb-4">${project.description}</p>
-        <span class="inline-block bg-white py-2 px-4 rounded-full text-sm text-[#2D3748] font-semibold hover:scale-105 transition-all duration-300 shadow-md">
-          Read More
-        </span>
-      </div>
-    </a>
-  `;
+    // Applying the gallery-item class and custom delays for staggered reveal
+    const delay = Math.random() * 0.4 + 0.2; 
+    return `
+        <a href="${project.link}" class="project-card block bg-retro-background rounded-xl overflow-hidden shadow-lg gallery-item reveal"
+           data-project-name="${project.title.replace(/ /g, '_')}" style="--delay: ${delay}s;">
+            <img src="${project.imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Project+Image';" alt="${project.title}" class="w-full h-52 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-cormorant font-bold mb-2 text-retro-primary">${project.title}</h3>
+                <p class="text-base mb-4 font-cormorant text-retro-primary/80">${project.description}</p>
+                <span class="inline-block bg-retro-accent-main py-2 px-4 rounded-full text-sm text-retro-primary font-bold hover:bg-retro-accent-secondary transition-all duration-300 shadow-md">
+                    Explore Project →
+                </span>
+            </div>
+        </a>
+    `;
 }
 
 function renderProjects() {
-  const container = document.getElementById('projects-container');
-  if (container && Array.isArray(projects)) {
-    container.innerHTML = '';
-    projects.forEach(project => {
-      container.innerHTML += createProjectCard(project);
-    });
-  }
+    const container = document.getElementById('projects-container');
+    if (container && Array.isArray(projects)) {
+        container.innerHTML = '';
+        projects.forEach(project => {
+            container.innerHTML += createProjectCard(project);
+        });
+
+        // CRITICAL: Re-apply observation to newly rendered project cards
+        container.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    }
 }
 
+function createBlogCard(blog) {
+    const delay = Math.random() * 0.4 + 0.2; 
+    return `
+        <a href="${blog.link}" class="blog-card block bg-retro-background rounded-xl overflow-hidden shadow-lg gallery-item reveal"
+           data-blog-name="${blog.title.replace(/ /g, '_')}" style="--delay: ${delay}s;">
+            <img src="${blog.imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/600x300/A7A3B1/202c34?text=Blog+Image';" alt="${blog.title}" class="w-full h-52 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-cormorant font-bold mb-2 text-retro-primary">${blog.title}</h3>
+                <p class="text-base mb-4 font-cormorant text-retro-primary/80">${blog.description}</p>
+                <span class="inline-block bg-retro-accent-main py-2 px-4 rounded-full text-sm text-retro-primary font-bold hover:bg-retro-accent-secondary transition-all duration-300 shadow-md">
+                    Read Article →
+                </span>
+            </div>
+        </a>
+    `;
+}
+
+function renderBlogs() {
+    const container = document.getElementById('blogs-container');
+    if (container && Array.isArray(featuredBlogs)) {
+        container.innerHTML = '';
+        featuredBlogs.forEach(blog => {
+            container.innerHTML += createBlogCard(blog);
+        });
+
+        // CRITICAL: Re-apply observation to newly rendered blog cards
+        container.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
+    // --------------------------------------
+    // Mouse Trail Animation Logic (Color updated)
+    // --------------------------------------
+    document.addEventListener('mousemove', (e) => {
+        // Only trigger occasionally to maintain performance and subtlety
+        if (Math.random() > 0.8) return; 
+
+        const dot = document.createElement('div');
+        dot.className = 'cursor-dot';
+        
+        // Set initial position
+        dot.style.left = `${e.clientX}px`;
+        dot.style.top = `${e.clientY}px`;
+
+        document.body.appendChild(dot);
+
+        // Clean up: remove the dot after the animation finishes
+        dot.addEventListener('animationend', () => {
+            dot.remove();
+        });
+    });
+
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-nav-dropdown');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
     // Back to Top Functionality
     const backToTopButton = document.getElementById("back-to-top");
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
+        // Back to Top visibility
+        if (window.scrollY > 500) {
             backToTopButton.classList.remove("hidden");
         } else {
             backToTopButton.classList.add("hidden");
@@ -359,12 +703,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Render Projects
+    // Render Projects and Blogs
     renderProjects && renderProjects();
+    renderBlogs && renderBlogs();
+    
+    // Quote Rotator
+    const quotes = document.querySelectorAll('.quote');
+    let currentQuote = 0;
+
+    function rotateQuotes() {
+        quotes[currentQuote].classList.add('hidden');
+        quotes[currentQuote].classList.remove('active');
+        currentQuote = (currentQuote + 1) % quotes.length;
+        quotes[currentQuote].classList.remove('hidden');
+        quotes[currentQuote].classList.add('active');
+    }
+
+    // Start rotation every 5 seconds
+    setInterval(rotateQuotes, 5000);
+
+    // Apply Reveal Observer to static elements (like headings and initial text)
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
 });
 </script>
-
-<!-- Main JS -->
-<script src="script.js"></script>
 </body>
 </html>
