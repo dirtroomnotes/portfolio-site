@@ -1,52 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Public Notices Platform Redesign | Traci M Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Source Case Management System - Project</title>
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGLSZJYQHE');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RGLSZJYQHE');
+    </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Custom Tailwind Configuration to define custom colors and fonts
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
+                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
+                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
+                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        
+                        // Mapping for generic uses
+                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-secondary': '#5c5469', // Purple is secondary
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts for Retro Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for the Retro Theme (Floating Header, Nav Link, and Card Consistency) -->
+    <style>
+        /* Define CSS Variables for custom styles */
+        :root {
+            --custom-teal: #66B2B2;
+            --custom-purple: #5c5469;
+            --custom-pink: #E84A5F; /* Primary Accent Pink */
+            --warm-cream: #f5f2e8;
+            --deep-charcoal: #202c34;
+        }
+
+        /* Floating header with a subtle frosted glass effect */
+        .floating-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(245, 242, 232, 0.95); /* Warm Cream with transparency */
+            backdrop-filter: blur(8px); 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Animated Underline for Navigation */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            color: var(--deep-charcoal); /* Default text color */
+            transition: color 0.3s ease-out;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--custom-purple); /* Hover underline remains purple */
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-link:hover {
+             color: var(--custom-purple); /* Text color changes to purple on hover */
+        }
+        
+        /* Define active link style (now using PINK) */
+        .nav-active {
+            color: var(--custom-pink); /* Active link text is PINK */
+            font-weight: 600; 
+        }
+        
+        .nav-active::after {
+            transform: scaleX(1) !important; /* Active link is always underlined */
+            background-color: var(--custom-pink) !important; /* Underline is PINK */
+        }
+
+        /* Ensure mobile dropdown border is pink */
+        #mobile-nav-dropdown {
+            border-top: 2px solid var(--custom-pink);
+        }
+        
+        /* Specific styling for project detail list */
+        .project-detail-list li strong {
+            display: inline-block;
+            min-width: 100px; /* Aligns keys */
+            font-weight: 700;
+            color: var(--custom-pink); /* Highlight keys in pink */
+        }
+    </style>
 </head>
-<body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
 
-<!-- Header and Navigation with Logo -->
-<header class="bg-white shadow-md py-4">
-  <div class="container mx-auto px-4 flex justify-between items-center">
-    <!-- Logo -->
-    <a href="../index.html" class="flex items-center space-x-2">
-      <img src="../assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-10 w-auto">
-    </a>
+<!-- Applying retro background and primary text color -->
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
 
-    <!-- Hamburger Button (Mobile) -->
-    <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-      <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-      </svg>
-    </button> 
+<!-- Floating Header and Navigation -->
+<header id="main-header" class="floating-header py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Logo + Site Name -->
+        <a href="../index.html" class="flex items-center space-x-3">
+            <!-- Ensure correct relative path -->
+            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+            <!-- Font and Color updated -->
+            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
+        </a>
 
-    <!-- Navigation -->
-    <nav id="mobile-menu" class="hidden md:flex">
-      <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-        <li><a href="../index.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Home</a></li>
-        <li><a href="../projects.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Projects</a></li>
-        <li><a href="../blogs.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Blog</a></li>
-        <li><a href="../about.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">About</a></li>
-        <li><a href="../index.html#contact" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+        <!-- Utility Container: Mobile Button -->
+        <div class="flex items-center space-x-4">
+            <!-- Hamburger Button (Mobile) -->
+            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button> 
+        </div>
+
+        <!-- Navigation (Desktop) - Projects link active -->
+        <nav id="desktop-menu" class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+                <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li>
+                <!-- Projects is the active parent page -->
+                <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li>
+                <li><a href="../blogs.html" class="nav-link transition duration-200">Blog</a></li>
+                <li><a href="../about.html" class="nav-link transition duration-200">About</a></li>
+                <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300">
+        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+            <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
+            <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li>
+            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blog</a></li>
+            <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
+            <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
+        </ul>
+    </div>
 </header>
 
 <!-- Project Content -->
@@ -128,18 +253,31 @@
   </div>
 </footer>
 
+<!-- Mobile Menu Toggle Script -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
 
-  <script src="../script.js"></script>
+        if (mobileMenuButton && dropdown) {
+            mobileMenuButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class to show/hide the dropdown
+                dropdown.classList.toggle('hidden');
+            });
+
+            // Optional: Hide dropdown when a link is clicked
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Close the dropdown after navigating
+                    if (!dropdown.classList.contains('hidden')) {
+                        dropdown.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    });
+</script>
+  
 </body>
 </html>
