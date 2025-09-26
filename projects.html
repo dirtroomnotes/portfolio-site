@@ -119,10 +119,12 @@
     </div>
 </header>
   
-  <main class="py-16">
-    <section class="container mx-auto px-4">
-      <h1 class="text-4xl font-bold text-center text-gray-900 mb-10">My Projects</h1>
-    <!-- Projects Grid -->
+<main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-pacifico text-retro-primary mb-6 border-b-2 border-custom-teal pb-2">My Projects</h1>
+    <!-- Content for the Projects page goes here -->
+    <p class="font-cormorant text-center text-lg text-gray-700">My Projects</h1>
+    
+  <!-- Projects Grid -->
     <div class="cards-container">
 
       <!-- Project 1 -->
@@ -262,15 +264,28 @@
 </footer>
 
 <!-- Mobile Menu Toggle Script -->
+<!-- Simple Script to Toggle Mobile Menu -->
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+        if (menuButton && dropdown) {
+            menuButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class to show/hide the dropdown
+                dropdown.classList.toggle('hidden');
+            });
+
+            // Optional: Hide dropdown when a link is clicked (useful for single-page nav)
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdown.classList.add('hidden');
+                });
+            });
+        }
+    });
 </script>
-
-<script src="script.js"></script>
+  
 </body>
 </html>
