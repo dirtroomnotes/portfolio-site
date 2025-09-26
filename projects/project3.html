@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertising Management Application - Project</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Retained for completeness -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -17,16 +17,20 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Custom Tailwind Configuration (Exact match from previous files)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',
-                        'retro-background': '#f5f2e8',
-                        'custom-teal': '#66B2B2',
-                        'custom-purple': '#5c5469',
-                        'custom-pink': '#E84A5F',
-                        'retro-accent-secondary': '#5c5469',
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
+                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
+                        'custom-teal': '#66B2B2',          // Teal 
+                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
+                        'custom-pink': '#E84A5F',         // Primary Accent Pink
+                        
+                        // Mapping for generic uses
+                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
                         'pacifico': ['Pacifico', 'cursive'],
@@ -38,34 +42,38 @@
         }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts for Retro Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
+    <!-- Custom CSS for the Retro Theme (Floating Header and Nav Link) -->
     <style>
+        /* Define CSS Variables for custom styles */
         :root {
             --custom-teal: #66B2B2;
             --custom-purple: #5c5469;
-            --custom-pink: #E84A5F;
-            --retro-background: #f5f2e8;
-            --retro-primary: #202c34;
+            --custom-pink: #E84A5F; /* Primary Accent Pink */
+            --warm-cream: #f5f2e8;
+            --deep-charcoal: #202c34;
         }
 
+        /* Floating header with a subtle frosted glass effect */
         .floating-header {
             position: sticky;
             top: 0;
             width: 100%;
             z-index: 100;
-            background-color: rgba(245, 242, 232, 0.95);
+            background-color: rgba(245, 242, 232, 0.95); /* Warm Cream with transparency */
             backdrop-filter: blur(8px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
+        /* Animated Underline for Navigation */
         .nav-link {
             position: relative;
             padding-bottom: 4px;
-            color: var(--retro-primary);
+            color: var(--deep-charcoal);
             transition: color 0.3s ease-out;
         }
 
@@ -88,39 +96,59 @@
         }
 
         .nav-link:hover { color: var(--custom-purple); }
+        
+        /* Define active link style (now using PINK) */
         .nav-active {
             color: var(--custom-pink);
             font-weight: 600;
         }
+        
         .nav-active::after {
             transform: scaleX(1) !important;
             background-color: var(--custom-pink) !important;
         }
+
         #mobile-nav-dropdown { border-top: 2px solid var(--custom-pink); }
 
+        /* Specific styling for project detail list */
         .project-detail-list li strong { 
             display: inline-block; 
-            min-width: 100px; 
+            min-width: 120px; /* Increased width for better alignment */
             font-weight: 700; 
-            color: var(--custom-pink); 
+            color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card (using a distinct white BG with purple border for contrast) */
+        .retro-card {
+            background-color: #ffffff; 
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); 
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
 
+<!-- Applying retro background and primary text color -->
 <body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
 
-<!-- Header -->
+<!-- Header and Navigation -->
 <header class="floating-header py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
             <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
+
+        <!-- Mobile Button -->
         <div class="flex items-center space-x-4">
             <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
+        
+        <!-- Navigation (Desktop) - Projects link active -->
         <nav id="desktop-menu" class="hidden md:flex">
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
@@ -131,6 +159,8 @@
             </ul>
         </nav>
     </div>
+    
+    <!-- Mobile Menu Dropdown -->
     <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300">
         <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
             <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
@@ -146,50 +176,62 @@
 <main class="py-16">
     <section class="container mx-auto px-4 text-center">
         <!-- Project Title -->
-        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-custom-pink inline-block pb-1">
+        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
             Advertising Management Application
         </h1>
 
         <!-- Project Image -->
-        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50">
-            <img src="../assets/images/admanagementvs2.jpg"
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
+            <img src="https://placehold.co/800x600/66B2B2/202c34?text=Ad+Management+System"
                     alt="Advertising Management Application UI preview"
                     class="w-full h-full object-cover"
-                    onerror="this.onerror=null;this.src='https://placehold.co/576x576/99CCCC/202c34?text=Ad+Management';">
+                    onerror="this.onerror=null;this.src='https://placehold.co/800x600/66B2B2/202c34?text=Ad+Management+System';">
         </div>
 
-        <!-- Project Details -->
-        <div class="bg-white rounded-xl p-8 shadow-md max-w-xl mx-auto mb-8">
-            <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
+        <!-- Project Details Card (Updated to use retro-card styling) -->
+        <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8 text-retro-primary">
+            <!-- Summary Description -->
+            <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
                 Supported and enhanced a critical advertising order and management system used by thousands of newspapers nationwide. Work included backend stability improvements, ACH payment integration, and migration planning to a modern cloud-hosted platform.
             </p>
 
+            <!-- Project Overview Section -->
             <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
-                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Project Overview </h2>
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-retro-accent-main pl-3">Project Overview </h2>
                 <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
                     <li><strong>Company:</strong> Quoin</li>
                     <li><strong>Duration:</strong> May 2019 – Feb 2024</li>
                     <li><strong>Platform:</strong> Web application (ad order &amp; delivery system)</li>
                     <li><strong>Tools:</strong> Redmine, Java, JavaScript, MySQL, Excel, AWS</li>
                     <li><strong>Delivery Method:</strong> Agile (Scrum / Kanban)</li>
-                    <li><strong>Link:</strong> <a href="https://quoininc.com/work/onesys" target="_blank" class="text-custom-pink underline">OneSystem (advertising)</a></li>
+                    <!-- Link is styled using retro accent pink -->
+                    <li><strong>Link:</strong> <a href="https://quoininc.com/work/onesys" target="_blank" class="text-retro-accent-main underline hover:text-custom-purple transition duration-200">OneSystem (advertising)</a></li>
                 </ul>
             </div>
 
+            <!-- Work Done Section -->
             <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
-                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Work Done</h2>
-                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-retro-accent-main pl-3">Work Done</h2>
+                <!-- Changed list text color from gray-600 to retro-primary -->
+                <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
                     <li>Led backend server upgrades to reduce downtime and improve system stability.</li>
-                    <li>Managed ACH payment integrations and implemented feature enhancements based on stakeholder feedback.</li>
+                    <li>Managed **ACH payment integrations** and implemented feature enhancements based on stakeholder feedback.</li>
                     <li>Directed Agile delivery and prioritized work using Redmine and Excel-based reporting.</li>
-                    <li>Assisted with migration planning to a modern AWS-hosted infrastructure.</li>
+                    <li>Assisted with **migration planning** to a modern AWS-hosted infrastructure.</li>
                     <li>Provided training and adoption support for business clients and users.</li>
                 </ul>
             </div>
 
-            <!-- Back Button -->
+            <!-- Back Button (Updated to use retro accent colors) -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
-                <a href="../projects.html" class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple">
+                <a 
+                    href="../projects.html" 
+                    class="inline-flex items-center justify-center 
+                           bg-retro-accent-main text-retro-background font-semibold 
+                           py-3 px-8 rounded-full transition-all duration-300 
+                           transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                           focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50"
+                >
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
@@ -200,13 +242,17 @@
     </section>
 </main>
 
-    <!-- Footer with new colors -->
-    <footer class="bg-[#2D3748] text-white py-8">
-        <div class="container mx-auto px-4 text-center text-sm">
-            <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-            <p class="mt-2 text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-        </div>
-    </footer>
+<!-- FOOTER (Updated to use retro color variables and structure) -->
+<footer class="bg-retro-primary text-retro-background py-8 mt-12">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
+        
+        <!-- Text -->
+        <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+        <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
+    </div>
+</footer>
 
 <!-- Mobile Menu Toggle -->
 <script>
@@ -216,6 +262,15 @@
         if (mobileMenuButton && dropdown) {
             mobileMenuButton.addEventListener('click', () => {
                 dropdown.classList.toggle('hidden');
+            });
+            // Optional: Hide dropdown when a link is clicked
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!dropdown.classList.contains('hidden')) {
+                        dropdown.classList.add('hidden');
+                    }
+                });
             });
         }
     });
