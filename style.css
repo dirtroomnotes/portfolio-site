@@ -172,6 +172,26 @@
   }
 }
 
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #66B2B2; /* or text-retro-accent-secondary */
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 /* Consolidating styles from style.css */
         body {
             background-color: #2d3748;
