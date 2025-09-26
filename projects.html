@@ -41,13 +41,11 @@
         <!-- Logo + Site Name -->
         <a href="index.html" class="flex items-center space-x-3">
             <img src="assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
-            <span class="text-2xl font-pacifico text-[#2D3748] hidden sm:inline">Traci M.</span>
+            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
 
-        <!-- Utility Container: Mobile Button -->
         <div class="flex items-center space-x-4">
-            <!-- Hamburger Button (Mobile) -->
-            <button id="mobile-menu-button" class="md:hidden text-[#2D3748] focus:outline-none p-2 rounded-lg hover:bg-[#E6F7F7] transition">
+            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -56,28 +54,28 @@
 
         <!-- Navigation -->
         <nav id="mobile-menu" class="hidden md:flex">
-            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold text-[#2D3748]">
-                <li><a href="index.html" class="hover:text-[#66B2B2] transition duration-200">Home</a></li>
-                <li><a href="projects.html" class="hover:text-[#66B2B2] transition duration-200">Projects</a></li>
-                <li><a href="blogs.html" class="hover:text-[#66B2B2] transition duration-200">Blogs</a></li>
-                <li><a href="about.html" class="hover:text-[#66B2B2] transition duration-200">About</a></li>
-                <li><a href="#contact" class="hover:text-[#66B2B2] transition duration-200">Contact</a></li>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+                <li><a href="index.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Home</a></li>
+                <li><a href="projects.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Blogs</a></li>
+                <li><a href="about.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">About</a></li>
+                <li><a href="#contact" class="nav-link hover:text-retro-accent-secondary transition duration-200">Contact</a></li>
             </ul>
         </nav>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-white shadow-xl py-4 border-t border-[#66B2B2]">
-        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium text-[#2D3748]">
-            <li><a href="index.html" class="hover:text-[#66B2B2] transition">Home</a></li>
-            <li><a href="projects.html" class="hover:text-[#66B2B2] transition">Projects</a></li>
-            <li><a href="blogs.html" class="hover:text-[#66B2B2] transition">Blogs</a></li>
-            <li><a href="about.html" class="hover:text-[#66B2B2] transition">About</a></li>
-            <li><a href="#contact" class="hover:text-[#66B2B2] transition">Contact</a></li>
+    <!-- Mobile Menu -->
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 border-t border-custom-teal">
+        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+            <li><a href="index.html" class="hover:text-retro-accent-secondary transition">Home</a></li>
+            <li><a href="projects.html" class="hover:text-retro-accent-secondary transition">Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-retro-accent-secondary transition">Blogs</a></li>
+            <li><a href="about.html" class="hover:text-retro-accent-secondary transition">About</a></li>
+            <li><a href="#contact" class="hover:text-retro-accent-secondary transition">Contact</a></li>
         </ul>
     </div>
 </header>
-
+  
   <main class="py-16">
     <section class="container mx-auto px-4">
       <h1 class="text-4xl font-bold text-center text-gray-900 mb-10">My Projects</h1>
