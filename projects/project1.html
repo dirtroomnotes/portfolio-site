@@ -249,17 +249,29 @@
 
 <!-- Mobile Menu Toggle Script -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
 
-  <script src="../script.js"></script>
+        if (mobileMenuButton && dropdown) {
+            mobileMenuButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class to show/hide the dropdown
+                dropdown.classList.toggle('hidden');
+            });
+
+            // Optional: Hide dropdown when a link is clicked
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Close the dropdown after navigating
+                    if (!dropdown.classList.contains('hidden')) {
+                        dropdown.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    });
+</script>
+    
 </body>
 </html>
