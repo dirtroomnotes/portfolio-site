@@ -1,204 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Advertising Management Application - Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising Management Application - Project</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RGLSZJYQHE');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RGLSZJYQHE');
+    </script>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'retro-primary': '#202c34',
+                        'retro-background': '#f5f2e8',
+                        'custom-teal': '#66B2B2',
+                        'custom-purple': '#5c5469',
+                        'custom-pink': '#E84A5F',
+                        'retro-accent-secondary': '#5c5469',
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Minimal custom CSS to match header fonts/underline behavior but not change page background -->
-  <style>
-    :root{
-      --accent-teal: #66B2B2;
-      --accent-purple: #5c5469;
-      --text-dark: #2D3748;
-      --footer-bg: #2D3748;
-    }
+    <style>
+        :root {
+            --custom-teal: #66B2B2;
+            --custom-purple: #5c5469;
+            --custom-pink: #E84A5F;
+            --retro-background: #f5f2e8;
+            --retro-primary: #202c34;
+        }
 
-    /* font helper classes */
-    .font-pacifico { font-family: 'Pacifico', cursive; }
-    .font-cormorant { font-family: 'Cormorant Garamond', serif; }
-    .font-inter { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+        .floating-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(245, 242, 232, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
 
-    /* floating header */
-    .floating-header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background-color: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            color: var(--retro-primary);
+            transition: color 0.3s ease-out;
+        }
 
-    /* nav-link underline animation */
-    .nav-link {
-      position: relative;
-      padding-bottom: 4px;
-      color: var(--text-dark);
-      transition: color 0.25s ease;
-      text-decoration: none;
-    }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      height: 2px;
-      width: 100%;
-      transform: scaleX(0);
-      transform-origin: right center;
-      background: var(--accent-teal);
-      transition: transform 0.28s cubic-bezier(.2,.8,.2,1);
-    }
-    .nav-link:hover { color: var(--accent-teal); }
-    .nav-link:hover::after { transform: scaleX(1); transform-origin: left center; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--custom-purple);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
 
-    /* active nav style for Projects */
-    .nav-active { color: var(--accent-teal); font-weight: 600; }
-    .nav-active::after { transform: scaleX(1); background: var(--accent-teal); transform-origin: left center; }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-    /* small responsive tweaks for the hero/project image */
-    .project-hero {
-      aspect-ratio: 16/9;
-    }
+        .nav-link:hover { color: var(--custom-purple); }
+        .nav-active {
+            color: var(--custom-pink);
+            font-weight: 600;
+        }
+        .nav-active::after {
+            transform: scaleX(1) !important;
+            background-color: var(--custom-pink) !important;
+        }
+        #mobile-nav-dropdown { border-top: 2px solid var(--custom-pink); }
 
-    /* footer */
-    .site-footer { background: var(--footer-bg); color: white; }
-
-    /* ensure images never overflow */
-    img { max-width: 100%; display: block; }
-  </style>
+        .project-detail-list li strong { 
+            display: inline-block; 
+            min-width: 100px; 
+            font-weight: 700; 
+            color: var(--custom-pink); 
+        }
+    </style>
 </head>
 
-<body class="bg-[#F5F7FA] text-[#2D3748] font-inter antialiased min-h-screen">
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
 
-  <!-- Header (matching index look but safe for this page) -->
-  <header id="main-header" class="floating-header py-4">
+<!-- Header -->
+<header class="floating-header py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center space-x-3">
-        <img src="../assets/images/vintagelogovs2updated.webp"
-             alt="Traci M. logo"
-             class="h-12 w-auto rounded-full shadow-md"
-             onerror="this.onerror=null;this.src='https://placehold.co/48x48/66B2B2/ffffff?text=TM'">
-        <span class="text-2xl font-pacifico text-[#2D3748] hidden sm:inline">Traci M.</span>
-      </a>
-
-      <div class="flex items-center space-x-4">
-        <button id="mobile-menu-button" class="md:hidden text-[#2D3748] focus:outline-none p-2 rounded-lg hover:bg-[#E6F7F7] transition">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
-
-      <nav id="desktop-menu" class="hidden md:flex">
-        <ul class="flex items-center space-x-8 text-lg">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="../projects.html" class="nav-link nav-active">Projects</a></li>
-          <li><a href="../blogs.html" class="nav-link">Blogs</a></li>
-          <li><a href="../about.html" class="nav-link">About</a></li>
-          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <a href="../index.html" class="flex items-center space-x-3">
+            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <nav id="desktop-menu" class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../projects.html" class="nav-link nav-active">Projects</a></li>
+                <li><a href="../blogs.html" class="nav-link">Blog</a></li>
+                <li><a href="../about.html" class="nav-link">About</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300">
+        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+            <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
+            <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li>
+            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blog</a></li>
+            <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
+            <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
         </ul>
-      </nav>
     </div>
+</header>
 
-    <!-- mobile dropdown -->
-    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-white shadow-xl py-4 border-t" style="border-color: var(--accent-teal);">
-      <ul class="flex flex-col space-y-3 px-4 text-lg">
-        <li><a href="../index.html" class="block nav-link">Home</a></li>
-        <li><a href="../projects.html" class="block nav-link nav-active">Projects</a></li>
-        <li><a href="../blogs.html" class="block nav-link">Blogs</a></li>
-        <li><a href="../about.html" class="block nav-link">About</a></li>
-        <li><a href="../index.html#contact" class="block nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-<!-- Main -->
+<!-- Project Content -->
 <main class="py-16">
-  <section class="container mx-auto px-4 text-center">
-    <!-- Project Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
-      Advertising Management Application
-    </h1>
+    <section class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-custom-pink inline-block pb-1">
+            Advertising Management Application
+        </h1>
 
-    <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50">
-      <img
-        src="../assets/images/admanagementvs2.jpg"
-        alt="Advertising Management Application UI preview"
-        class="w-full h-full object-cover"
-        onerror="this.onerror=null;this.src='https://placehold.co/576x576/99CCCC/202c34?text=Ad+Management';"
-      />
-    </div>
+        <!-- Project Image -->
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50">
+            <img src="../assets/images/admanagementvs2.jpg"
+                 alt="Advertising Management Application UI preview"
+                 class="w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/576x576/99CCCC/202c34?text=Ad+Management';">
+        </div>
 
-    <!-- Content Box -->
-    <div class="bg-white rounded-xl p-8 shadow-xl max-w-xl mx-auto mb-8 text-gray-700 leading-relaxed text-left">
-      <p class="text-lg mb-6 text-center">
-        Supported and enhanced a critical advertising order and management system used by thousands of newspapers nationwide. The work included backend stability improvements, ACH payment integration, and migration planning to a modern cloud-hosted platform.
-      </p>
+        <!-- Project Details -->
+        <div class="bg-white rounded-xl p-8 shadow-md max-w-xl mx-auto mb-8">
+            <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
+                Supported and enhanced a critical advertising order and management system used by thousands of newspapers nationwide. Work included backend stability improvements, ACH payment integration, and migration planning to a modern cloud-hosted platform.
+            </p>
 
-      <!-- Project Overview -->
-      <div class="text-left mb-6">
-        <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> May 2019 – Feb 2024</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Web application (ad order & delivery system)</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Redmine, Java, JavaScript, MySQL, Excel, AWS</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Delivery:</strong> Agile (Scrum / Kanban)</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://quoininc.com/work/onesys" target="_blank" class="text-[#066B9B] underline">OneSystem (advertising)</a></p>
-      </div>
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Quoin</li>
+                    <li><strong>Duration:</strong> May 2019 – Feb 2024</li>
+                    <li><strong>Platform:</strong> Web application (ad order & delivery system)</li>
+                    <li><strong>Tools:</strong> Redmine, Java, JavaScript, MySQL, Excel, AWS</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum / Kanban)</li>
+                    <li><strong>Link:</strong> <a href="https://quoininc.com/work/onesys" target="_blank" class="text-custom-pink underline">OneSystem (advertising)</a></li>
+                </ul>
+            </div>
 
-      <!-- Work Done -->
-      <div class="text-left">
-        <h2 class="text-2xl font-cormorant font-semibold mb-3">Work Done</h2>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Led backend server upgrades to reduce downtime and improve system stability.</li>
-          <li>Managed ACH payment integrations and implemented feature enhancements based on stakeholder feedback.</li>
-          <li>Directed Agile delivery and prioritized work using Redmine and Excel-based reporting.</li>
-          <li>Assisted with migration planning to a modern AWS-hosted infrastructure.</li>
-          <li>Provided training and adoption support for business clients and users.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Work Done</h2>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Led backend server upgrades to reduce downtime and improve system stability.</li>
+                    <li>Managed ACH payment integrations and implemented feature enhancements based on stakeholder feedback.</li>
+                    <li>Directed Agile delivery and prioritized work using Redmine and Excel-based reporting.</li>
+                    <li>Assisted with migration planning to a modern AWS-hosted infrastructure.</li>
+                    <li>Provided training and adoption support for business clients and users.</li>
+                </ul>
+            </div>
+
+            <!-- Back Button -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
+                <a href="../projects.html" class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
 
-  <!-- Footer -->
-  <footer class="site-footer py-8">
-    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-      <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition" onerror="this.onerror=null;this.src='https://placehold.co/40x40/66B2B2/ffffff?text=TM'">
-      <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-      <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+<!-- Footer -->
+<footer class="bg-retro-primary text-retro-background py-10">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-4">
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-80 hover:opacity-100 transition duration-300 rounded-full">
+        <p class="text-custom-pink">&copy; 2025 Traci Moore. All Rights Reserved.</p>
+        <p class="text-custom-pink">Built with <span class="text-retro-accent-secondary">&hearts;</span>, powered by Gemini.</p>
     </div>
-  </footer>
+</footer>
 
-  <!-- Mobile menu toggle script -->
-  <script>
+<!-- Mobile Menu Toggle -->
+<script>
     document.addEventListener('DOMContentLoaded', () => {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileDropdown = document.getElementById('mobile-nav-dropdown');
-      if (mobileMenuButton && mobileDropdown) {
-        mobileMenuButton.addEventListener('click', () => {
-          mobileDropdown.classList.toggle('hidden');
-        });
-      }
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
+        if (mobileMenuButton && dropdown) {
+            mobileMenuButton.addEventListener('click', () => {
+                dropdown.classList.toggle('hidden');
+            });
+        }
     });
-  </script>
+</script>
 </body>
 </html>
-
