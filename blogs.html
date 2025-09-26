@@ -25,12 +25,13 @@
                     colors: {
                         'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Primary Accent
-                        'custom-purple': '#5c5469',       // Secondary Accent/Hover/Highlight
+                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
+                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
+                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
                         
                         // Mapping for generic uses
-                        'retro-accent-main': '#66B2B2',
-                        'retro-accent-secondary': '#5c5469', 
+                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
                         'pacifico': ['Pacifico', 'cursive'],
@@ -60,6 +61,7 @@
         :root {
             --custom-teal: #66B2B2;
             --custom-purple: #5c5469;
+            --custom-pink: #E84A5F; /* NEW: Pink Accent */
             --warm-cream: #f5f2e8;
             --deep-charcoal: #202c34;
         }
@@ -80,6 +82,7 @@
             position: relative;
             padding-bottom: 4px;
             color: var(--deep-charcoal); /* Default text color */
+            transition: color 0.3s ease-out; /* Add transition for color */
         }
 
         .nav-link::after {
@@ -90,6 +93,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
+            /* Hover underline remains purple */
             background-color: var(--custom-purple); 
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
@@ -101,7 +105,18 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes on hover */
+             color: var(--custom-purple); /* Text color changes to purple on hover */
+        }
+        
+        /* Define active link style (now using PINK) */
+        .nav-active {
+            color: var(--custom-pink); /* Active link text is PINK */
+            font-weight: 600; 
+        }
+        
+        .nav-active::after {
+            transform: scaleX(1) !important; /* Active link is always underlined */
+            background-color: var(--custom-pink) !important; /* Underline is PINK */
         }
         
         /* Blog Card Hover Effect (consistent with index.html) */
@@ -113,8 +128,8 @@
 
         .card-link:hover {
             transform: translateY(-8px) rotateZ(0.5deg); 
-            box-shadow: 0 12px 25px rgba(92, 84, 105, 0.5); /* Purple glow */
-            border-color: var(--custom-teal); /* Teal border on hover */
+            box-shadow: 0 12px 25px rgba(92, 84, 105, 0.5); /* Purple glow remains as secondary accent */
+            border-color: var(--custom-pink); /* NOW PINK border on hover */
         }
     </style>
 </head>
@@ -146,7 +161,8 @@
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
                 <li><a href="index.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Home</a></li>
                 <li><a href="projects.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Projects</a></li>
-                <li><a href="blogs.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Blogs</a></li>
+                <!-- Highlighted as active page using PINK -->
+                <li><a href="blogs.html" class="nav-link nav-active transition duration-200">Blogs</a></li>
                 <li><a href="about.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">About</a></li>
                 <li><a href="index.html#contact" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Contact</a></li>
             </ul>
@@ -154,11 +170,12 @@
     </div>
 
     <!-- Mobile Menu Dropdown (Background updated) -->
-    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300 border-t border-custom-teal">
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300 border-t border-custom-pink">
         <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
             <li><a href="index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
             <li><a href="projects.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Projects</a></li>
-            <li><a href="blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blogs</a></li>
+            <!-- Highlighted as active page using PINK -->
+            <li><a href="blogs.html" class="block text-custom-pink font-bold transition">Blogs</a></li>
             <li><a href="about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
             <li><a href="index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
         </ul>
@@ -168,13 +185,13 @@
 <!-- Main Content -->
 <main class="py-16">
     <section class="container mx-auto px-4">
-        <!-- Heading updated to use retro font and teal accent -->
-        <h1 class="text-5xl font-pacifico text-center text-retro-primary mb-12 border-b-2 border-custom-teal inline-block pb-1 mx-auto">All Blog Posts</h1>
+        <!-- Heading updated to use retro font and PINK accent -->
+        <h1 class="text-5xl font-pacifico text-center text-retro-primary mb-12 border-b-2 border-custom-pink inline-block pb-1 mx-auto">All Blog Posts</h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Blog Card 1 -->
             <a href="blogs/blog1.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
-                <img src="/portfolio-site/assets/images/pmcomm.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+1';" alt="Bridging communication between technical and business teams" class="w-full h-48 object-cover">
+                <img src="/portfolio-site/assets/images/pmcomm.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/E84A5F/202c34?text=Blog+Image+1';" alt="Bridging communication between technical and business teams" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">The Project Manager as an Interpreter: Bridging the Gap Between Tech and Business</h3>
                     <p class="text-retro-primary/80 text-base font-cormorant">How PMs bridge the gap between technical teams and business stakeholders, translating complex ideas into shared understanding.</p>
@@ -192,7 +209,7 @@
 
             <!-- Blog Card 3 -->
             <a href="blogs/blog3.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
-                <img src="/portfolio-site/assets/images/teamwork25.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+3';" alt="Team members celebrating success together" class="w-full h-48 object-cover">
+                <img src="/portfolio-site/assets/images/teamwork25.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/E84A5F/202c34?text=Blog+Image+3';" alt="Team members celebrating success together" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Making the Invisible Work Visible: The Psychology of Recognition in Teams</h3>
                     <p class="text-retro-primary/80 text-base font-cormorant">Why acknowledging behind-the-scenes efforts and celebrating contributions builds stronger, more engaged teams.</p>
@@ -210,7 +227,7 @@
 
             <!-- Blog Card 5 -->
             <a href="blogs/blog5.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
-                <img src="/portfolio-site/assets/images/web3into.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+5';" alt="Illustration of Web3 concepts" class="w-full h-48 object-cover">
+                <img src="/portfolio-site/assets/images/web3into.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/E84A5F/202c34?text=Blog+Image+5';" alt="Illustration of Web3 concepts" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Understanding Web3: The Next Step in the Web</h3>
                     <p class="text-retro-primary/80 text-base font-cormorant">An overview of Web3, its decentralized technologies, and implications for the workplace and future applications.</p>
@@ -228,7 +245,7 @@
 
             <!-- Blog Card 7 -->
             <a href="blogs/blog7.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
-                <img src="/portfolio-site/assets/images/pmbias4.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+7';" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover">
+                <img src="/portfolio-site/assets/images/pmbias4.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/E84A5F/202c34?text=Blog+Image+7';" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h3>
                     <p class="text-retro-primary/80 text-base font-cormorant">How Determination and Inspiration Helped Me Build My First Website.</p>
