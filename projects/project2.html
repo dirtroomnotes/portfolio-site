@@ -128,7 +128,7 @@
 <!-- Applying retro background and primary text color -->
 <body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
 
-<!-- Floating Header and Navigation -->
+<!-- Floating Header and Navigation (Copied from project 1) -->
 <header id="main-header" class="floating-header py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
@@ -155,7 +155,7 @@
                 <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li>
                 <!-- Projects is the active parent page -->
                 <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li>
-                <li><a href="../blogs.html" class="nav-link transition duration-200">Blogs</a></li>
+                <li><a href="../blogs.html" class="nav-link transition duration-200">Blog</a></li>
                 <li><a href="../about.html" class="nav-link transition duration-200">About</a></li>
                 <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li>
             </ul>
@@ -167,84 +167,97 @@
         <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
             <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
             <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li>
-            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blogs</a></li>
+            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blog</a></li>
             <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
             <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
         </ul>
     </div>
 </header>
 
-!-- Project Content -->
+<!--main-->
 <main class="py-16">
-    <section class="container mx-auto px-4">
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
+  <section class="container mx-auto px-4">
+    <!-- Project Title -->
+    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-8">
       MVP GenAI Prototype Application
     </h1>
 
     <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
+    <div class="max-w-3xl mx-auto mb-8 rounded-xl overflow-hidden shadow-lg border border-gray-200">
       <img
-        src="../assets/images/baswebvs3.jpg"
-        alt="Smart building interface example"
-        class="w-full h-full object-cover"
+        src="../assets/images/genai_prototype_placeholder.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/800x400/E84A5F/f5f2e8?text=GenAI+Prototype';"
+        alt="Minimal Viable Product GenAI Application Prototype"
+        class="w-full object-cover max-h-[400px]"
       />
     </div>
 
-    <!-- Project Details -->
-    <div class="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md">
-      <!-- Intro paragraph -->
-      <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-          Drove early-stage product development for a novel GenAI-powered application concept and supporting device.
-        </p>
+    <!-- Content Box -->
+    <div class="bg-white rounded-xl p-8 shadow-md text-gray-700 leading-relaxed text-left">
+      <p class="text-lg mb-6">
+        Drove early-stage product development for a novel GenAI-powered application concept and supporting device.
+      </p>
 
-        <!-- Main Points -->
-        <div class="text-left mb-6">
-          <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Protovate</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Mar 2024 – Apr 2025</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Figma, Wireframes, OpenAI API, Bluetooth Device Prototyping</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Mobile App + External Device Prototype</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-        </div>
+            <!-- Project Overview List -->
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Protovate</li>
+                    <li><strong>Duration:</strong> Mar 2024 – Apr 2025</li>
+                    <li><strong>Tools:</strong> Figma, Wireframes, OpenAI API, Bluetooth Device Prototyping</li>
+                    <li><strong>Platform:</strong> Mobile App + External Device Prototype</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                </ul>
+            </div>
 
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Initiated from concept phase, translating vague requirements into actionable designs.</li>
-            <li>Created design mockups, wireframes, and branding elements (logos, color schemes, visual directions).</li>
-            <li>Managed AI integration and modeling needs, researching APIs and testing GenAI functionality.</li>
-            <li>Oversaw mobile app development planning and coordinated prototype of a Bluetooth-connected external device.</li>
-            <li>Led UX iteration cycles and worked with hardware/software teams to align vision, feasibility, and delivery plan.</li>
-          </ul>
-        </div>
+            <!-- Key Contributions List -->
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Key Contributions</h2>
+                <ul class="list-disc list-outside text-xl text-retro-primary space-y-4 pl-6">
+                    <li>Initiated from concept phase, translating vague requirements into actionable designs.</li>
+                    <li>Created design mockups, wireframes, and branding elements (logos, color schemes, visual directions).</li>
+                    <li>Managed AI integration and modeling needs, researching APIs and testing GenAI functionality.</li>
+                    <li>Oversaw mobile app development planning and coordinated prototype of a Bluetooth-connected external device.</li>
+                    <li>Led UX iteration cycles and worked with hardware/software teams to align vision, feasibility, and delivery plan.</li>
+                </ul>
+            </div>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-          <a
-            href="../projects.html"
-            class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            Back to Projects
-          </a>
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
+                <a
+                    href="../projects.html"
+                    class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
-  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-    <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
-
-    <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-  </div>
+<!-- Footer (Copied from project 1) -->
+<footer class="bg-retro-primary text-retro-background py-10">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-4">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-80 hover:opacity-100 transition duration-300 rounded-full">
+        <!-- Social Links (Placeholder for icons) (Hover color changed to PINK) -->
+        <div class="flex space-x-6 text-xl">
+            <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="hover:text-custom-pink transition-colors text-retro-background">
+                <!-- LinkedIn Icon Placeholder -->
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 3c-1.11 0-2 .89-2 2s.89 2 2 2 2-.89 2-2-.89-2-2-2z"/></svg>
+            </a>
+            <a href="https://github.com/dirtroomnotes/daylightking.github.io" target="_blank" class="hover:text-custom-pink transition-colors text-retro-background">
+                <!-- GitHub Icon Placeholder -->
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12s-5.373-12-12-12zm6.602 17.653c-.347.85-1.503.85-2.003.586-1.39-1.29-3.32-1.63-4.63-1.63s-3.24.34-4.63 1.63c-.5.264-1.656.264-2.003-.586-.184-.452-.084-.963.264-1.31 1.29-1.29 3.22-1.63 4.63-1.63s3.34.34 4.63 1.63c.348.347.448.858.264 1.31zM12 11c-2.485 0-4.5-2.015-4.5-4.5S9.515 2 12 2s4.5 2.015 4.5 4.5S14.485 11 12 11z"/></svg>
+            </a>
+        </div>
+        <!-- Copyright (Accent color changed to PINK) -->
+        <p class="text-custom-pink">&copy; 2025 Traci Moore. All Rights Reserved.</p>
+        <p class="text-custom-pink">Built with <span class="text-retro-accent-secondary">&hearts;</span>, powered by Gemini.</p>
+    </div>
 </footer>
 
 <!-- Mobile Menu Toggle Script -->
@@ -272,6 +285,5 @@
         }
     });
 </script>
-    
 </body>
 </html>

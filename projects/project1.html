@@ -155,7 +155,7 @@
                 <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li>
                 <!-- Projects is the active parent page -->
                 <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li>
-                <li><a href="../blogs.html" class="nav-link transition duration-200">Blogs</a></li>
+                <li><a href="../blogs.html" class="nav-link transition duration-200">Blog</a></li>
                 <li><a href="../about.html" class="nav-link transition duration-200">About</a></li>
                 <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li>
             </ul>
@@ -174,77 +174,91 @@
     </div>
 </header>
 
-!-- Project Content -->
+<!--main-->
 <main class="py-16">
-    <section class="container mx-auto px-4">
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
+  <section class="container mx-auto px-4">
+    <!-- Project Title -->
+    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-8">
       Smart Building BAS Integration & Application Development
     </h1>
 
     <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
+    <div class="max-w-3xl mx-auto mb-8 rounded-xl overflow-hidden shadow-lg border border-gray-200">
       <img
         src="../assets/images/baswebvs3.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/800x400/5c5469/f5f2e8?text=Smart+Building';"
         alt="Smart building interface example"
-        class="w-full h-full object-cover"
+        class="w-full object-cover max-h-[400px]"
       />
     </div>
 
-    <!-- Project Details -->
-    <div class="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md">
-      <!-- Intro paragraph -->
-      <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
+    <!-- Content Box -->
+    <div class="bg-white rounded-xl p-8 shadow-md text-gray-700 leading-relaxed text-left">
+      <p class="text-lg mb-6">
         Led end-to-end delivery of a smart building application enabling real-time triage of building alarms and sensor data visualization.
       </p>
 
-      <!-- Main Points -->
-<div class="text-left mb-6">
-    <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Protovate</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Mar 2024 – Apr 2025</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Figma, FigJam, Miro, Jira, Confluence, MS Project, MQTT, InfluxDB, SkySpark API, Continual AI</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Web Dashboard + Remote Command Center Display</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-</div>
+            <!-- Project Overview List -->
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Protovate</li>
+                    <li><strong>Duration:</strong> Mar 2024 – Apr 2025</li>
+                    <li><strong>Tools:</strong> Figma, FigJam, Miro, Jira, Confluence, MS Project, MQTT, InfluxDB, SkySpark API, Continual AI</li>
+                    <li><strong>Platform:</strong> Web Dashboard + Remote Command Center Display</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                </ul>
+            </div>
 
-<div class="text-left mb-6">
-    <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-    <ul class="list-disc list-inside text-gray-600 space-y-2">
-        <li>Integrated AutoCAD layouts with interactive floorplans and live sensor icons for improved visualization.</li>
-        <li>Enabled near real-time and historical visualization of sensor data streams using MQTT and InfluxDB.</li>
-        <li>Led Agile ceremonies with Scrum/Kanban via Jira and Confluence, coordinating sprints and stakeholder alignment.</li>
-        <li>Collaborated with design teams using Figma, FigJam, and Miro to create UX flows, wireframes, and UI mockups.</li>
-        <li>Implemented advanced analytics and automation APIs, including SkySpark and Continual AI.</li>
-        <li>Delivered predictive insights and reporting to support operational decisions.</li>
-    </ul>
-</div>
+            <!-- Key Contributions List -->
+            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Key Contributions</h2>
+                <ul class="list-disc list-outside text-xl text-retro-primary space-y-4 pl-6">
+                    <li>Integrated AutoCAD layouts with interactive floorplans and live sensor icons for improved visualization.</li>
+                    <li>Enabled near real-time and historical visualization of sensor data streams using MQTT and InfluxDB.</li>
+                    <li>Led Agile ceremonies with Scrum/Kanban via Jira and Confluence, coordinating sprints and stakeholder alignment.</li>
+                    <li>Collaborated with design teams using Figma, FigJam, and Miro to create UX flows, wireframes, and UI mockups.</li>
+                    <li>Implemented advanced analytics and automation APIs, including SkySpark and Continual AI.</li>
+                    <li>Delivered predictive insights and reporting to support operational decisions.</li>
+                </ul>
+            </div>
 
-      <!-- Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-        <a
-          href="../projects.html"
-          class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-        >
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-          Back to Projects
-        </a>
-      </div>
-    </div>
-  </section>
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
+                <a
+                    href="../projects.html"
+                    class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
 
-<!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
-  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-    <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
-
-    <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-  </div>
+<!-- Footer -->
+<footer class="bg-retro-primary text-retro-background py-10">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-4">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-80 hover:opacity-100 transition duration-300 rounded-full">
+        <!-- Social Links (Placeholder for icons) (Hover color changed to PINK) -->
+        <div class="flex space-x-6 text-xl">
+            <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="hover:text-custom-pink transition-colors text-retro-background">
+                <!-- LinkedIn Icon Placeholder -->
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 3c-1.11 0-2 .89-2 2s.89 2 2 2 2-.89 2-2-.89-2-2-2z"/></svg>
+            </a>
+            <a href="https://github.com/dirtroomnotes/daylightking.github.io" target="_blank" class="hover:text-custom-pink transition-colors text-retro-background">
+                <!-- GitHub Icon Placeholder -->
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12s-5.373-12-12-12zm6.602 17.653c-.347.85-1.503.85-2.003.586-1.39-1.29-3.32-1.63-4.63-1.63s-3.24.34-4.63 1.63c-.5.264-1.656.264-2.003-.586-.184-.452-.084-.963.264-1.31 1.29-1.29 3.22-1.63 4.63-1.63s3.34.34 4.63 1.63c.348.347.448.858.264 1.31zM12 11c-2.485 0-4.5-2.015-4.5-4.5S9.515 2 12 2s4.5 2.015 4.5 4.5S14.485 11 12 11z"/></svg>
+            </a>
+        </div>
+        <!-- Copyright (Accent color changed to PINK) -->
+        <p class="text-custom-pink">&copy; 2025 Traci Moore. All Rights Reserved.</p>
+        <p class="text-custom-pink">Built with <span class="text-retro-accent-secondary">&hearts;</span>, powered by Gemini.</p>
+    </div>
 </footer>
 
 <!-- Mobile Menu Toggle Script -->
@@ -272,6 +286,5 @@
         }
     });
 </script>
-    
 </body>
 </html>
