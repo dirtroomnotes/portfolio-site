@@ -16,6 +16,28 @@
 
   <!-- Tailwind CSS CDN for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Custom Tailwind Configuration to define custom colors and fonts used in the header
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // These colors are inferred from the class names in your header structure
+            'retro-primary': '#4A5568', // Example dark text/logo color
+            'retro-background': '#F5F7FA', // Matches body background color
+            'custom-teal': '#38B2AC', // Example hover color
+            'retro-accent-secondary': '#D53F8C', // Example secondary accent color
+          },
+          fontFamily: {
+            // Custom fonts are imported via <link> and defined here for Tailwind usage
+            'pacifico': ['Pacifico', 'cursive'],
+            'cormorant': ['Cormorant Garamond', 'serif'],
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+          },
+        }
+      }
+    }
+  </script>
 
   <!-- Google Fonts for Retro Style -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,12 +52,32 @@
   <meta property="og:url" content="https://dirtroomnotes.github.io/portfolio-site">
   <meta property="og:type" content="website">
 
+  <!-- NOTE: Since Tailwind is used, external CSS like 'style.css' is often integrated,
+       but kept here if it contains non-Tailwind specific styles. -->
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Custom styles for the fixed/floating header effect */
+    .floating-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background-color: rgba(245, 247, 250, 0.9); /* Background color with slight transparency */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 12px 12px;
+    }
+    
+    /* Ensure the mobile dropdown is correctly positioned under the header */
+    #mobile-nav-dropdown {
+        top: 100%; /* Position right below the header */
+    }
+  </style>
 </head>
 
 <body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased min-h-screen">
 
-<!-- Floating Header and Navigation (matching index page) -->
+<!-- Floating Header and Navigation -->
 <header id="main-header" class="floating-header py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
@@ -52,19 +94,20 @@
             </button> 
         </div>
 
-        <!-- Navigation -->
+        <!-- Navigation (Desktop) -->
         <nav id="mobile-menu" class="hidden md:flex">
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
                 <li><a href="index.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Home</a></li>
                 <li><a href="projects.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Projects</a></li>
                 <li><a href="blogs.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">Blogs</a></li>
                 <li><a href="about.html" class="nav-link hover:text-retro-accent-secondary transition duration-200">About</a></li>
+                <!-- Note: Contact link likely points to an anchor on a specific page, possibly index.html or this page's footer -->
                 <li><a href="#contact" class="nav-link hover:text-retro-accent-secondary transition duration-200">Contact</a></li>
             </ul>
         </nav>
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu Dropdown -->
     <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 border-t border-custom-teal">
         <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
             <li><a href="index.html" class="hover:text-retro-accent-secondary transition">Home</a></li>
