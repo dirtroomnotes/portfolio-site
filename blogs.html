@@ -3,32 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Traci M Portfolio</title>
+    <title>Blog Musings - Traci M Portfolio</title>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGLSZJYQHE');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RGLSZJYQHE');
+    </script>
 
-    <!-- Tailwind CSS CDN for styling -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-  <!-- ✅ Favicon -->
-<link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
-</head>
-    <!-- Google Fonts for Inter -->
+    
+    <!-- Configure custom colors and fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
+                        'custom-teal': '#66B2B2',         // Primary Accent
+                        'custom-purple': '#5c5469',       // Secondary Accent/Hover/Highlight
+                        
+                        // Mapping for generic uses
+                        'retro-accent-main': '#66B2B2',
+                        'retro-accent-secondary': '#5c5469', 
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts for Retro Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
-<!-- Header and Navigation with Logo -->
+    <!-- Favicon and Open Graph -->
+    <link rel="icon" type="image/png" href="assets/images/vintagelogovs2.png">
+    <meta property="og:title" content="Traci Moore Portfolio Blogs">
+    <meta property="og:description" content="Read my latest musings on Project Management, technology, and career growth.">
+    <meta property="og:image" content="assets/images/vintagelogovs2.png">
+    <meta property="og:url" content="https://dirtroomnotes.github.io/portfolio-site/blogs.html">
+    <meta property="og:type" content="website">
+
+    <!-- Custom CSS for the Retro Theme (Floating Header and Nav Link) -->
+    <style>
+        /* Define CSS Variables for custom styles */
+        :root {
+            --custom-teal: #66B2B2;
+            --custom-purple: #5c5469;
+            --warm-cream: #f5f2e8;
+            --deep-charcoal: #202c34;
+        }
+
+        /* Floating header with a subtle frosted glass effect */
+        .floating-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(245, 242, 232, 0.95); /* Use Warm Cream with transparency */
+            backdrop-filter: blur(8px); 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Animated Underline for Navigation */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            color: var(--deep-charcoal); /* Default text color */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--custom-purple); 
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-link:hover {
+             color: var(--custom-purple); /* Text color changes on hover */
+        }
+        
+        /* Blog Card Hover Effect (consistent with index.html) */
+        .card-link {
+            border: 2px solid transparent;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-link:hover {
+            transform: translateY(-8px) rotateZ(0.5deg); 
+            box-shadow: 0 12px 25px rgba(92, 84, 105, 0.5); /* Purple glow */
+            border-color: var(--custom-teal); /* Teal border on hover */
+        }
+    </style>
 </head>
 <!-- Applying retro background and primary text color -->
 <body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
@@ -80,69 +168,70 @@
 <!-- Main Content -->
 <main class="py-16">
     <section class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center text-gray-900 mb-10">All Blog Posts</h1>
+        <!-- Heading updated to use retro font and teal accent -->
+        <h1 class="text-5xl font-pacifico text-center text-retro-primary mb-12 border-b-2 border-custom-teal inline-block pb-1 mx-auto">All Blog Posts</h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog 1 -->
-            <a href="blogs/blog1.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/pmcomm.jpeg" alt="Bridging communication between technical and business teams" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 1 -->
+            <a href="blogs/blog1.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/pmcomm.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+1';" alt="Bridging communication between technical and business teams" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">The Project Manager as an Interpreter: Bridging the Gap Between Tech and Business</h3>
-                    <p class="text-gray-600 text-sm">How PMs bridge the gap between technical teams and business stakeholders, translating complex ideas into shared understanding.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">The Project Manager as an Interpreter: Bridging the Gap Between Tech and Business</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">How PMs bridge the gap between technical teams and business stakeholders, translating complex ideas into shared understanding.</p>
                 </div>
             </a>
 
-            <!-- Blog 2 -->
-            <a href="blogs/blog2.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/calmandchaospm.jpeg" alt="A serene project manager amidst swirling chaos" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 2 -->
+            <a href="blogs/blog2.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/calmandchaospm.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/5c5469/f5f2e8?text=Blog+Image+2';" alt="A serene project manager amidst swirling chaos" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">The Calm in the Chaos: How Good PMs Handle Uncertainty</h3>
-                    <p class="text-gray-600 text-sm">Exploring how experienced project managers maintain clarity and focus amid shifting priorities and unexpected challenges.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">The Calm in the Chaos: How Good PMs Handle Uncertainty</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">Exploring how experienced project managers maintain clarity and focus amid shifting priorities and unexpected challenges.</p>
                 </div>
             </a>
 
-            <!-- Blog 3 -->
-            <a href="blogs/blog3.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/teamwork25.jpeg" alt="Team members celebrating success together" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 3 -->
+            <a href="blogs/blog3.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/teamwork25.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+3';" alt="Team members celebrating success together" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Making the Invisible Work Visible: The Psychology of Recognition in Teams</h3>
-                    <p class="text-gray-600 text-sm">Why acknowledging behind-the-scenes efforts and celebrating contributions builds stronger, more engaged teams.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Making the Invisible Work Visible: The Psychology of Recognition in Teams</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">Why acknowledging behind-the-scenes efforts and celebrating contributions builds stronger, more engaged teams.</p>
                 </div>
             </a>
 
-            <!-- Blog 4 -->
-            <a href="blogs/blog4.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/thinkingpm.jpg" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 4 -->
+            <a href="blogs/blog4.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/thinkingpm.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/5c5469/f5f2e8?text=Blog+Image+4';" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Thinking Traps in Project Management: How Bias Creeps into Decisions</h3>
-                    <p class="text-gray-600 text-sm">Identifying common cognitive biases in PM decisions and strategies to reduce their impact on project outcomes.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Thinking Traps in Project Management: How Bias Creeps into Decisions</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">Identifying common cognitive biases in PM decisions and strategies to reduce their impact on project outcomes.</p>
                 </div>
             </a>
 
-            <!-- Blog 5 -->
-            <a href="blogs/blog5.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/web3into.jpg" alt="Illustration of Web3 concepts" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 5 -->
+            <a href="blogs/blog5.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/web3into.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+5';" alt="Illustration of Web3 concepts" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Understanding Web3: The Next Step in the Web</h3>
-                    <p class="text-gray-600 text-sm">An overview of Web3, its decentralized technologies, and implications for the workplace and future applications.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Understanding Web3: The Next Step in the Web</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">An overview of Web3, its decentralized technologies, and implications for the workplace and future applications.</p>
                 </div>
             </a>
 
-             <!-- Blog 6 -->
-            <a href="blogs/blog6.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/pmbiasblog.jpeg" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 6 -->
+            <a href="blogs/blog6.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/pmbiasblog.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/5c5469/f5f2e8?text=Blog+Image+6';" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Crafting Your Unique Value Proposition as a Project Manager</h3>
-                    <p class="text-gray-600 text-sm">Sharing insights, strategies, and stories to help project managers navigate people, process, and progress.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">Crafting Your Unique Value Proposition as a Project Manager</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">Sharing insights, strategies, and stories to help project managers navigate people, process, and progress.</p>
                 </div>
             </a>
 
-               <!-- Blog 7 -->
-            <a href="blogs/blog7.html" class="card-link bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <img src="/portfolio-site/assets/images/pmbias4.jpeg" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+            <!-- Blog Card 7 -->
+            <a href="blogs/blog7.html" class="card-link bg-retro-background rounded-xl overflow-hidden shadow-xl">
+                <img src="/portfolio-site/assets/images/pmbias4.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/66B2B2/202c34?text=Blog+Image+7';" alt="Visual metaphor of bias influencing project decisions" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h3>
-                    <p class="text-gray-600 text-sm">How Determination and Inspiration Helped Me Build My First Website.</p>
+                    <h3 class="text-xl font-cormorant font-bold text-retro-primary mb-2">The Grit and Glory: How I Coded My Own Website (Without Being a Dev)</h3>
+                    <p class="text-retro-primary/80 text-base font-cormorant">How Determination and Inspiration Helped Me Build My First Website.</p>
                 </div>
             </a>
         </div>
