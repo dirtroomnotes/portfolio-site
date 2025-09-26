@@ -115,7 +115,7 @@
             border-top: 2px solid var(--custom-pink);
         }
         
-        /* Specific styling for project detail list */
+        /* Specific styling for project detail list - keys are pink */
         .project-detail-list li strong {
             display: inline-block;
             min-width: 100px; /* Aligns keys */
@@ -174,77 +174,83 @@
     </div>
 </header>
 
-  <!-- Project Content -->
-   <main class="py-16">
+<!-- Project Content -->
+<main class="py-16">
     <section class="container mx-auto px-4">
     <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
+    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-retro-accent-main inline-block pb-1 mx-auto text-retro-primary">
         TripTuner Travel Discovery Platform
-      </h1>
+    </h1>
 
-      <!-- Project Image -->
-      <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
+    <!-- Project Image -->
+    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl shadow-retro-accent-secondary/50 border-4 border-retro-accent-secondary/50 aspect-video md:aspect-w-16 md:aspect-h-9">
+        <!-- Using aspect ratio classes for better mobile compatibility -->
         <img src="../assets/images/travelappvs1.jpg"
-             alt="TripTuner platform UI preview"
-             class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/1024x576/5c5469/f5f2e8?text=TripTuner+Preview';"
+                alt="TripTuner platform UI preview"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.03]"
         />
     </div>
 
-      <!-- Project Details -->
-      <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto mb-8">
-        <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
-          Supported evolution of TripTuner’s platform, including UX improvements, security compliance, and partner integrations.
+    <!-- Project Details Card (Updated to use retro colors) -->
+    <div class="bg-retro-background border border-retro-accent-secondary/50 rounded-xl p-8 shadow-2xl shadow-retro-accent-secondary/30 max-w-4xl mx-auto mb-10">
+        <p class="text-retro-primary text-xl font-medium mb-8 leading-relaxed text-center border-b border-retro-accent-main/50 pb-4 italic">
+            Supported evolution of TripTuner’s platform, including UX improvements, security compliance, and partner integrations.
         </p>
 
-        <div class="text-left mb-6">
-          <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin (for TripTuner)</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Jun 2020 – Feb 2024</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Agile, PHP, JavaScript, MySQL, UX/UI, SOC2, Mobile Optimization</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Web & Mobile Travel Recommendation System</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> 
-    <a href="https://quoininc.com/work/triptuner" class="text-blue-600 underline" target="_blank">TripTuner, Inspired Travel Application</a>
-  </p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> 
-    <a href="https://triptuner.com/" class="text-blue-600 underline" target="_blank">Visit TripTuner</a>
-  </p>
-</div>
-
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Directed redesign of mobile-optimized UI and performance improvements.</li>
-            <li>Collaborated on product roadmap and architecture evolution.</li>
-            <li>Led Agile ceremonies and delivery across multiple feature sets.</li>
-            <li>Managed penetration testing and SOC2 compliance initiatives.</li>
-            <li>Oversaw partner customizations and integrations (e.g., VISIT FLORIDA).</li>
-          </ul>
+        <!-- Details List -->
+        <div class="text-left mb-8 font-cormorant text-xl text-retro-primary">
+            <ul class="project-detail-list space-y-3">
+                <li><strong>Company:</strong> Quoin (for TripTuner)</li>
+                <li><strong>Duration:</strong> Jun 2020 – Feb 2024</li>
+                <li><strong>Tools:</strong> Agile, PHP, JavaScript, MySQL, UX/UI, SOC2, Mobile Optimization</li>
+                <li><strong>Platform:</strong> Web & Mobile Travel Recommendation System</li>
+                <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                <li><strong>Link:</strong> 
+                    <a href="https://quoininc.com/work/triptuner" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">TripTuner, Inspired Travel Application</a>
+                </li>
+                <li><strong>Link:</strong> 
+                    <a href="https://triptuner.com/" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">Visit TripTuner</a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <a href="../projects.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            Back to Projects
-          </a>
+        <!-- Work Done Section -->
+        <div class="text-left mb-6 pt-4 border-t border-retro-accent-main/50">
+            <h2 class="text-3xl font-bold mb-4 text-retro-accent-secondary border-b border-retro-accent-main inline-block pb-1">Key Contributions</h2>
+            <ul class="list-disc list-inside text-retro-primary ml-6 space-y-3 mt-4">
+                <li class="pl-2">Directed redesign of mobile-optimized UI and performance improvements.</li>
+                <li class="pl-2">Collaborated on product roadmap and architecture evolution.</li>
+                <li class="pl-2">Led Agile ceremonies and delivery across multiple feature sets.</li>
+                <li class="pl-2">Managed penetration testing and SOC2 compliance initiatives.</li>
+                <li class="pl-2">Oversaw partner customizations and integrations (e.g., VISIT FLORIDA).</li>
+            </ul>
         </div>
 
-      </div>
+        <!-- Buttons (Updated to use accent colors) -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+            <a href="../projects.html" class="inline-flex items-center justify-center bg-retro-accent-secondary text-retro-background font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-main shadow-lg shadow-retro-accent-secondary/50 border-2 border-retro-accent-secondary">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Projects
+            </a>
+        </div>
+
+    </div>
     </section>
-  </main>
+</main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
-  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-    <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+<!-- Footer with new colors -->
+<footer class="bg-retro-primary text-retro-background py-8">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';">
 
-    <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-  </div>
+        <!-- Text -->
+        <p>&copy; 2025 Traci M. All Rights Reserved.</p>
+        <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
+    </div>
 </footer>
 
 <!-- Mobile Menu Toggle Script -->
@@ -272,6 +278,5 @@
         }
     });
 </script>
-  
 </body>
 </html>

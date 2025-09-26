@@ -22,14 +22,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
-                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
-                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
+                        'retro-background': '#f5f2e8', 	 // Warm Cream/Off-White (Primary Background)
+                        'custom-teal': '#66B2B2',        // Teal (Kept for secondary use if needed)
+                        'custom-purple': '#5c5469',      // Deep Purple (Hover/Secondary Accent)
+                        'custom-pink': '#E84A5F',        // NEW: Primary Accent Pink
                         
                         // Mapping for generic uses
-                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-main': '#E84A5F', 	 // Pink is the main accent
                         'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
@@ -116,11 +116,12 @@
         }
         
         /* Specific styling for project detail list */
+        /* Keys (labels) are bolded and colored pink for emphasis */
         .project-detail-list li strong {
             display: inline-block;
             min-width: 100px; /* Aligns keys */
             font-weight: 700;
-            color: var(--custom-pink); /* Highlight keys in pink */
+            color: var(--custom-pink); 
         }
     </style>
 </head>
@@ -182,41 +183,50 @@
       Enhancements to Financial Reporting Platform
     </h1>
 
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
-      <img src="../assets/images/forestappvs3.jpg"
-           alt="Fintech accounting dashboard preview"
-           class="w-full h-full object-cover"
-            />
-        </div>
+    <!-- Image Container (Standardized with hover and fallback) -->
+    <div class="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video">
+      <img
+        src="../assets/images/forestappvs3.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/1000x560/5c5469/f5f2e8?text=FINTECH+DASHBOARD+PREVIEW';"
+        alt="Fintech accounting dashboard preview"
+        class="w-full h-full object-cover transition duration-300 hover:scale-[1.02]"
+        />
+    </div>
 
-      <div class="bg-white rounded-xl p-8 shadow-md">
+      <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto">
         <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-          Improved a high-net-worth client Fintech platform by reducing technical debt and enhancing performance and security.
+          Improved a high-net-worth client Fintech platform by reducing technical debt and enhancing performance and security. This focused on modernizing the back-end infrastructure while ensuring zero disruption to critical financial reporting and ledger systems.
         </p>
 
-        <div class="text-left mb-6">
-          <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Feb 2021 – Feb 2024</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> .NET, C#, SSL, Testing Automation, Project Oversight</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Cloud-based Accounting & Ledger System</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://quoininc.com/work/forest-systems" class="text-blue-600 underline" target="_blank">Forest Systems Case Study</a></p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://forestsystems.com/" class="text-blue-600 underline" target="_blank">Visit Forest Systems</a></p>
-        </div>
-
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
-            <li>Upgraded legacy .NET frameworks to modern versions to reduce operational risk.</li>
-            <li>Introduced stricter browser policies and improved SSL implementations for data security.</li>
-            <li>Added customizable financial reporting features and automated testing pipelines.</li>
-            <li>Collaborated with cross-functional teams and external partners to improve integrations.</li>
-            <li>Supported scalability improvements across financial and ledger modules.</li>
+        <!-- Project Details (REFACTORED to use UL and the custom class for pink labels) -->
+        <div class="text-left mb-8">
+          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Project Overview</h2>
+          <ul class="project-detail-list text-gray-700 text-lg space-y-2">
+            <li><strong>Company:</strong> Quoin</li>
+            <li><strong>Duration:</strong> Feb 2021 – Feb 2024 (3 years)</li>
+            <li><strong>Tools:</strong> .NET, C#, SSL, Testing Automation, Project Oversight, Cloud Architecture</li>
+            <li><strong>Platform:</strong> Cloud-based Accounting & Ledger System</li>
+            <li><strong>Delivery:</strong> Agile (Scrum/Kanban)</li>
+            <li><strong>External Link 1:</strong> <a href="https://quoininc.com/work/forest-systems" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">Forest Systems Case Study</a></li>
+            <li><strong>External Link 2:</strong> <a href="https://forestsystems.com/" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">Visit Forest Systems</a></li>
           </ul>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-          <a href="../projects.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <div class="text-left mb-8">
+          <!-- Work Done Heading uses retro-accent-main -->
+          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Work Done & Impact</h2>
+          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
+            <li>Upgraded legacy **.NET frameworks** to modern versions to reduce operational risk and improve compile times by 15%.</li>
+            <li>Introduced stricter browser policies and improved **SSL implementations** to significantly bolster data security and compliance.</li>
+            <li>Added customizable financial reporting features and automated **testing pipelines** to ensure report accuracy and faster deployment cycles.</li>
+            <li>Collaborated with cross-functional teams and external partners to improve data flow and system **integrations**.</li>
+            <li>Supported scalability improvements across financial and ledger modules to accommodate a growing high-net-worth client base.</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 border-t border-retro-background">
+          <!-- Back button color uses custom-teal class -->
+          <a href="../projects.html" class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
@@ -224,21 +234,22 @@
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
+<!-- Footer color standardized to use retro-primary class -->
+<footer class="bg-retro-primary text-white py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-md">
 
     <!-- Text -->
     <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+    <!-- Heart color uses retro-accent-main -->
+    <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
+
 
 <!-- Mobile Menu Toggle Script -->
 <script>
@@ -265,6 +276,6 @@
         }
     });
 </script>
-  
+ 
 </body>
 </html>

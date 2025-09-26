@@ -22,7 +22,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
                         'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
@@ -96,7 +96,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -182,12 +182,13 @@
       Open-Source Case Management System
     </h1>
 
-    <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
+    <!-- Project Image (Standardized to aspect-video) -->
+    <div class="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video">
       <img
         src="../assets/images/cmsappvs2.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/1000x560/5c5469/f5f2e8?text=CMS+DASHBOARD+PREVIEW';"
         alt="Primero CMS project screenshot"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover transition duration-300 hover:scale-[1.02]"
         />
     </div>
 
@@ -195,38 +196,42 @@
     <div class="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md">
       <!-- Intro paragraph -->
       <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-        Managed rollout of Primero in Cambodia, focusing on global user needs and security in field environments.
+        Managed the rollout and deployment of Primero, an open-source case management system for humanitarian aid, in Cambodia. My work focused on securing the system for global users and enhancing its features for security and offline functionality in remote field environments.
       </p>
 
-      <!-- Main Points -->
-      <div class="text-left mb-6">
-        <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Apr 2019 – Feb 2024</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Agile, Remote Collaboration, International Deployment</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Primero (Open-Source CMS for Humanitarian Aid)</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Summary:</strong> Focused on security, offline functionality, and regional customization.</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://www.unicef.org/primero" class="text-blue-600 underline" target="_blank">UNICEF Primero Case Study</a></p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://primero.org/" class="text-blue-600 underline" target="_blank">Visit Primero</a></p>
+      <!-- Main Points (REFACTORED to use UL and the custom class for pink labels) -->
+      <div class="text-left mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Project Overview</h2>
+        <ul class="project-detail-list text-gray-700 text-lg space-y-2">
+          <li><strong>Company:</strong> Quoin</li>
+          <li><strong>Duration:</strong> Apr 2019 – Feb 2024 (4 years, 11 months)</li>
+          <li><strong>Tools:</strong> Agile, Remote Collaboration, International Deployment, Security Audits</li>
+          <li><strong>Platform:</strong> Primero (Open-Source CMS for Humanitarian Aid)</li>
+          <li><strong>Delivery:</strong> Agile (Scrum/Kanban)</li>
+          <!-- Standardized link colors -->
+          <li><strong>Link 1:</strong> <a href="https://www.unicef.org/primero" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">UNICEF Primero Case Study</a></li>
+          <li><strong>Link 2:</strong> <a href="https://primero.org/" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">Visit Primero</a></li>
+        </ul>
       </div>
 
       <!-- Work Done -->
-      <div class="text-left mb-6 max-w-2xl">
-        <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Led stakeholder engagement, requirement gathering, and field usability sessions.</li>
-          <li>Coordinated cross-border teams to ensure Agile sprint progress and delivery.</li>
-          <li>Tracked budgets, managed invoicing, and maintained resourcing timelines.</li>
-          <li>Improved offline functionality and added custom security features for field staff.</li>
-          <li>Provided support for regional customization and humanitarian compliance needs.</li>
+      <div class="text-left mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Work Done & Impact</h2>
+        <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
+          <li>Led **stakeholder engagement**, requirement gathering, and field usability sessions to drive feature prioritization.</li>
+          <li>Coordinated **cross-border teams** (developers, QA, field staff) to ensure Agile sprint progress and timely feature delivery.</li>
+          <li>Managed project finances, including **budget tracking, invoicing**, and maintaining resourcing timelines across multiple regions.</li>
+          <li>Improved **offline functionality** and added custom security features, significantly boosting data integrity and usability for field staff with intermittent connectivity.</li>
+          <li>Provided support for **regional customization** and ensured compliance with local humanitarian and data privacy laws.</li>
         </ul>
       </div>
 
       <!-- Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 border-t border-retro-background">
+        <!-- Back button color uses custom-teal class -->
         <a
           href="../projects.html"
-          class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+          class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -238,15 +243,16 @@
   </section>
 </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
+  <!-- Footer standardized with custom Tailwind classes -->
+<footer class="bg-retro-primary text-white py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-md">
 
     <!-- Text -->
     <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+    <!-- Heart color uses retro-accent-main class -->
+    <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
 

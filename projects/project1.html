@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Building BAS Integration - Project</title>
+    <title>Smart Building BAS Integration - Project Detail</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Placeholder, keeping structure -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -17,16 +17,16 @@
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Custom Tailwind Configuration to define custom colors and fonts
+        // Custom Tailwind Configuration to define custom colors and fonts (Matching the template)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
+                        'custom-teal': '#66B2B2',          // Teal 
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'custom-pink': '#E84A5F',         // Primary Accent Pink
                         
                         // Mapping for generic uses
                         'retro-accent-main': '#E84A5F',     // Pink is the main accent
@@ -96,7 +96,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -115,12 +115,21 @@
             border-top: 2px solid var(--custom-pink);
         }
         
-        /* Specific styling for project detail list */
+        /* Specific styling for project detail list (using LI now) */
         .project-detail-list li strong {
             display: inline-block;
-            min-width: 100px; /* Aligns keys */
+            min-width: 120px; /* Aligned with the template */
             font-weight: 700;
             color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card */
+        .retro-card {
+            background-color: #ffffff; /* Use white for maximum contrast inside the card */
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); /* Border using the secondary accent */
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -133,7 +142,7 @@
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path -->
+            <!-- Updated path to match template convention -->
             <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
             <!-- Font and Color updated -->
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
@@ -155,7 +164,7 @@
                 <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li>
                 <!-- Projects is the active parent page -->
                 <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li>
-                <li><a href="../blogs.html" class="nav-link transition duration-200">Blog</a></li>
+                <li><a href="../blogs.html" class="nav-link transition duration-200">Blogs</a></li>
                 <li><a href="../about.html" class="nav-link transition duration-200">About</a></li>
                 <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li>
             </ul>
@@ -167,63 +176,73 @@
         <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
             <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
             <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li>
-            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blog</a></li>
+            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blogs</a></li>
             <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
             <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
         </ul>
     </div>
 </header>
 
-<!-- Project Content -->
+<!-- MAIN CONTENT -->
 <main class="py-16">
-    <section class="container mx-auto px-4 text-center">
-        <!-- TITLE -->
-        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-custom-pink inline-block pb-1">
-      Smart Building BAS Integration
-    </h1>
+    <section class="container mx-auto px-4">
+        <!-- Title -->
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
+                Smart Building BAS Integration
+            </h1>
+        </div>
 
-    <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50">
-      <img
-        src="../assets/images/baswebvs3.jpg"
-        alt="Smart building interface example"
-        class="w-full h-full object-cover"
-        onerror="this.onerror=null;this.src='https://placehold.co/576x576/5c5469/f5f2e8?text=Smart+Building+Image';"
-      />
-    </div>
+        <!-- Project Image -->
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
+            <img
+                src="https://placehold.co/800x600/5c5469/f5f2e8?text=Smart+Building+Interface"
+                alt="Smart building interface example"
+                class="w-full h-full object-cover"
+            />
+        </div>
 
-    <!-- Project Details (Smaller width) -->
-    <div class="bg-white rounded-xl p-8 shadow-md max-w-2xl mx-auto mb-8">
-      <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
-        Led end-to-end delivery of a smart building application enabling real-time triage of building alarms and sensor data visualization.
-      </p>
+        <!-- Project Details Card (Styled with retro-card) -->
+        <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8">
+            <!-- Summary Description (Updated text style) -->
+            <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
+                Led end-to-end delivery of a smart building application enabling real-time triage of building alarms and sensor data visualization, significantly enhancing operational response times and facility management efficiency.
+            </p>
 
-      <!-- Project Overview List -->
-      <div class="text-left mb-6">
-        <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Protovate</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Mar 2024 – Apr 2025</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Figma, FigJam, Miro, Jira, Confluence, MS Project, MQTT, InfluxDB, SkySpark API, Continual AI</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Web Dashboard + Remote Command Center Display</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-      </div>
-            <!-- Key Contributions List -->
-            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
-                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Key Contributions</h2>
-                <ul class="list-disc list-outside text-xl text-retro-primary space-y-4 pl-6">
+            <!-- Project Overview Section -->
+            <div class="text-left mb-6 pt-6 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Protovate</li>
+                    <li><strong>Duration:</strong> Mar 2024 – Apr 2025</li>
+                    <li><strong>Tools:</strong> Figma, FigJam, Miro, Jira, Confluence, MS Project, MQTT, InfluxDB, SkySpark API, Continual AI</li>
+                    <li><strong>Platform:</strong> Web Dashboard + Remote Command Center Display</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                </ul>
+            </div>
+
+            <!-- Key Contributions Section -->
+            <div class="text-left mb-6 pt-4 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Key Contributions</h2>
+                <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
                     <li>Integrated AutoCAD layouts with interactive floorplans and live sensor icons for improved visualization.</li>
-                    <li>Enabled near real-time and historical visualization of sensor data streams using MQTT and InfluxDB.</li>
+                    <li>Enabled near real-time and historical visualization of sensor data streams using **MQTT** and **InfluxDB**.</li>
                     <li>Led Agile ceremonies with Scrum/Kanban via Jira and Confluence, coordinating sprints and stakeholder alignment.</li>
                     <li>Collaborated with design teams using Figma, FigJam, and Miro to create UX flows, wireframes, and UI mockups.</li>
-                    <li>Implemented advanced analytics and automation APIs, including SkySpark and Continual AI.</li>
+                    <li>Implemented advanced analytics and automation APIs, including **SkySpark** and **Continual AI**.</li>
                     <li>Delivered predictive insights and reporting to support operational decisions.</li>
                 </ul>
             </div>
 
-            <!-- Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
+            <!-- Back to Projects Button (Updated to use retro accent colors) -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <a
                     href="../projects.html"
-                    class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple"
+                    class="inline-flex items-center justify-center 
+                           bg-retro-accent-main text-retro-background font-semibold 
+                           py-3 px-8 rounded-full transition-all duration-300 
+                           transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                           focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50"
                 >
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -235,15 +254,20 @@
     </section>
 </main>
 
-   <!-- Footer with new colors -->
-    <footer class="bg-[#2D3748] text-white py-8">
-        <div class="container mx-auto px-4 text-center text-sm">
-            <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-            <p class="mt-2 text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-        </div>
-    </footer>
+<!-- Footer with new colors (Matching the template) -->
+<footer class="bg-retro-primary text-retro-background py-8">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
 
-<!-- Mobile Menu Toggle Script -->
+        <!-- Text -->
+        <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+        <!-- Heart color is explicitly defined -->
+        <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
+    </div>
+</footer>
+
+<!-- Mobile Menu Toggle Script (Kept as provided) -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuButton = document.getElementById('mobile-menu-button');

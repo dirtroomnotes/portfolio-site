@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Website Redesign - Project</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Kept as is -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -26,10 +26,11 @@
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
                         'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'custom-pink': '#E84A5F',         // Primary Accent Pink
+                        'retro-dark-footer': '#2D3748',   // NEW: Dark Footer Color (for consistency)
                         
                         // Mapping for generic uses
-                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-main': '#E84A5F',    // Pink is the main accent
                         'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
@@ -133,8 +134,13 @@
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path -->
-            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+            <!-- Ensure correct relative path and robust image fallback -->
+            <img 
+              src="../assets/images/vintagelogovs2updated.webp" 
+              onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" 
+              alt="Logo" 
+              class="h-12 w-auto rounded-full shadow-md"
+            >
             <!-- Font and Color updated -->
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
@@ -188,33 +194,35 @@
         src="../assets/images/websiteredesignvs1.jpg"
         alt="Company website redesign example"
         class="w-full h-full object-cover"
+        onerror="this.onerror=null;this.src='https://placehold.co/500x500/5c5469/E84A5F?text=Project+Placeholder';" 
         />
     </div>
 
-      <!-- Details -->
-      <div class="bg-white rounded-xl p-8 shadow-md">
-        <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-          Directed the full redesign and launch of Quoin’s public website, improving UX and brand alignment.
+      <!-- Details Card -->
+      <div class="bg-white rounded-xl p-8 shadow-2xl"> <!-- Enhanced shadow for the card -->
+        <p class="text-retro-primary text-lg mb-6 leading-relaxed text-left">
+          Directed the full redesign and launch of Quoin’s public website, improving **UX** and **brand alignment**. This initiative involved migrating to a modern, scalable architecture and implementing an accessible Content Management System (CMS) to empower content authors.
         </p>
 
-        <div class="text-left mb-6">
-          <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Apr 2020 – Feb 2024</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> HTML, CSS, AWS ECS/Fargate, Docker, GitHub, Genetics Mesh CMS</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Public Company Website</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://quoininc.com/" class="text-blue-600 underline" target="_blank">Visit Quoin</a></p>
+        <!-- Project Metadata -->
+        <div class="text-left mb-6 project-detail-list"> 
+          <p class="text-retro-primary text-lg mb-2"><strong>Company:</strong> Quoin</p>
+          <p class="text-retro-primary text-lg mb-2"><strong>Duration:</strong> Apr 2020 – Feb 2024</p>
+          <p class="text-retro-primary text-lg mb-2"><strong>Tools:</strong> HTML, CSS, AWS ECS/Fargate, Docker, GitHub, Genetics Mesh CMS</p>
+          <p class="text-retro-primary text-lg mb-2"><strong>Platform:</strong> Public Company Website</p>
+          <p class="text-retro-primary text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
+          <p class="text-retro-primary text-lg mb-2"><strong>Link:</strong> <a href="https://quoininc.com/" class="text-custom-pink underline hover:text-retro-accent-secondary transition duration-200" target="_blank">Visit Quoin</a></p>
         </div>
 
         <!-- Work Done -->
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
-            <li>Led redesign of site layout with a mobile-responsive, modern interface aligned to new branding goals.</li>
-            <li>Served as content administrator and handled CMS configuration and updates.</li>
-            <li>Managed Agile execution from discovery to deployment using Scrum ceremonies and backlog prioritization.</li>
-            <li>Collaborated with developers to implement infrastructure enhancements using AWS and Docker.</li>
-            <li>Ensured site security and performance through regular audits and CI/CD improvements.</li>
+        <div class="text-left mb-8 border-t border-retro-accent-secondary/20 pt-6">
+          <h2 class="text-3xl font-cormorant font-bold text-retro-primary mb-4">Key Responsibilities & Outcomes</h2>
+          <ul class="list-disc list-outside text-gray-600 space-y-3 pl-6 text-lg">
+            <li><span class="font-semibold text-retro-accent-main">Design & UX Leadership:</span> Led redesign of site layout with a mobile-responsive, modern interface aligned to new branding goals, focusing on **accessibility (A11y)** and **conversion optimization**.</li>
+            <li><span class="font-semibold text-retro-accent-main">CMS Management:</span> Served as content administrator, handling CMS configuration, **troubleshooting**, and providing **training** to marketing team members for content autonomy.</li>
+            <li><span class="font-semibold text-retro-accent-main">Agile Execution:</span> Managed Agile execution from discovery to deployment using Scrum ceremonies and **backlog prioritization** to meet aggressive release timelines.</li>
+            <li><span class="font-semibold text-retro-accent-main">DevOps Collaboration:</span> Collaborated with developers to implement infrastructure enhancements using **AWS ECS/Fargate** and **Docker** for a more scalable and resilient hosting environment.</li>
+            <li><span class="font-semibold text-retro-accent-main">Performance & Security:</span> Ensured site security and performance through regular **audits** (including Core Web Vitals checks) and **CI/CD** process improvements.</li>
           </ul>
         </div>
 
@@ -222,28 +230,33 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="../projects.html"
-            class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-custom-teal/50"
           >
+            <!-- SVG remains the same -->
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            Back to Projects
+            Back to All Projects
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
+<!-- Footer with new colors -->
+<footer class="bg-retro-dark-footer text-white py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="../assets/images/vintagelogovs2updated.webp" 
+         onerror="this.onerror=null;this.src='https://placehold.co/40x40/202c34/f5f2e8?text=TM';" 
+         alt="Traci M. Logo" 
+         class="h-10 opacity-90 hover:opacity-100 transition rounded-full"
+    >
 
     <!-- Text -->
     <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+    <!-- Updated accent color for heart -->
+    <p class="text-gray-300">Made with <span class="text-custom-pink">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
 

@@ -1,273 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure Modernization & Data Migration - Project</title>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Infrastructure Modernization & Data Migration - Project</title> 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RGLSZJYQHE');
-    </script>
+    <!-- Google tag (gtag.js) - Added Google Analytics tracking code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script> 
+    <script> 
+        window.dataLayer = window.dataLayer || []; 
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date()); 
+        gtag('config', 'G-RGLSZJYQHE'); 
+    </script> 
 
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Custom Tailwind Configuration to define custom colors and fonts
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
-                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
-                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
-                        
-                        // Mapping for generic uses
-                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
-                        'retro-accent-secondary': '#5c5469', // Purple is secondary
-                    },
-                    fontFamily: {
-                        'pacifico': ['Pacifico', 'cursive'],
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS CDN for styling --> 
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script> 
+        // Custom Tailwind Configuration to define custom colors and fonts 
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color) 
+                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background) 
+                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed) 
+                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent) 
+                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink 
+                         
+                        // Mapping for generic uses 
+                        'retro-accent-main': '#E84A5F',     // Pink is the main accent 
+                        'retro-accent-secondary': '#5c5469', // Purple is secondary 
+                    }, 
+                    fontFamily: { 
+                        'pacifico': ['Pacifico', 'cursive'], 
+                        'cormorant': ['Cormorant Garamond', 'serif'], 
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'], 
+                    }, 
+                } 
+            } 
+        } 
+    </script> 
 
-    <!-- Google Fonts for Retro Style -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS for the Retro Theme (Floating Header, Nav Link, and Card Consistency) -->
-    <style>
-        /* Define CSS Variables for custom styles */
-        :root {
-            --custom-teal: #66B2B2;
+    <!-- Google Fonts for Retro Style --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+     
+    <!-- Custom CSS for the Retro Theme (Floating Header, Nav Link, and Card Consistency) --> 
+    <style> 
+        /* Define CSS Variables for custom styles */ 
+        :root { 
+            --custom-teal: #66B2B2; 
             --custom-purple: #5c5469;
-            --custom-pink: #E84A5F; /* Primary Accent Pink */
-            --warm-cream: #f5f2e8;
-            --deep-charcoal: #202c34;
-        }
+            --custom-pink: #E84A5F; /* Primary Accent Pink */ 
+            --warm-cream: #f5f2e8; 
+            --deep-charcoal: #202c34; 
+        } 
 
-        /* Floating header with a subtle frosted glass effect */
-        .floating-header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background-color: rgba(245, 242, 232, 0.95); /* Warm Cream with transparency */
-            backdrop-filter: blur(8px); 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Animated Underline for Navigation */
-        .nav-link {
-            position: relative;
-            padding-bottom: 4px;
-            color: var(--deep-charcoal); /* Default text color */
-            transition: color 0.3s ease-out;
-        }
+        /* Floating header with a subtle frosted glass effect */ 
+        .floating-header { 
+            position: sticky; 
+            top: 0; 
+            width: 100%; 
+            z-index: 100; 
+            background-color: rgba(245, 242, 232, 0.95); /* Warm Cream with transparency */ 
+            backdrop-filter: blur(8px);  
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+        } 
+         
+        /* Animated Underline for Navigation */ 
+        .nav-link { 
+            position: relative; 
+            padding-bottom: 4px; 
+            color: var(--deep-charcoal); /* Default text color */ 
+            transition: color 0.3s ease-out; 
+        } 
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--custom-purple); /* Hover underline remains purple */
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
+        .nav-link::after { 
+            content: ''; 
+            position: absolute; 
+            width: 100%; 
+            transform: scaleX(0); 
+            height: 2px; 
+            bottom: 0; 
+            left: 0; 
+            background-color: var(--custom-purple); /* Hover underline remains purple */ 
+            transform-origin: bottom right; 
+            transition: transform 0.3s ease-out; 
+        } 
 
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
+        .nav-link:hover::after { 
+            transform: scaleX(1); 
+            transform-origin: bottom left; 
+        } 
 
-        .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
-        }
-        
-        /* Define active link style (now using PINK) */
-        .nav-active {
-            color: var(--custom-pink); /* Active link text is PINK */
-            font-weight: 600; 
-        }
-        
-        .nav-active::after {
-            transform: scaleX(1) !important; /* Active link is always underlined */
-            background-color: var(--custom-pink) !important; /* Underline is PINK */
-        }
+        .nav-link:hover { 
+             color: var(--custom-purple); /* Text color changes to purple on hover */ 
+        } 
+         
+        /* Define active link style (now using PINK) */ 
+        .nav-active { 
+            color: var(--custom-pink); /* Active link text is PINK */ 
+            font-weight: 600;  
+        } 
+         
+        .nav-active::after { 
+            transform: scaleX(1) !important; /* Active link is always underlined */ 
+            background-color: var(--custom-pink) !important; /* Underline is PINK */ 
+        } 
 
-        /* Ensure mobile dropdown border is pink */
-        #mobile-nav-dropdown {
-            border-top: 2px solid var(--custom-pink);
-        }
-        
-        /* Specific styling for project detail list */
-        .project-detail-list li strong {
-            display: inline-block;
-            min-width: 100px; /* Aligns keys */
-            font-weight: 700;
-            color: var(--custom-pink); /* Highlight keys in pink */
-        }
-    </style>
-</head>
-  <!-- Applying retro background and primary text color -->
-<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
+        /* Ensure mobile dropdown border is pink */ 
+        #mobile-nav-dropdown { 
+            border-top: 2px solid var(--custom-pink); 
+        } 
+         
+        /* Specific styling for project detail list */ 
+        /* Updated min-width for better alignment */
+        .project-detail-list li strong { 
+            display: inline-block; 
+            min-width: 120px; 
+            font-weight: 700; 
+            color: var(--custom-pink); /* Highlight keys in pink */ 
+        } 
+    </style> 
+</head> 
 
-<!-- Floating Header and Navigation -->
-<header id="main-header" class="floating-header py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <!-- Logo + Site Name -->
-        <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path -->
-            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
-            <!-- Font and Color updated -->
-            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
-        </a>
+<!-- Applying retro background and primary text color --> 
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen"> 
 
-        <!-- Utility Container: Mobile Button -->
-        <div class="flex items-center space-x-4">
-            <!-- Hamburger Button (Mobile) -->
-            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button> 
-        </div>
+<!-- Floating Header and Navigation --> 
+<header id="main-header" class="floating-header py-4"> 
+    <div class="container mx-auto px-4 flex justify-between items-center"> 
+        <!-- Logo + Site Name --> 
+        <a href="../index.html" class="flex items-center space-x-3"> 
+            <!-- Ensure correct relative path and include onerror --> 
+            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md"> 
+            <!-- Font and Color updated --> 
+            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span> 
+        </a> 
 
-        <!-- Navigation (Desktop) - Projects link active -->
-        <nav id="desktop-menu" class="hidden md:flex">
-            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
-                <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li>
-                <!-- Projects is the active parent page -->
-                <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li>
-                <li><a href="../blogs.html" class="nav-link transition duration-200">Blogs</a></li>
-                <li><a href="../about.html" class="nav-link transition duration-200">About</a></li>
-                <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+        <!-- Utility Container: Mobile Button --> 
+        <div class="flex items-center space-x-4"> 
+            <!-- Hamburger Button (Mobile) --> 
+            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition"> 
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path> 
+                </svg> 
+            </button>  
+        </div> 
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300">
-        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
-            <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li>
-            <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li>
-            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blogs</a></li>
-            <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li>
-            <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li>
-        </ul>
-    </div>
-</header>
+        <!-- Navigation (Desktop) - Projects link active --> 
+        <nav id="desktop-menu" class="hidden md:flex"> 
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold"> 
+                <li><a href="../index.html" class="nav-link transition duration-200">Home</a></li> 
+                <!-- Projects is the active parent page --> 
+                <li><a href="../projects.html" class="nav-link nav-active transition duration-200">Projects</a></li> 
+                <li><a href="../blogs.html" class="nav-link transition duration-200">Blogs</a></li> 
+                <li><a href="../about.html" class="nav-link transition duration-200">About</a></li> 
+                <li><a href="../index.html#contact" class="nav-link transition duration-200">Contact</a></li> 
+            </ul> 
+        </nav> 
+    </div> 
 
-  <!-- Project Content -->
-  <main class="py-16">
-    <section class="container mx-auto px-4">
-    <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
+    <!-- Mobile Menu Dropdown --> 
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300"> 
+        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium"> 
+            <li><a href="../index.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Home</a></li> 
+            <li><a href="../projects.html" class="block text-custom-pink font-bold transition">Projects</a></li> 
+            <li><a href="../blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">Blogs</a></li> 
+            <li><a href="../about.html" class="block text-retro-primary hover:text-retro-accent-secondary transition">About</a></li> 
+            <li><a href="../index.html#contact" class="block text-retro-primary hover:text-retro-accent-secondary transition">Contact</a></li> 
+        </ul> 
+    </div> 
+</header> 
+
+<!-- Project Content --> 
+<main class="py-16"> 
+    <section class="container mx-auto px-4"> 
+    <!-- 1. PROJECT TITLE -->
+    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto"> 
         Infrastructure Modernization & Data Migration
-      </h1>
+    </h1> 
 
-      <!-- Project Image -->
-      <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
-        <img src="../assets/images/infraprojectsvs2.jpg"
-             alt="Infrastructure modernization and data migration"
-             class="w-full h-full object-cover"
-        />
-    </div>
+    <!-- 2. IMAGE/MOCKUP CONTAINER (Reverted to video aspect and larger size) --> 
+    <div class="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video"> 
+        <img src="../assets/images/infraprojectsvs2.jpg" 
+             onerror="this.onerror=null;this.src='https://placehold.co/1000x560/5c5469/f5f2e8?text=INFRA+MODERNIZATION+IMAGE';"
+             alt="Infrastructure modernization and data migration project visual" 
+             class="w-full h-full object-cover transition duration-300 hover:scale-[1.02]" 
+        /> 
+    </div> 
 
-<!-- Project Details -->
-<div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto mb-8">
-  <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
-    Managed enterprise infrastructure modernization and secure data migration projects for government and defense-affiliated clients, deploying NetApp solutions to ensure compliance, uptime, and operational excellence.
-  </p>
+    <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto mb-8"> 
+        <!-- 3. PROJECT SUMMARY -->
+        <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left"> 
+            Managed enterprise **infrastructure modernization** and secure **data migration** projects for government and defense-affiliated clients, deploying NetApp solutions to ensure compliance, uptime, and operational excellence. This involved leading complex, multi-faceted technical deployments in highly regulated environments.
+        </p> 
 
-  <div class="text-left mb-6">
-    <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> NetApp / SBS Partnership</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Mar 2018 – Mar 2019</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Pulse, MS Project, Excel, SharePoint, MS365 (Teams, Outlook), GSDC Dashboards</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Enterprise Infrastructure & Storage Solutions (SnapCenter, MetroCluster, StorageGRID)</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Waterfall</p>
-    <p class="text-gray-700 text-lg mb-2"><strong>Summary:</strong> Led modernization of enterprise infrastructure, coordinated server/storage/network deployments, ensured regulatory compliance, and delivered high-availability solutions for sensitive government environments.</p>
-  </div>
+        <!-- 4. PROJECT METADATA (Restored to use the styled UL) --> 
+        <div class="text-left mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Project Overview</h2>
+            <ul class="project-detail-list text-gray-700 text-lg space-y-2">
+                <li><strong>Company:</strong> NetApp / SBS Partnership</li>
+                <li><strong>Duration:</strong> Mar 2018 – Mar 2019 (1 year)</li>
+                <li><strong>Tools:</strong> Pulse, MS Project, Excel, SharePoint, MS365, GSDC Dashboards</li>
+                <li><strong>Platform:</strong> Enterprise Storage Solutions (SnapCenter, MetroCluster, StorageGRID)</li>
+                <li><strong>Delivery:</strong> Waterfall</li>
+            </ul>
+        </div> 
 
-  <div class="text-left mb-6">
-    <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-    <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
-      <li>Managed infrastructure modernization and data migration projects valued $500K–$10M, including DoD-affiliated deployments.</li>
-      <li>Coordinated rack/stack, configuration, and cut-over validation of servers, storage arrays, and networking equipment.</li>
-      <li>Partnered with network engineers to verify connectivity, routing, and failover readiness for minimal downtime.</li>
-      <li>Scheduled and executed server migrations with risk mitigation and post-migration validation.</li>
-      <li>Maintained project schedules, status reporting, and technical documentation for visibility and compliance.</li>
-      <li>Facilitated collaboration between on-site technicians, vendors, and remote teams to meet infrastructure milestones on time.</li>
-      <li>Ensured regulatory compliance and audit readiness; passed DoD and federal audits with zero findings.</li>
-      <li>Delivered comprehensive program documentation including knowledge transfer guides, SLAs, and dashboards.</li>
-    </ul>
-  </div>
+        <!-- 5. DETAILED WORK & IMPACT -->
+        <div class="text-left mb-8"> 
+            <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Detailed Work & Impact</h2> 
+            <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6"> 
+                <li>Managed infrastructure modernization and data migration projects valued **\$500K–\$10M**, including DoD-affiliated deployments.</li>
+                <li>Coordinated rack/stack, configuration, and cut-over validation of servers, storage arrays, and networking equipment.</li>
+                <li>Partnered with network engineers to verify connectivity, routing, and **failover readiness** for minimal downtime.</li>
+                <li>Scheduled and executed server migrations with risk mitigation and post-migration validation.</li>
+                <li>Maintained project schedules, status reporting, and technical documentation for visibility and compliance.</li>
+                <li>Facilitated collaboration between on-site technicians, vendors, and remote teams to meet infrastructure milestones on time.</li>
+                <li>Ensured **regulatory compliance** and audit readiness; passed DoD and federal audits with zero findings.</li>
+                <li>Delivered comprehensive program documentation including knowledge transfer guides, SLAs, and dashboards.</li>
+            </ul> 
+        </div> 
 
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-    <a href="../projects.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg>
-      Back to Projects
-    </a>
-  </div>
-</div>
-    </section>
-  </main>
+        <!-- 6. BACK BUTTON (Standardized) --> 
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 border-t border-retro-background"> 
+            <!-- Using custom-teal class defined in Tailwind config -->
+            <a href="../projects.html" class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"> 
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> 
+                </svg> 
+                Back to Projects 
+            </a> 
+        </div> 
+    </div> 
+    </section> 
+</main> 
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
-  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-    <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+<!-- Footer color standardized to use retro-primary class --> 
+<footer class="bg-retro-primary text-white py-8"> 
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3"> 
+        <!-- Logo --> 
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-md"> 
 
-    <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-  </div>
-</footer>
+        <!-- Text --> 
+        <p>&copy; 2025 Traci M. All Rights Reserved.</p> 
+        <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p> 
+    </div> 
+</footer> 
 
-<!-- Mobile Menu Toggle Script -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const dropdown = document.getElementById('mobile-nav-dropdown');
+<!-- Mobile Menu Toggle Script --> 
+<script> 
+    document.addEventListener('DOMContentLoaded', () => { 
+        const mobileMenuButton = document.getElementById('mobile-menu-button'); 
+        const dropdown = document.getElementById('mobile-nav-dropdown'); 
 
-        if (mobileMenuButton && dropdown) {
-            mobileMenuButton.addEventListener('click', () => {
-                // Toggle the 'hidden' class to show/hide the dropdown
-                dropdown.classList.toggle('hidden');
-            });
+        if (mobileMenuButton && dropdown) { 
+            mobileMenuButton.addEventListener('click', () => { 
+                // Toggle the 'hidden' class to show/hide the dropdown 
+                dropdown.classList.toggle('hidden'); 
+            }); 
 
-            // Optional: Hide dropdown when a link is clicked
-            const links = dropdown.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Close the dropdown after navigating
-                    if (!dropdown.classList.contains('hidden')) {
-                        dropdown.classList.add('hidden');
-                    }
-                });
-            });
-        }
-    });
+            // Optional: Hide dropdown when a link is clicked 
+            const links = dropdown.querySelectorAll('a'); 
+            links.forEach(link => { 
+                link.addEventListener('click', () => { 
+                    // Close the dropdown after navigating 
+                    if (!dropdown.classList.contains('hidden')) { 
+                        dropdown.classList.add('hidden'); 
+                    } 
+                }); 
+            }); 
+        } 
+    }); 
 </script>
-  
+
 </body>
 </html>

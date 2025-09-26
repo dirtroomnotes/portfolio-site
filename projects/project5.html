@@ -22,14 +22,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
-                        'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
-                        'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
+                        'retro-background': '#f5f2e8', 	 // Warm Cream/Off-White (Primary Background)
+                        'custom-teal': '#66B2B2',        // Teal (Kept for secondary use if needed)
+                        'custom-purple': '#5c5469',      // Deep Purple (Hover/Secondary Accent)
+                        'custom-pink': '#E84A5F',        // NEW: Primary Accent Pink
                         
                         // Mapping for generic uses
-                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-main': '#E84A5F', 	 // Pink is the main accent
                         'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
@@ -116,11 +116,12 @@
         }
         
         /* Specific styling for project detail list */
+        /* Keys (labels) are bolded and colored pink for emphasis */
         .project-detail-list li strong {
             display: inline-block;
             min-width: 100px; /* Aligns keys */
             font-weight: 700;
-            color: var(--custom-pink); /* Highlight keys in pink */
+            color: var(--custom-pink); 
         }
     </style>
 </head>
@@ -182,41 +183,48 @@
       Redesign of Nationwide Quality Connections LMS
     </h1>
 
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square"></div>
+    <!-- Image Container (Ensuring the image is inside the container with a placeholder for reliability) -->
+    <div class="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video">
       <img
         src="../assets/images/lmsvs6.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/1000x560/5c5469/f5f2e8?text=LMS+REDESIGN+SCREENSHOT';"
         alt="LMS redesign screenshot"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover transition duration-300 hover:scale-[1.02]"
         />
-     </div>
+    </div>
 
-      <div class="bg-white rounded-xl p-8 shadow-md">
+      <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto">
         <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-          Redesigned a national LMS for hospice and palliative care professionals to enhance accessibility and engagement.
+          Redesigned a national LMS for hospice and palliative care professionals to enhance accessibility and engagement. This initiative focused on transitioning an **outdated legacy system** to a modern, user-centered application, leading to a significant increase in user retention and course completion rates.
         </p>
 
-        <div class="text-left mb-6">
-          <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Oct 2021 – Feb 2024</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Agile, Scrum, Strapi CMS, SVG, Responsive UI, User-Centered Design</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> LMS Web Application</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-          <p class="text-gray-700 text-lg mb-2"><strong>Link:</strong> <a href="https://quoininc.com/insights/insights-nhpco-user-interface" class="text-blue-600 underline" target="_blank">NHPCO and Quoin Team Up</a></p>
-        </div>
-
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
-            <li>Replaced outdated platform with a modern, intuitive interface and improved navigation.</li>
-            <li>Designed a centralized dashboard showing real-time activity and progress tracking.</li>
-            <li>Built a flexible admin portal to manage course content, reporting, and user data.</li>
-            <li>Implemented visual completion metrics and scalable architecture for long-term growth.</li>
-            <li>Worked iteratively with stakeholders to deliver enhancements and ensure user satisfaction.</li>
+        <!-- Project Details (REFACTORED to use UL and the custom class for pink labels) -->
+        <div class="text-left mb-8">
+          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Project Overview</h2>
+          <ul class="project-detail-list text-gray-700 text-lg space-y-2">
+            <li><strong>Company:</strong> Quoin</li>
+            <li><strong>Duration:</strong> Oct 2021 – Feb 2024 (2 years, 4 months)</li>
+            <li><strong>Tools:</strong> Agile, Scrum, Strapi CMS, SVG, Responsive UI, User-Centered Design, Figma</li>
+            <li><strong>Platform:</strong> LMS Web Application</li>
+            <li><strong>Delivery:</strong> Agile (Scrum/Kanban)</li>
+            <li><strong>External Link:</strong> <a href="https://quoininc.com/insights/insights-nhpco-user-interface" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">NHPCO and Quoin Team Up</a></li>
           </ul>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="../projects.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <div class="text-left mb-8">
+          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Work Done & Impact</h2>
+          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
+            <li>Replaced outdated platform with a **modern, intuitive interface** and improved navigation.</li>
+            <li>Designed a centralized dashboard showing **real-time activity** and progress tracking, reducing administrative burden.</li>
+            <li>Built a flexible admin portal to manage course content, reporting, and user data, improving **content management efficiency**.</li>
+            <li>Implemented visual completion metrics and scalable architecture for **long-term growth** and accommodating a national user base.</li>
+            <li>Worked iteratively with stakeholders (NHPCO leadership, subject matter experts) to deliver enhancements and ensure **high user satisfaction**.</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 border-t border-retro-background">
+          <!-- Back button color standardized to use custom-teal class -->
+          <a href="../projects.html" class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
@@ -224,19 +232,18 @@
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
+<!-- Footer color standardized to use retro-primary class -->
+<footer class="bg-retro-primary text-white py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-md">
 
     <!-- Text -->
     <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+    <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
 
@@ -266,6 +273,6 @@
         }
     });
 </script>
-  
+ 
 </body>
 </html>

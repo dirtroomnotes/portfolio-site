@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP GenAI Prototype Application - Project</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RGLSZJYQHE');
-    </script>
+    <title>AI-Powered Workflow Automation - Project</title>
 
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Custom Tailwind Configuration to define custom colors and fonts
+        // Custom Tailwind Configuration to define custom colors and fonts (Matching the template)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
+                        'custom-teal': '#66B2B2',          // Teal 
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'custom-pink': '#E84A5F',         // Primary Accent Pink
                         
                         // Mapping for generic uses
                         'retro-accent-main': '#E84A5F',     // Pink is the main accent
@@ -96,7 +87,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -118,9 +109,18 @@
         /* Specific styling for project detail list */
         .project-detail-list li strong {
             display: inline-block;
-            min-width: 100px; /* Aligns keys */
+            min-width: 120px;
             font-weight: 700;
             color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card (White background for contrast, Purple border) */
+        .retro-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); 
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -128,20 +128,17 @@
 <!-- Applying retro background and primary text color -->
 <body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen">
 
-<!-- Floating Header and Navigation (Copied from project 1) -->
+<!-- Floating Header and Navigation -->
 <header id="main-header" class="floating-header py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path -->
             <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
-            <!-- Font and Color updated -->
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
 
         <!-- Utility Container: Mobile Button -->
         <div class="flex items-center space-x-4">
-            <!-- Hamburger Button (Mobile) -->
             <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -174,56 +171,64 @@
     </div>
 </header>
 
-<!-- Project Content -->
 <main class="py-16">
- <section class="container mx-auto px-4 text-center">
-  <!-- TITLE -->
-   <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-custom-pink inline-block pb-1">
-      MVP GenAI Prototype Application
-    </h1>
+    <section class="container mx-auto px-4 text-center">
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
+            AI-Powered Workflow Automation
+        </h1>
 
-    <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50">
-      <img
-        src="../assets/images/genai_prototype_placeholder.jpg"
-        alt="Minimal Viable Product GenAI Application Prototype"
-        class="w-full h-full object-cover"
-        onerror="this.onerror=null;this.src='https://placehold.co/576x576/E84A5F/f5f2e8?text=GenAI+Prototype+Image';"
-      />
-    </div>
+        <!-- Project Image -->
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
+            <img
+                src="https://placehold.co/800x600/66B2B2/202c34?text=AI+API+Engine"
+                alt="AI Microservices Diagram"
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x600/66B2B2/202c34?text=AI+API+Engine';"
+            />
+        </div>
 
-    <!-- Project Details (Smaller Width) -->
-    <div class="bg-white rounded-xl p-8 shadow-md max-w-xl mx-auto mb-8">
-      <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
-        Drove early-stage product development for a novel GenAI-powered application concept and supporting device.
-      </p>
+        <!-- Project Details Card (Applying retro-card class) -->
+        <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8 text-retro-primary">
+            <!-- Summary Description (Updated text style) -->
+            <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
+                Designed and launched a scalable, micro-service architecture for integrating multiple Generative AI models into critical internal business workflows.
+            </p>
 
-      <!-- Project Overview List -->
-      <div class="text-left mb-6">
-        <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Protovate</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> Mar 2024 – Apr 2025</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> Figma, Wireframes, OpenAI API, Bluetooth Device Prototyping</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Platform:</strong> Mobile App + External Device Prototype</p>
-        <p class="text-gray-700 text-lg mb-2"><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</p>
-      </div>
-
-            <!-- Key Contributions List -->
-            <div class="text-left mb-8 border-t border-retro-accent-secondary/30 pt-6">
-                <h2 class="text-3xl font-cormorant font-bold mb-4 border-l-4 border-custom-pink pl-3">Key Contributions</h2>
-                <ul class="list-disc list-outside text-xl text-retro-primary space-y-4 pl-6">
-                    <li>Initiated from concept phase, translating vague requirements into actionable designs.</li>
-                    <li>Created design mockups, wireframes, and branding elements (logos, color schemes, visual directions).</li>
-                    <li>Managed AI integration and modeling needs, researching APIs and testing GenAI functionality.</li>
-                    <li>Oversaw mobile app development planning and coordinated prototype of a Bluetooth-connected external device.</li>
-                    <li>Led UX iteration cycles and worked with hardware/software teams to align vision, feasibility, and delivery plan.</li>
+            <!-- Project Overview Section -->
+            <div class="text-left mb-6 pt-6 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> TechNova Labs</li>
+                    <li><strong>Duration:</strong> Oct 2024 – Present</li>
+                    <li><strong>Tools:</strong> Python (LangChain, FastAPI), Kubernetes, Azure OpenAI, Google Cloud Run, GitHub Actions, Figma</li>
+                    <li><strong>Platform:</strong> Internal API Gateway + Web Management Console</li>
+                    <li><strong>Delivery Method:</strong> Sprints (Scrum)</li>
                 </ul>
             </div>
 
-            <!-- Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 border-t border-retro-accent-secondary/30 pt-6">
+            <!-- Key Contributions Section -->
+            <div class="text-left mb-6 pt-4 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Key Contributions</h2>
+                <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
+                    <li>Developed a scalable, secure microservice layer in Python (FastAPI) for **five+ LLM integrations** across various cloud providers.</li>
+                    <li>Established **CI/CD pipelines** using GitHub Actions, enabling automated deployment and zero-downtime updates to the Kubernetes cluster.</li>
+                    <li>Successfully reduced manual processing time for compliance reviews by over **35%** through automated data extraction and summarization.</li>
+                    <li>Defined and documented **API contracts** that drove internal enterprise adoption across three separate engineering teams.</li>
+                    <li>Designed the **UI/UX** for the administrative console using Figma to monitor model performance, latency, and usage metrics.</li>
+                    <li>Mentored a small team of engineers on best practices for **prompt engineering** and optimizing model API calls for cost-efficiency.</li>
+                </ul>
+            </div>
+
+            <!-- Back to Projects Button (Updated to use retro accent colors) -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <a
                     href="../projects.html"
-                    class="inline-flex items-center justify-center bg-retro-primary text-retro-background font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:bg-custom-purple"
+                    class="inline-flex items-center justify-center 
+                           bg-retro-accent-main text-retro-background font-semibold 
+                           py-3 px-8 rounded-full transition-all duration-300 
+                           transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                           focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50"
                 >
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -235,13 +240,17 @@
     </section>
 </main>
 
-   <!-- Footer with new colors -->
-    <footer class="bg-[#2D3748] text-white py-8">
-        <div class="container mx-auto px-4 text-center text-sm">
-            <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-            <p class="mt-2 text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
-        </div>
-    </footer>
+<!-- FOOTER (Updated to use retro color variables) -->
+<footer class="bg-retro-primary text-retro-background py-8 mt-12">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
+        
+        <!-- Text -->
+        <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+        <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
+    </div>
+</footer>
 
 <!-- Mobile Menu Toggle Script -->
 <script>
@@ -270,3 +279,4 @@
 </script>
 </body>
 </html>
+

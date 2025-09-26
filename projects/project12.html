@@ -22,7 +22,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
                         'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
@@ -96,7 +96,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -115,12 +115,21 @@
             border-top: 2px solid var(--custom-pink);
         }
         
-        /* Specific styling for project detail list */
+        /* Specific styling for project detail list (using LI now) */
         .project-detail-list li strong {
             display: inline-block;
-            min-width: 100px; /* Aligns keys */
+            min-width: 120px; /* Increased alignment space for keys */
             font-weight: 700;
             color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card */
+        .retro-card {
+            background-color: #ffffff; /* Use white for maximum contrast inside the card */
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); /* Border using the secondary accent */
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -178,36 +187,43 @@
   <main class="py-16">
     <section class="container mx-auto px-4">
     <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
-        Operational & Project Management Support
+    <!-- Use inline-block pb-1 mx-auto on a block element -->
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
+          Operational & Project Management Support
       </h1>
+    </div>
 
       <!-- Project Image -->
-       <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-square">
+       <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
         <img src="../assets/images/pmoversightvs6.jpg"
+             onerror="this.onerror=null;this.src='https://placehold.co/800x600/5c5469/f5f2e8?text=Project+Image+Placeholder';"
              alt="Project Management Office support illustration"
              class="w-full h-full object-cover"
         />
     </div>
 
-      <!-- Project Details -->
-      <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto mb-8">
-        <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
+      <!-- Project Details Card (Updated Styling) -->
+      <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8">
+        <!-- Summary Description -->
+        <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
           Provided oversight, PMO guidance, and operational support across multiple small projects and initiatives at Quoin, ensuring alignment with organizational objectives and supporting other PMs and teams.
         </p>
 
-        <div class="text-left mb-6">
-  <p class="text-gray-700 text-lg mb-2"><strong>Company:</strong> Quoin</p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Duration:</strong> 2019 – 2024</p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Scope:</strong> PMO support, process improvements, prototype/product oversight, BA/QA contributions</p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Tools:</strong> GSuite, MS Project, Jira, Redmine, GitHub</p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Certifications:</strong> PMP, CSM</p>
-  <p class="text-gray-700 text-lg mb-2"><strong>Summary:</strong> Assisted in project planning, SOW reviews, resource coordination, requirements gathering, and QA efforts for small initiatives including prototypes, process improvements, and product kickoffs.</p>
-</div>
+        <!-- Project Details (Updated to UL/LI structure to use custom CSS) -->
+        <ul class="text-retro-primary text-lg mb-6 leading-relaxed space-y-2 project-detail-list border-t pt-6 border-retro-accent-secondary/30">
+          <li><strong>Company:</strong> Quoin</li>
+          <li><strong>Duration:</strong> 2019 – 2024</li>
+          <li><strong>Scope:</strong> PMO support, process improvements, prototype/product oversight, BA/QA contributions</li>
+          <li><strong>Tools:</strong> GSuite, MS Project, Jira, Redmine, GitHub</li>
+          <li><strong>Certifications:</strong> PMP, CSM</li>
+          <li><strong>Summary:</strong> Assisted in project planning, SOW reviews, resource coordination, requirements gathering, and QA efforts for small initiatives including prototypes, process improvements, and product kickoffs.</li>
+        </ul>
 
-        <div class="text-left mb-6">
-          <h2 class="text-2xl font-semibold mb-4">Work Done</h2>
-          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6">
+        <!-- Work Done Section (Updated Heading) -->
+        <div class="text-left mb-6 pt-4 border-t border-retro-accent-secondary/30">
+          <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Work Done</h2>
+          <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
             <li>Supported other PMs with project planning, stakeholder coordination, and SOW reviews.</li>
             <li>Oversaw small-scale initiatives, prototypes, and product design launches (e.g., SALUS product launch, Diuretics device prototype, Enel weather app transition).</li>
             <li>Performed business analysis tasks including requirements gathering, functional specification review, and translating stakeholder needs into actionable tasks.</li>
@@ -218,9 +234,14 @@
           </ul>
         </div>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <a href="../projects.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <!-- Buttons (Updated Styling) -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <a href="../projects.html" 
+             class="inline-flex items-center justify-center 
+                    bg-retro-accent-main text-retro-background font-semibold 
+                    py-3 px-8 rounded-full transition-all duration-300 
+                    transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                    focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
@@ -232,15 +253,16 @@
     </section>
   </main>
 
- <!-- Footer with new colors -->
-<footer class="bg-[#2D3748] text-white py-8">
+  <!-- Footer with new colors -->
+<footer class="bg-retro-primary text-retro-background py-8">
   <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
     <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
 
     <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+    <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+    <!-- Heart color is explicitly defined -->
+    <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
   </div>
 </footer>
 
