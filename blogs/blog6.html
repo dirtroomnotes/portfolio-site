@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafting Your Unique Value Proposition - Traci M Portfolio</title>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGLSZJYQHE');
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Project Manager as an Interpreter - Traci M Portfolio</title>
 
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RGLSZJYQHE');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'retro-primary': '#202c34',
+            'retro-background': '#f5f2e8',
+            'custom-teal': '#66B2B2',
+            'custom-purple': '#5c5469',
+            'custom-pink': '#E84A5F',
+            'retro-accent-main': '#E84A5F',
+            'retro-accent-secondary': '#5c5469',
+          },
+          fontFamily: {
+            'pacifico': ['Pacifico', 'cursive'],
+            'cormorant': ['Cormorant Garamond', 'serif'],
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Retro Header Styling -->
+  <style>
+    :root {
+      --custom-teal: #66B2B2;
+      --custom-purple: #5c5469;
+      --custom-pink: #E84A5F;
+      --warm-cream: #f5f2e8;
+      --deep-charcoal: #202c34;
+    }
+    .floating-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(245, 242, 232, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--deep-charcoal);
+      transition: color 0.3s ease-out;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--custom-purple);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .nav-link:hover {
+      color: var(--custom-purple);
+    }
+    .nav-active {
+      color: var(--custom-pink);
+      font-weight: 600;
+    }
+    .nav-active::after {
+      transform: scaleX(1) !important;
+      background-color: var(--custom-pink) !important;
+    }
+    #mobile-nav-dropdown {
+      border-top: 2px solid var(--custom-pink);
+    }
+  </style>
 </head>
-<body class="bg-[#F5F7FA] text-[#2D3748] font-sans antialiased">
 
-<!-- Header and Navigation with Logo -->
-<header class="bg-white shadow-md py-4">
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased">
+
+<!-- Floating Header -->
+<header id="main-header" class="floating-header py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <!-- Logo -->
-    <a href="../index.html" class="flex items-center space-x-2">
-      <img src="../assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-10 w-auto">
+    <a href="../index.html" class="flex items-center space-x-3">
+      <img src="../assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+      <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
     </a>
 
-    <!-- Hamburger Button (Mobile) -->
-    <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-      <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+    <!-- Hamburger -->
+    <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
 
-    <!-- Navigation -->
-    <nav id="mobile-menu" class="hidden md:flex">
-      <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-        <li><a href="../index.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Home</a></li>
-        <li><a href="../projects.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Projects</a></li>
-        <li><a href="../blogs.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Blogs</a></li>
-        <li><a href="../about.html" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">About</a></li>
-        <li><a href="../index.html#contact" class="text-lg font-medium text-[#2D3748] hover:text-[#66B2B2]">Contact</a></li>
+    <!-- Desktop Nav -->
+    <nav id="desktop-menu" class="hidden md:flex">
+      <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../projects.html" class="nav-link">Projects</a></li>
+        <li><a href="../blogs.html" class="nav-link nav-active">Blogs</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4">
+    <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+      <li><a href="../index.html" class="block">Home</a></li>
+      <li><a href="../projects.html" class="block">Projects</a></li>
+      <li><a href="../blogs.html" class="block text-custom-pink font-bold">Blogs</a></li>
+      <li><a href="../about.html" class="block">About</a></li>
+      <li><a href="../index.html#contact" class="block">Contact</a></li>
+    </ul>
   </div>
 </header>
 
@@ -134,14 +226,25 @@
 
 <!-- Mobile Menu Toggle Script -->
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+        if (mobileMenuButton && dropdown) {
+            mobileMenuButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class to show/hide the dropdown
+                dropdown.classList.toggle('hidden');
+            });
+
+            // Optional: Hide dropdown when a link is clicked
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdown.classList.add('hidden');
+                });
+            });
+        }
+    });
 </script>
-    
-    <script src="script.js"></script>
 </body>
 </html>
