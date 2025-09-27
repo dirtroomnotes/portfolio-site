@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Notices Web & Mobile Platform Redesign - Project</title>
-
-    <!-- Google tag (gtag.js) - Kept as is -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RGLSZJYQHE');
-    </script>
+    <title> Public Notices Website - Project</title>
 
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Custom Tailwind Configuration to define custom colors and fonts
+        // Custom Tailwind Configuration to define custom colors and fonts (Matching the template)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color / New Footer)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Button/Link color)
+                        'custom-teal': '#66B2B2',          // Teal 
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
                         'custom-pink': '#E84A5F',         // Primary Accent Pink
                         
@@ -96,7 +87,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -115,12 +106,21 @@
             border-top: 2px solid var(--custom-pink);
         }
         
-        /* Specific styling for project detail list - ensures alignment and pink labels */
+        /* Specific styling for project detail list */
         .project-detail-list li strong {
             display: inline-block;
-            min-width: 120px; /* Aligns keys and provides more room */
+            min-width: 120px;
             font-weight: 700;
             color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card (White background for contrast, Purple border) */
+        .retro-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); 
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -133,20 +133,12 @@
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path and robust image fallback -->
-            <img 
-              src="../assets/images/vintagelogovs2updated.webp" 
-              onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" 
-              alt="Logo" 
-              class="h-12 w-auto rounded-full shadow-md"
-            >
-            <!-- Font and Color updated -->
+            <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
 
         <!-- Utility Container: Mobile Button -->
         <div class="flex items-center space-x-4">
-            <!-- Hamburger Button (Mobile) -->
             <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -179,95 +171,87 @@
     </div>
 </header>
 
-<!-- Project Content -->
 <main class="py-16">
-    <section class="container mx-auto px-4">
-    <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-custom-pink inline-block pb-1 mx-auto">
-      Public Notices Platform Redesign
-    </h1>
- <div>
+    <section class="container mx-auto px-4 text-center">
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
+            Public Notices Web & Mobile Platform Redesign
+        </h1>
+  <div>
 
-    <!-- Image Container (Standardized with hover and fallback) -->
-    <div class="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video">
-      <img
-        src="../assets/images/publicnoticesvs2.jpg"
-        onerror="this.onerror=null;this.src='https://placehold.co/1000x560/5c5469/f5f2e8?text=PUBLIC+NOTICES+PREVIEW';"
-        alt="Public notices site preview"
-        class="w-full h-full object-cover transition duration-300 hover:scale-[1.02]"
-        />
-    </div>
-
-      <!-- Details Card (Standardized to max-w-4xl and centered) -->
-      <div class="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto"> 
-        <p class="text-gray-700 text-lg mb-6 leading-relaxed text-left">
-          Rebuilt a public-facing legal notices system to support multi-state regulations, accessibility, and modern user experience (UX). This complex platform serves as a critical resource for citizens and legal entities to track required public filings.
-        </p>
-
-        <!-- Project Details (Standardized UL structure) -->
-        <div class="text-left mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Project Overview</h2>
-          <ul class="project-detail-list text-gray-700 text-lg space-y-2">
-            <li><strong>Company:</strong> Quoin</li>
-            <li><strong>Duration:</strong> Feb 2020 – Feb 2024</li>
-            <li><strong>Tools:</strong> AWS, Docker, MySQL, React, Node.js, ElasticSearch, Twilio</li>
-            <li><strong>Platform:</strong> Multi-State Notices System</li>
-            <li><strong>Delivery:</strong> Agile (Scrum/Kanban)</li>
-            <li><strong>External Links:</strong> 
-                <a href="https://quoininc.com/work/mspn-public-notices" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">Quoin Case Study</a>, 
-                <a href="https://floridapublicnotices.com/" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">Florida Public Notices</a>
-            </li>
-          </ul>
+        <!-- Project Image -->
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
+            <img
+                src="../assets/images/publicnoticesvs2.jpg"
+                alt=""
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x600/66B2B2/202c34?text=AI+API+Engine';"
+            />
         </div>
 
-        <!-- Work Done & Impact (Standardized H2 and list items) -->
-        <div class="text-left mb-8 border-t border-retro-accent-secondary/20 pt-6">
-          <h2 class="text-2xl font-semibold mb-4 text-retro-accent-main">Key Responsibilities & Outcomes</h2>
-          <ul class="list-disc list-outside text-gray-600 space-y-2 pl-6 text-lg">
-            <li>Managed migration from a legacy Python system to a modern **Node.js + React** stack, significantly improving performance and maintainability.</li>
-            <li>Implemented **XML/TXT ingestion** and **bilingual support** to meet diverse multi-state public notice regulations.</li>
-            <li>Added real-time **text alerts** using the **Twilio API**, interactive map UX, and user dashboards for improved public accessibility.</li>
-            <li>Built a customized content and admin dashboard to streamline **user and client management** workflows.</li>
-            <li>Introduced new user signup enhancements and extended archival from 1 to **3 years** to ensure compliance and data retention.</li>
-            <li>Added **dark/light mode options** and ensured overall compliance with accessibility (A11y) standards.</li>
-            <li>Directed Agile delivery across discovery, development, and go-live phases, including training and client support.</li>
-            <li>Improved operational efficiency through automation and scalable **AWS/Docker** infrastructure.</li>
-          </ul>
-        </div>
+        <!-- Project Details Card (Applying retro-card class) -->
+        <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8 text-retro-primary">
+            <!-- Summary Description (Updated text style) -->
+            <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
+              Rebuilt a public-facing legal notices system to support state regulations, accessibility, and modern UX.
+            </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 border-t border-retro-background">
-          <!-- Back button color uses custom-teal class -->
-          <a
-            href="../projects.html"
-            class="inline-flex items-center justify-center bg-custom-teal text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            Back to Projects
-          </a>
+            <!-- Project Overview Section -->
+            <div class="text-left mb-6 pt-6 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Quoin, Inc</li>
+                    <li><strong>Duration:</strong> Feb 2020 – Feb 2024 </li>
+                    <li><strong>Tools:</strong> AWS, Docker, Ansible, MySQL, React, Node.js, ElasticSearch, Twilio</li>
+                    <li><strong>Platform:</strong> Multi-State Notices System</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                    <li><strong> Website:</strong> <a href="https://floridapublicnotices.com/" class="text-custom-teal hover:text-retro-accent-secondary underline transition duration-200 font-medium" target="_blank">FL Public Notices</a></li>
+                </ul>
+            </div>
+
+            <!-- Key Contributions Section -->
+            <div class="text-left mb-6 pt-4 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Key Contributions</h2>
+                <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
+                    <li>Managed legacy-to-modern tech stack migration: Python to Node.js + React.</li>
+                    <li>Implemented XML ingestion, bilingual support, real-time alerts, dashboards, and map UX.</li>
+                    <li>Led Agile delivery from discovery to go-live, including training and support.</li>
+                    <li>Ensured compliance with legal standards and accessibility requirements.</li>
+                    <li>Improved operational efficiency through automation and scalable infrastructure.</li>
+                </ul>
+            </div>
+
+            <!-- Back to Projects Button (Updated to use retro accent colors) -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a
+                    href="../projects.html"
+                    class="inline-flex items-center justify-center 
+                           bg-retro-accent-main text-retro-background font-semibold 
+                           py-3 px-8 rounded-full transition-all duration-300 
+                           transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                           focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
         </div>
-      </div>
     </section>
 </main>
 
-<!-- Footer color standardized to use retro-primary class -->
-<footer class="bg-retro-primary text-white py-8">
-  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
-    <!-- Logo -->
-    <img src="../assets/images/vintagelogovs2updated.webp" 
-          onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" 
-          alt="Traci M. Logo" 
-          class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-md"
-    >
-
-    <!-- Text -->
-    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-    <!-- Heart color uses retro-accent-main -->
-    <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
-  </div>
+<!-- FOOTER (Updated to use retro color variables) -->
+<footer class="bg-retro-primary text-retro-background py-8 mt-12">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+        <!-- Logo -->
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
+        
+        <!-- Text -->
+        <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+        <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
+    </div>
 </footer>
-
 
 <!-- Mobile Menu Toggle Script -->
 <script>

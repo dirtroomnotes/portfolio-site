@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Discovery Platform - Project</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RGLSZJYQHE');
-    </script>
+    <title> Travel Discovery Platform - Project</title>
 
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Custom Tailwind Configuration to define custom colors and fonts
+        // Custom Tailwind Configuration to define custom colors and fonts (Matching the template)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'retro-primary': '#202c34',       // Deep Charcoal Blue (Text Color)
+                        'retro-primary': '#202c34',      // Deep Charcoal Blue (Text Color)
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
-                        'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
+                        'custom-teal': '#66B2B2',          // Teal 
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink': '#E84A5F',         // NEW: Primary Accent Pink
+                        'custom-pink': '#E84A5F',         // Primary Accent Pink
                         
                         // Mapping for generic uses
                         'retro-accent-main': '#E84A5F',     // Pink is the main accent
@@ -96,7 +87,7 @@
         }
 
         .nav-link:hover {
-             color: var(--custom-purple); /* Text color changes to purple on hover */
+            color: var(--custom-purple); /* Text color changes to purple on hover */
         }
         
         /* Define active link style (now using PINK) */
@@ -115,12 +106,21 @@
             border-top: 2px solid var(--custom-pink);
         }
         
-        /* Specific styling for project detail list - keys are pink */
+        /* Specific styling for project detail list */
         .project-detail-list li strong {
             display: inline-block;
-            min-width: 100px; /* Aligns keys */
+            min-width: 120px;
             font-weight: 700;
             color: var(--custom-pink); /* Highlight keys in pink */
+        }
+        
+        /* Style for the main content card (White background for contrast, Purple border) */
+        .retro-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 4px solid var(--custom-purple); 
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -133,15 +133,12 @@
     <div class="container mx-auto px-4 flex justify-between items-center">
         <!-- Logo + Site Name -->
         <a href="../index.html" class="flex items-center space-x-3">
-            <!-- Ensure correct relative path -->
             <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/48x48/202c34/f5f2e8?text=TM';" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
-            <!-- Font and Color updated -->
             <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
         </a>
 
         <!-- Utility Container: Mobile Button -->
         <div class="flex items-center space-x-4">
-            <!-- Hamburger Button (Mobile) -->
             <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -174,83 +171,86 @@
     </div>
 </header>
 
-<!-- Project Content -->
 <main class="py-16">
-    <section class="container mx-auto px-4">
-    <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-pacifico text-center mb-10 border-b-2 border-retro-accent-main inline-block pb-1 mx-auto text-retro-primary">
-     Travel Discovery Platform
-    </h1>
- <div>
+    <section class="container mx-auto px-4 text-center">
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-pacifico mb-10 border-b-2 border-retro-accent-main inline-block pb-1">
+            Travel Discovery Platform
+        </h1>
+  <div>
 
-    <!-- Project Image -->
-    <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl shadow-retro-accent-secondary/50 border-4 border-retro-accent-secondary/50 aspect-video md:aspect-w-16 md:aspect-h-9">
-        <!-- Using aspect ratio classes for better mobile compatibility -->
-        <img src="../assets/images/travelappvs1.jpg"
-                onerror="this.onerror=null;this.src='https://placehold.co/1024x576/5c5469/f5f2e8?text=TripTuner+Preview';"
-                alt="TripTuner platform UI preview"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.03]"
-        />
-    </div>
+        <!-- Project Image -->
+        <div class="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden shadow-2xl border-4 border-retro-accent-secondary/50 aspect-video md:aspect-[3/2]">
+            <img
+                src="../assets/images/travelappvs1.jpg"
+                alt=""
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x600/66B2B2/202c34?text=AI+API+Engine';"
+            />
+        </div>
 
-    <!-- Project Details Card (Updated to use retro colors) -->
-    <div class="bg-retro-background border border-retro-accent-secondary/50 rounded-xl p-8 shadow-2xl shadow-retro-accent-secondary/30 max-w-4xl mx-auto mb-10">
-        <p class="text-retro-primary text-xl font-medium mb-8 leading-relaxed text-center border-b border-retro-accent-main/50 pb-4 italic">
-            Supported evolution of TripTuner’s platform, including UX improvements, security compliance, and partner integrations.
-        </p>
+        <!-- Project Details Card (Applying retro-card class) -->
+        <div class="retro-card p-8 shadow-2xl max-w-4xl mx-auto mb-8 text-retro-primary">
+            <!-- Summary Description (Updated text style) -->
+            <p class="text-retro-primary text-lg mb-6 leading-relaxed text-center font-medium">
+              Supported evolution of TripTuner’s platform, including UX improvements, security compliance, and partner integrations.
+            </p>
 
-        <!-- Details List -->
-        <div class="text-left mb-8 font-cormorant text-xl text-retro-primary">
-            <ul class="project-detail-list space-y-3">
-                <li><strong>Company:</strong> Quoin (for TripTuner)</li>
-                <li><strong>Duration:</strong> Jun 2020 – Feb 2024</li>
-                <li><strong>Tools:</strong> Agile, PHP, JavaScript, MySQL, UX/UI, SOC2, Mobile Optimization</li>
-                <li><strong>Platform:</strong> Web & Mobile Travel Recommendation System</li>
-                <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
-                <li><strong>Link:</strong> 
-                    <a href="https://quoininc.com/work/triptuner" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">TripTuner, Inspired Travel Application</a>
+            <!-- Project Overview Section -->
+            <div class="text-left mb-6 pt-6 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Project Overview</h2>
+                <ul class="list-none project-detail-list text-lg text-retro-primary space-y-2">
+                    <li><strong>Company:</strong> Quoin, Inc</li>
+                    <li><strong>Duration:</strong> Jun 2020 – Feb 2024 </li>
+                    <li><strong>Tools:</strong> Agile, PHP, JavaScript, MySQL, UX/UI, SOC2, Mobile Optimization</li>
+                    <li><strong>Platform:</strong> Web & Mobile Travel Recommendation System</li>
+                    <li><strong>Delivery Method:</strong> Agile (Scrum/Kanban)</li>
+                    <li><strong> Website:</strong><a href="https://quoininc.com/work/triptuner" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">TripTuner, Inspired Travel Application</a></li>
+                    <li><strong>Link:</strong><a href="https://triptuner.com/" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">Visit TripTuner</a></li>
                 </li>
-                <li><strong>Link:</strong> 
-                    <a href="https://triptuner.com/" class="text-retro-accent-main hover:text-retro-accent-secondary underline transition duration-300" target="_blank">Visit TripTuner</a>
-                </li>
-            </ul>
-        </div>
+            </div>
 
-        <!-- Work Done Section -->
-        <div class="text-left mb-6 pt-4 border-t border-retro-accent-main/50">
-            <h2 class="text-3xl font-bold mb-4 text-retro-accent-secondary border-b border-retro-accent-main inline-block pb-1">Key Contributions</h2>
-            <ul class="list-disc list-inside text-retro-primary ml-6 space-y-3 mt-4">
-                <li class="pl-2">Directed redesign of mobile-optimized UI and performance improvements.</li>
-                <li class="pl-2">Collaborated on product roadmap and architecture evolution.</li>
-                <li class="pl-2">Led Agile ceremonies and delivery across multiple feature sets.</li>
-                <li class="pl-2">Managed penetration testing and SOC2 compliance initiatives.</li>
-                <li class="pl-2">Oversaw partner customizations and integrations (e.g., VISIT FLORIDA).</li>
-            </ul>
-        </div>
+            <!-- Key Contributions Section -->
+            <div class="text-left mb-6 pt-4 border-t border-retro-accent-secondary/30">
+                <h2 class="text-3xl font-cormorant font-bold mb-4 text-retro-accent-main">Key Contributions</h2>
+                <ul class="list-disc list-outside text-retro-primary space-y-3 pl-6 text-lg">
+                    <li>Directed redesign of mobile-optimized UI and performance improvements.</li>
+                    <li>Collaborated on product roadmap and architecture evolution.</li>
+                    <li>Led Agile ceremonies and delivery across multiple feature sets.</li>
+                    <li>Managed penetration testing and SOC2 compliance initiatives.</li>
+                    <li>Oversaw partner customizations and integrations (e.g., VISIT FLORIDA).</li>
+                </ul>
+            </div>
 
-        <!-- Buttons (Updated to use accent colors) -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-            <a href="../projects.html" class="inline-flex items-center justify-center bg-retro-accent-secondary text-retro-background font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-retro-accent-main shadow-lg shadow-retro-accent-secondary/50 border-2 border-retro-accent-secondary">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                Back to Projects
-            </a>
+            <!-- Back to Projects Button (Updated to use retro accent colors) -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a
+                    href="../projects.html"
+                    class="inline-flex items-center justify-center 
+                           bg-retro-accent-main text-retro-background font-semibold 
+                           py-3 px-8 rounded-full transition-all duration-300 
+                           transform hover:scale-105 shadow-xl hover:bg-retro-accent-secondary 
+                           focus:outline-none focus:ring-4 focus:ring-retro-accent-main/50"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
         </div>
-
-    </div>
     </section>
 </main>
 
-<!-- Footer with new colors -->
-<footer class="bg-retro-primary text-retro-background py-8">
+<!-- FOOTER (Updated to use retro color variables) -->
+<footer class="bg-retro-primary text-retro-background py-8 mt-12">
     <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
         <!-- Logo -->
-        <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';">
-
+        <img src="../assets/images/vintagelogovs2updated.webp" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f5f2e8/202c34?text=TM';" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition rounded-full shadow-lg">
+        
         <!-- Text -->
-        <p>&copy; 2025 Traci M. All Rights Reserved.</p>
-        <p class="text-gray-300">Made with <span class="text-retro-accent-main">&hearts;</span> and a lot of coffee</p>
+        <p class="font-cormorant">&copy; 2025 Traci M. All Rights Reserved.</p>
+        <p class="text-retro-background/80 font-cormorant">Made with <span class="text-retro-accent-main font-bold">&hearts;</span> and a lot of coffee</p>
     </div>
 </footer>
 
