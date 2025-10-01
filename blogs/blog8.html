@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culture Fit or Culture Freeze? - Portfolio</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RGLSZJYQHE');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'retro-primary': '#202c34',
+            'retro-background': '#f5f2e8',
+            'custom-teal': '#66B2B2',
+            'custom-purple': '#5c5469',
+            'custom-pink': '#E84A5F',
+            'retro-accent-main': '#E84A5F',
+            'retro-accent-secondary': '#5c5469',
+          },
+          fontFamily: {
+            'pacifico': ['Pacifico', 'cursive'],
+            'cormorant': ['Cormorant Garamond', 'serif'],
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Retro Header Styling -->
+  <style>
+    :root {
+      --custom-teal: #66B2B2;
+      --custom-purple: #5c5469;
+      --custom-pink: #E84A5F;
+      --warm-cream: #f5f2e8;
+      --deep-charcoal: #202c34;
+    }
+    .floating-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(245, 242, 232, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--deep-charcoal);
+      transition: color 0.3s ease-out;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--custom-purple);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .nav-link:hover {
+      color: var(--custom-purple);
+    }
+    .nav-active {
+      color: var(--custom-pink);
+      font-weight: 600;
+    }
+    .nav-active::after {
+      transform: scaleX(1) !important;
+      background-color: var(--custom-pink) !important;
+    }
+    #mobile-nav-dropdown {
+      border-top: 2px solid var(--custom-pink);
+    }
+  </style>
+</head>
+
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased">
+
+<!-- Floating Header -->
+<header id="main-header" class="floating-header py-4">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="../index.html" class="flex items-center space-x-3">
+      <img src="../assets/images/vintagelogovs2updated.webp" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+      <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
+    </a>
+
+    <!-- Hamburger -->
+    <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-custom-teal transition">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+
+    <!-- Desktop Nav -->
+    <nav id="desktop-menu" class="hidden md:flex">
+      <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-xl font-cormorant font-semibold">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../projects.html" class="nav-link">Projects</a></li>
+        <li><a href="../blogs.html" class="nav-link nav-active">Blogs</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4">
+    <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+      <li><a href="../index.html" class="block">Home</a></li>
+      <li><a href="../projects.html" class="block">Projects</a></li>
+      <li><a href="../blogs.html" class="block text-custom-pink font-bold">Blogs</a></li>
+      <li><a href="../about.html" class="block">About</a></li>
+      <li><a href="../index.html#contact" class="block">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Blog Post Content -->
+<main class="py-16">
+  <section class="container mx-auto px-4 max-w-4xl">
+    <article class="bg-white rounded-xl p-8 shadow-md">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Culture Fit or Culture Freeze?
+      </h1>
+      <div class="text-gray-500 mb-6 text-sm">
+        <p>By <a href="#" class="text-blue-600 hover:underline">Traci</a> on <time datetime="2025-09-27">September 27, 2025</time></p>
+      </div>
+      <img src="../assets/images/teamfitvs2.jpg" alt="Diverse perspectives concept illustration" class="w-full rounded-xl shadow-lg mb-8">
+
+      <div class="prose max-w-none text-gray-700 leading-relaxed">
+        <p class="mb-6">We often hear the phrase “culture fit” when hiring or building teams. But too often, what it really means is:</p>
+
+        <ul class="list-disc list-inside mb-6">
+          <li>“Do they sound like us?”</li>
+          <li>“Do they work the way we’re used to?”</li>
+          <li>“Will they challenge us—and are we ready for that?”</li>
+        </ul>
+
+        <p class="mb-6">Instead of welcoming new perspectives, some organizations unintentionally filter out exactly the people who could help them grow. “Culture fit” becomes <strong>culture freeze</strong>.</p>
+
+        <h2 class="text-2xl font-semibold mb-4">The Real Question: Innovation or Imitation?</h2>
+        <p class="mb-6">Real growth doesn’t come from sameness. It comes from diversity, diversity of thought, background, and perspective. People who ask hard questions, bring fresh ideas, or suggest a different way of working often spark the most meaningful progress.</p>
+
+        <p class="mb-6">Some of the most impactful team members I’ve worked with weren’t the loudest voices in the room. They were the listeners, the critical thinkers, the ones who spoke up at the right moment with an idea that shifted the team’s direction for the better. These aren’t clashes. They’re catalysts for growth.</p>
+
+        <h2 class="text-2xl font-semibold mb-4">What “Culture Fit” Should Really Mean</h2>
+        <p class="mb-6">If we use the phrase carefully, culture fit isn’t about hobbies, personalities, or social habits. It’s about shared values and purpose. For me, true culture fit means:</p>
+
+        <ul class="list-disc list-inside mb-6">
+          <li>Caring deeply about the organization’s mission</li>
+          <li>Communicating with respect and honesty</li>
+          <li>Taking ownership and building trust</li>
+          <li>Leaving the team stronger than I found it</li>
+        </ul>
+
+        <p class="mb-6">It’s not about whether we all like the same music, coffee, or weekend plans. It’s about creating a foundation where different perspectives feel welcome and valued.</p>
+
+        <h2 class="text-2xl font-semibold mb-4">Embracing Different PM Styles</h2>
+        <p class="mb-6">Project managers lead in different ways, some thrive on structure, others on flexibility and iteration. Having a mix of styles on a team is a strength, not a conflict. It gives us more tools to solve problems, manage risks, and adapt to change.</p>
+
+        <p class="mb-6">So when you’re making your next hiring decision, try asking:</p>
+
+        <blockquote class="border-l-4 border-custom-pink pl-4 italic mb-6">“Will this person help our team grow by bringing a different perspective or style?”</blockquote>
+
+        <p class="mb-6">If the answer is yes, that’s not a risk, it’s an opportunity.</p>
+
+        <h2 class="text-2xl font-semibold mb-4">Final Thought</h2>
+        <p class="mb-6">I don’t see myself as a “culture fit” in the narrow sense. I see myself as a <em>culture builder</em>. My goal is to amplify potential, nurture trust, and help teams become stronger and more innovative than they were yesterday.</p>
+
+        <p class="mb-6">Because in the end, culture isn’t about being the same. It’s about belonging, contributing, and growing together.</p>
+      </div>
+
+      <!-- Share and Tags Section -->
+      <section class="mt-8 text-center">
+        <div class="mb-4">
+          <span class="font-semibold">Share this post:</span>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com/blog/culture-fit.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline mx-2">LinkedIn</a>|
+          <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/blog/culture-fit.html&text=Culture%20Fit%20or%20Culture%20Freeze" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline mx-2">Twitter</a>
+        </div>
+        <div class="text-gray-600">
+          <strong>Tags:</strong>
+          <a href="../blogs.html?tag=culture" class="text-blue-600 hover:underline">Culture</a>,
+          <a href="../blogs.html?tag=teamwork" class="text-blue-600 hover:underline">Teamwork</a>,
+          <a href="../blogs.html?tag=leadership" class="text-blue-600 hover:underline">Leadership</a>,
+          <a href="../blogs.html?tag=diversity" class="text-blue-600 hover:underline">Diversity</a>
+        </div>
+      </section>
+    </article>
+  </section>
+
+  <!-- Back to Blogs Button -->
+  <div class="flex justify-center mt-8">
+    <a href="../blogs.html" class="inline-flex items-center justify-center bg-[#66B2B2] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Back to Blogs
+    </a>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#2D3748] text-white py-8">
+  <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-3">
+    <img src="../assets/images/vintagelogovs2updated.webp" alt="Traci M. Logo" class="h-10 opacity-90 hover:opacity-100 transition">
+    <p>&copy; 2025 Traci M. All Rights Reserved.</p>
+    <p class="text-gray-300">Made with <span class="text-red-500">&hearts;</span> and a lot of coffee</p>
+  </div>
+</footer>
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const dropdown = document.getElementById('mobile-nav-dropdown');
+
+    if (mobileMenuButton && dropdown) {
+        mobileMenuButton.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+        });
+
+        const links = dropdown.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                dropdown.classList.add('hidden');
+            });
+        });
+    }
+});
+</script>
+</body>
+</html>
