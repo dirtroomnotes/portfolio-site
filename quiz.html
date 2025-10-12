@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traci Moore Portfolio - PM Archetype Quiz</title>
+
+<!-- Google Analytics (Preserved) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGLSZJYQHE"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RGLSZJYQHE');
+</script>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Tailwind Custom Config -->
+<script>
+tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          // Changed from #202c34 to #111827 for better contrast (near-black)
+          'retro-primary': '#111827', // Dark Text / Primary (Increased Contrast)
+          'retro-background': '#f5f2e8', // Light Background
+          'retro-accent-main': '#66B2B2', // Main Accent (Teal)
+          'retro-accent-secondary': '#5c5469' // Secondary Accent (Purple/Slate)
+        },
+        fontFamily: {
+          'pacifico': ['Pacifico', 'cursive'],
+          'cormorant': ['Cormorant Garamond', 'serif'],
+        },
+        boxShadow: {
+            // Custom shadow for the retro/pop-out effect
+            'retro-deep': '6px 6px 0px rgba(92, 84, 105, 0.9)',
+        }
+      }
+    }
+}
+</script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+/* Wrapper for absolute positioning.
+    CRITICAL FIX: min-height ensures the footer doesn't overlap the tallest screen.
+*/
+.quiz-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    min-height: 650px; 
+    margin-top: 2rem;
+}
+
+/* Base Quiz Container - uses opacity and position instead of display: none */
+.quiz-screen { 
+    position: absolute; /* Stack screens */
+    top: 0; left: 0;
+    width: 100%;
+    
+    text-align: center; 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    border: 3px solid #5c5469; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1), 6px 6px 0px #66B2B2; /* Pop-out shadow */
+    
+    /* Transition properties for smooth fade in/out */
+    opacity: 0;
+    pointer-events: none; /* Disables interaction when hidden */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+    transform: scale(0.98); /* Slight scale down when inactive */
+}
+
+.quiz-screen.active { 
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
+    transform: scale(1); 
+    z-index: 10;
+}
+
+/* Button Styling (Preserved) */
+.btn { 
+    padding: 0.8rem 2rem; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s; 
+    color: white; 
+    background: #66B2B2; 
+    margin-top: 1.5rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0px #5c5469;
+}
+.btn:hover { 
+    background: #5c5469; 
+    transform: translateY(-2px); 
+    box-shadow: 5px 5px 0px #66B2B2;
+}
+
+/* Answer Options Grid (Preserved) */
+.answer-buttons { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; 
+    margin-top: 2rem; 
+    text-align: left;
+}
+.answer-buttons button { 
+    padding: 1.25rem; 
+    border-radius: 10px; 
+    border: 2px solid #5c5469;
+    background: #ffffff; 
+    color: #111827; /* Uses retro-primary for contrast */
+    font-size: 1.150rem; /* Increased font size for better readability */
+    font-weight: 700; /* Increased boldness for better readability */
+    transition: all 0.2s;
+    cursor: pointer;
+    line-height: 1.4;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+.answer-buttons button:hover { 
+    background: #E0EEEE; /* Light hover */
+    border-color: #66B2B2;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #66B2B2;
+}
+
+/* Icons within buttons (Preserved) */
+.answer-btn-icon { 
+    float: left; 
+    font-size: 2.5rem; 
+    margin-right: 0.75rem; 
+    margin-top: -0.25rem;
+}
+
+/* Progress Bar (Preserved) */
+#progress-bar { 
+    height: 12px; 
+    width: 0%; 
+    background: linear-gradient(90deg, #66B2B2, #5c5469);
+    transition: width 0.5s ease; 
+    border-radius: 6px; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Keyframes - Kept for the initial start screen animation */
+@keyframes cardPop { 
+    0% { opacity: 0; transform: scale(0.9) translateY(20px); } 
+    100% { opacity: 1; transform: scale(1) translateY(0); } 
+}
+
+/* Apply cardPop only to the initial start screen for a noticeable entrance */
+#quiz-start.active {
+    animation: cardPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+</style>
+</head>
+
+<body class="bg-retro-background text-retro-primary font-cormorant antialiased min-h-screen flex flex-col">
+
+<!-- HEADER (Preserved) -->
+<header id="main-header" class="floating-header py-4 sticky top-0 z-10 bg-retro-background shadow-md">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <!-- Using placeholder image for asset preservation -->
+            <img src="https://placehold.co/48x48/5c5469/ffffff?text=TM" alt="Logo" class="h-12 w-auto rounded-full shadow-md">
+            <span class="text-2xl font-pacifico text-retro-primary hidden sm:inline">Traci M.</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <button id="mobile-menu-button" class="md:hidden text-retro-primary focus:outline-none p-2 rounded-lg hover:bg-retro-accent-main transition">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button> 
+        </div>
+        <nav id="desktop-menu" class="hidden md:flex">
+             <ul class="flex space-x-8 text-xl font-cormorant font-semibold">
+                <li><a href="index.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Home</a></li>
+                <li><a href="projects.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Blogs</a></li>
+                <li><a href="about.html" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">About</a></li>
+                <li><a href="#contact" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200">Contact</a></li>
+                <!-- QUIZ LINK -->
+                <li><a href="#" class="nav-link text-retro-primary hover:text-retro-accent-secondary transition duration-200 font-pacifico text-2xl">⚡ Quiz!</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="mobile-nav-dropdown" class="hidden md:hidden absolute w-full bg-retro-background shadow-xl py-4 transition-all duration-300 border-t border-retro-accent-main">
+        <ul class="flex flex-col space-y-4 px-4 text-lg font-cormorant font-medium">
+            <li><a href="index.html" class="block text-retro-primary hover:text-retro-accent-secondary">Home</a></li>
+            <li><a href="projects.html" class="block text-retro-primary hover:text-retro-accent-secondary">Projects</a></li>
+            <li><a href="blogs.html" class="block text-retro-primary hover:text-retro-accent-secondary">Blogs</a></li>
+            <li><a href="about.html" class="block text-retro-primary hover:text-retro-accent-secondary">About</a></li>
+            <li><a href="#contact" class="block text-retro-primary hover:text-retro-accent-secondary">Contact</a></li>
+            <!-- QUIZ LINK -->
+            <li><a href="#" class="block text-retro-primary hover:text-retro-accent-secondary font-pacifico text-xl">⚡ Quiz!</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- MAIN QUIZ CONTAINER -->
+<main class="flex flex-col items-center justify-start flex-grow py-10 px-4">
+    <div class="text-center w-full max-w-lg mb-6">
+        <h1 class="text-4xl sm:text-5xl font-pacifico text-retro-accent-secondary">
+            What's Your PM Archetype?
+        </h1>
+    </div>
+
+    <!-- QUIZ WRAPPER - handles absolute positioning for smooth transitions -->
+    <div id="quiz-wrapper" class="quiz-wrapper">
+        <!-- Start Screen -->
+        <section id="quiz-start" class="quiz-screen active">
+            <div class="text-6xl mb-4" role="img" aria-label="Rocket and Chart icon">
+                🚀📊
+            </div>
+            <h2 class="text-3xl font-bold mb-4">Discover Your PM Superpower!</h2>
+            <p class="text-lg mb-6 text-gray-700">
+                A fun, quick quiz to reveal the core personality that drives your project management style. Ready to see if you're a Strategist, Diplomat, Builder, or Alchemist?
+            </p>
+            <button id="startBtn" class="btn">Start the Assessment</button>
+        </section>
+
+        <!-- Question Screen -->
+        <section id="quiz-question" class="quiz-screen">
+            <div class="flex justify-between items-center mb-4">
+                <p id="question-count" class="text-lg font-bold text-retro-accent-main"></p>
+                <div class="quiz-progress w-2/3 h-3 rounded-full bg-gray-200 overflow-hidden">
+                    <div id="progress-bar" class="h-full"></div>
+                </div>
+            </div>
+            
+            <!-- UPDATED: Increased size (to text-3xl/sm:text-4xl) and boldness (to font-bold) -->
+            <h3 id="question-text" class="text-3xl sm:text-4xl font-bold mb-8 text-retro-primary"></h3>
+            
+            <div id="answer-buttons" class="answer-buttons">
+                <!-- Answer buttons will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="quiz-result" class="quiz-screen">
+            <h2 id="result-title" class="text-4xl font-pacifico mb-4 text-retro-accent-secondary"></h2>
+            <div class="text-7xl mb-6" id="result-icon"></div>
+            <p id="result-description" class="text-xl mb-8 text-gray-700 font-medium"></p>
+            
+            <div class="bg-retro-background p-4 rounded-lg border border-retro-accent-main/50 shadow-inner mb-6">
+                <h4 class="text-xl font-bold mb-2 text-retro-primary">Why This Matters:</h4>
+                <p class="text-base text-left">
+                  Understanding your project management style allows you to maximize your strengths. As a project manager, I adapt my approach to fit the needs of the project, bringing the precision of a Samurai, the strategic vision of a Wrangler, the collaborative harmony of a Diplomat, or the innovative flexibility of an Alchemist, ensuring the right focus drives your project forward.
+                </p>
+            </div>
+
+            <button id="retryBtn" class="btn bg-retro-accent-secondary hover:bg-retro-primary">Take the Quiz Again</button>
+        </section>
+    </div>
+</main>
+
+<!-- FOOTER (Preserved) -->
+<footer class="bg-retro-primary text-retro-background py-10 mt-auto">
+    <div class="container mx-auto px-4 text-center text-sm flex flex-col items-center space-y-4">
+        <img src="https://placehold.co/40x40/5c5469/ffffff?text=TM" alt="Traci M. Logo" class="h-10 opacity-80 hover:opacity-100 transition duration-300 rounded-full">
+        <div class="flex space-x-6 text-xl">
+            <!-- LinkedIn Icon -->
+            <a href="https://www.linkedin.com/in/traci-m-17203329/" target="_blank" class="hover:text-retro-accent-main transition-colors text-retro-background">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 3c-1.11 0-2 .89-2 2s.89 2 2 2 2-.89 2-2-.89-2-2-2z"/></svg>
+            </a>
+            <!-- Placeholder Globe/Portfolio Icon -->
+            <a href="https://dirtroomnotes.github.io/portfolio-site" target="_blank" class="hover:text-retro-accent-main transition-colors text-retro-background">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm1.8 15.6c-.34-.85-1.5-.85-2-.59-1.39-1.29-3.32-1.63-4.63-1.63s-3.24.34-4.63 1.63c-.5.26-1.66.26-2.01-.59-.18-.45-.08-.96.26-1.31 1.29-1.29 3.22-1.63 4.63-1.63s3.34.34 4.63 1.63c.34.35.44.86.26 1.31zM12 11c-2.48 0-4.5-2.02-4.5-4.5S9.52 2 12 2s4.5 2.02 4.5 4.5S14.48 11 12 11z"/></svg>
+            </a>
+        </div>
+        <p class="text-retro-accent-main">&copy; 2025 Traci Moore. All Rights Reserved.</p>
+        <p class="text-retro-accent-main">Built with <span class="text-red-500">&hearts;</span> and the right tool for the job.</p>
+    </div>
+</footer>
+
+<!-- QUIZ SCRIPT -->
+<script>
+const startBtn = document.getElementById("startBtn");
+const retryBtn = document.getElementById("retryBtn");
+const quizStart = document.getElementById("quiz-start");
+const quizQuestion = document.getElementById("quiz-question");
+const quizResult = document.getElementById("quiz-result");
+const questionText = document.getElementById("question-text");
+const questionCount = document.getElementById("question-count");
+const answerButtons = document.getElementById("answer-buttons");
+const progressBar = document.getElementById("progress-bar");
+const resultTitle = document.getElementById("result-title");
+const resultIcon = document.getElementById("result-icon");
+const resultDescription = document.getElementById("result-description");
+
+const quizData = [
+    { 
+        question: "A high-priority project is facing a major, unexpected technical failure. What's your immediate focus?",
+        answers: [
+            { text: "Call an immediate, intense triage session with key engineers to brainstorm a workaround.", type: "alchemist", icon:"💥" },
+            { text: "Document the failure, assess the formal impact on budget and schedule, and update the risk register.", type: "samurai", icon:"📋" },
+            { text: "Immediately notify all major stakeholders and craft a clear, calm message about the delay and next steps.", type: "diplomat", icon:"🗣️" },
+            { text: "Revisit the original business case with the leadership team to ensure the recovery plan still delivers maximum strategic value.", type: "wrangler", icon:"🧭" }
+        ]
+    },
+    { 
+        question: "Your development team is exhausted and morale is low, impacting sprint velocity. How do you address it?",
+        answers: [
+            { text: "Introduce a 'Hack Day' or time dedicated to creative, non-project work to recharge their enthusiasm.", type: "alchemist", icon:"🎨" },
+            { text: "Review the backlog and remove non-essential items, strictly enforcing the definition of 'done' to reduce ambiguity.", type: "samurai", icon:"⚖️" },
+            { text: "Set up 1:1 check-ins to listen to concerns, mediate any team conflicts, and advocate for resources.", type: "diplomat", icon:"🧘" },
+            { text: "Remind the team of the 'why'—the inspiring mission and market impact of the product they are building.", type: "wrangler", icon:"🏆" }
+        ]
+    },
+    { 
+        question: "You need to select the best methodology for a new product with vague requirements and a tight deadline.",
+        answers: [
+            { text: "Scrum or Kanban—something flexible that allows for rapid iteration and frequent pivots as requirements become clear.", type: "alchemist", icon:"🔁" },
+            { text: "Waterfall with rigorous upfront planning, defined gates, and strict change control to prevent scope creep.", type: "samurai", icon:"🏗️" },
+            { text: "Hybrid approach, spending the most time gathering consensus from users and stakeholders before starting the first phase.", type: "diplomat", icon:"🌐" },
+            { text: "Lean methodology, focusing ruthlessly on minimizing waste and maximizing the delivery of core customer value.", type: "wrangler", icon:"✂️" }
+        ]
+    },
+    { 
+        question: "How do you handle a senior leader who bypasses you and tries to assign work directly to a team member?",
+        answers: [
+            { text: "Treat it as an opportunity; use it as a feedback loop to improve communication flow, not as a power struggle.", type: "alchemist", icon:"✨" },
+            { text: "Meet with the leader one-on-one to politely reinforce the established process and the value of clear lines of authority.", type: "samurai", icon:"🛡️" },
+            { text: "Address it in a gentle group meeting, emphasizing 'Team Norms' and the importance of protecting the team's focus.", type: "diplomat", icon:"🤗" },
+            { text: "Escalate to the sponsor, explaining how this action threatens the project's ability to meet its strategic deadlines.", type: "wrangler", icon:"👑" }
+        ]
+    },
+    { 
+        question: "A project is 50% complete, but a market shift has made the final product less relevant. Your decision?",
+        answers: [
+            { text: "Pivot immediately! Salvage what can be used and dynamically refocus the remaining work on the new market opportunity.", type: "alchemist", icon:"🤸" },
+            { text: "Stop and perform a complete phase review. Create a formal change request that outlines all options and present the data.", type: "samurai", icon:"🛑" },
+            { text: "Facilitate a workshop with all key business unit leaders to collaboratively define a new path that satisfies most parties.", type: "diplomat", icon:"🤝" },
+            { text: "Recommend shutting down the project entirely if the Return on Investment (ROI) no longer aligns with company goals.", type: "wrangler", icon:"💸" }
+        ]
+    }
+];
+
+// Result definitions with more detail
+const resultDefinitions = {
+    alchemist: {
+        title: "🌪️ The Agile Alchemist", 
+        icon: "🧪",
+        desc: "You thrive on change, seeing it not as a risk but as raw material. Your superpower is Adaptability, quickly transforming chaos into a path forward. You are the master of flexible frameworks and emergent design. Projects love you because you never panic, you simply pivot."
+    },
+    samurai: {
+        title: "🗂️ The Process Samurai", 
+        icon: "⚔️",
+        desc: "You are the master of execution. Your superpower is Precision, ensuring every step is documented, every risk is tracked, and every process is followed perfectly. You build strong boundaries around projects and deliver with unflinching discipline and quality."
+    },
+    diplomat: {
+        title: "🕊️ The Consensus Diplomat", 
+        icon: "👑",
+        desc: "You manage relationships as well as you manage tasks. Your superpower is Harmony, ensuring that stakeholders, team members, and leadership are aligned and heard. You navigate politics effortlessly, making collaboration productive and bringing consensus to conflict."
+    },
+    wrangler: {
+        title: "🚀 The Vision Wrangler", 
+        icon: "🌌",
+        desc: "You never lose sight of the horizon. Your superpower is Strategy, ensuring every task, feature, and milepost ties directly back to the big-picture business goal. You're less focused on how things are built and more focused on why, driving maximum organizational value."
+    }
+};
+
+let currentQuestionIndex = 0;
+let scores = { alchemist: 0, samurai: 0, diplomat: 0, wrangler: 0 };
+
+/**
+ * Manages the smooth transition between quiz screens by fading out the current 
+ * screen before fading in the next one.
+ * @param {string} nextScreenId - The ID of the screen to transition to.
+ * @param {function} callback - Function to execute during the transition (e.g., showQuestion).
+ */
+function transitionTo(nextScreenId, callback = null) {
+    const allScreens = [quizStart, quizQuestion, quizResult];
+    const currentActive = document.querySelector(".quiz-screen.active");
+    const nextScreen = document.getElementById(nextScreenId);
+
+    // 1. Fade out current screen (if one exists)
+    if (currentActive) {
+        currentActive.classList.remove("active");
+    }
+    
+    // The CSS transition is 0.3s (300ms). We wait for the fade-out to complete.
+    setTimeout(() => {
+        // After fade-out, ensure the old screen is no longer interactive
+        if (currentActive) {
+            // Optional: for good measure, we ensure all screens lose focus
+            allScreens.forEach(screen => {
+                screen.style.zIndex = '';
+            });
+        }
+        
+        // 2. Run callback (e.g., load new question data)
+        if (callback) {
+            callback();
+        }
+
+        // 3. Fade in next screen
+        nextScreen.classList.add("active");
+        
+    }, 300); 
+}
+
+startBtn.addEventListener("click", () => {
+    transitionTo("quiz-question", showQuestion);
+});
+
+retryBtn.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    scores = { alchemist: 0, samurai: 0, diplomat: 0, wrangler: 0 };
+    transitionTo("quiz-start", () => {
+        progressBar.style.width = "0%";
+    });
+});
+
+function showQuestion() {
+    const q = quizData[currentQuestionIndex];
+    
+    // Update question counter
+    questionCount.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+    
+    // Update content
+    questionText.textContent = q.question;
+    answerButtons.innerHTML = "";
+    
+    q.answers.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.className = "hover:shadow-retro-deep"; // Tailwind utility from config
+        btn.innerHTML = `<span class="answer-btn-icon" role="img" aria-hidden="true">${answer.icon}</span>${answer.text}`;
+        // Note: selectAnswer is called directly, managing the next transition
+        btn.addEventListener("click", () => selectAnswer(answer.type));
+        answerButtons.appendChild(btn);
+    });
+    
+    // Update progress bar
+    const progressPercent = (currentQuestionIndex / quizData.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+}
+
+function selectAnswer(type) {
+    scores[type]++;
+    currentQuestionIndex++;
+    
+    if(currentQuestionIndex < quizData.length) {
+        // Transition to the next question screen, running showQuestion() mid-transition
+        transitionTo("quiz-question", showQuestion);
+    } else {
+        // Transition to the result screen, running showResults() mid-transition
+        transitionTo("quiz-result", showResults);
+    }
+}
+
+function showResults() {
+    // This function now only updates content, as transitionTo handles the 'active' class
+    
+    // Calculate the top type
+    const topType = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    const result = resultDefinitions[topType];
+
+    resultTitle.textContent = result.title;
+    resultIcon.textContent = result.icon;
+    resultDescription.textContent = result.desc;
+    
+    // Final progress bar update
+    progressBar.style.width = "100%";
+}
+
+// Mobile Menu Toggle (Preserved logic)
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
+if(mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileNavDropdown.classList.toggle('hidden');
+    });
+}
+</script>
+
+</body>
+</html>
