@@ -24,10 +24,10 @@
                         'retro-background': '#f5f2e8',    // Warm Cream/Off-White (Primary Background)
                         'custom-teal': '#66B2B2',         // Teal (Kept for secondary use if needed)
                         'custom-purple': '#5c5469',       // Deep Purple (Hover/Secondary Accent)
-                        'custom-pink/blue': '#1394B1',    // NEW: Primary Accent Pink updated to blue
+                        'custom-pink': '#1394B1',         // <--- CHANGE PRIMARY ACCENT COLOR HERE (1/3)
                         
                         // Mapping for generic uses
-                        'retro-accent-main': '#E84A5F',     // Pink is the main accent
+                        'retro-accent-main': '#E84A5F',     // <--- AND HERE (2/3)
                         'retro-accent-secondary': '#5c5469', // Purple is secondary
                     },
                     fontFamily: {
@@ -51,7 +51,7 @@
         :root {
             --custom-teal: #66B2B2;
             --custom-purple: #5c5469;
-            --custom-pink: #E84A5F; /* Primary Accent Pink */
+            --custom-pink: #E84A5F; /* <--- AND HERE (3/3) (CSS Variable) */
             --warm-cream: #f5f2e8;
             --deep-charcoal: #202c34;
         }
@@ -99,16 +99,16 @@
         
         /* Define active link style (now using PINK) */
         .nav-active {
-            color: var(--custom-pink); /* Active link text is PINK */
+            color: var(--custom-pink); /* Active link text is the Accent Color */
             font-weight: 600; 
         }
         
         .nav-active::after {
             transform: scaleX(1) !important; /* Active link is always underlined */
-            background-color: var(--custom-pink) !important; /* Underline is PINK */
+            background-color: var(--custom-pink) !important; /* Underline is the Accent Color */
         }
 
-        /* Ensure mobile dropdown border is pink */
+        /* Ensure mobile dropdown border is the Accent Color */
         #mobile-nav-dropdown {
             border-top: 2px solid var(--custom-pink);
         }
@@ -275,7 +275,7 @@
                     <ul class="text-lg space-y-2 list-none text-left pl-0">
                         <li class="flex items-start">
                             <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
-                            <span>My pup, Sonnie 🐾</span>
+                            <span>My pup, Sonnie</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
@@ -283,15 +283,11 @@
                         </li>
                         <li class="flex items-start">
                             <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
-                            <span>Music and inspiration 🎶</span>
+                            <span>Music and inspiration</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
-                            <span>Web design and tech projects 💻</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
-                            <span>Diving into a good book 📚</span>
+                            <span>Web design and tech projects</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-custom-pink text-xl mr-2 mt-0.5" aria-hidden="true">&bull;</span>
